@@ -1,9 +1,0 @@
-E:\kuangjia\TrainingManagement.Framework.Data\bin\Debug\TrainingManagement.Framework.Data.dll
-E:\kuangjia\TrainingManagement.Framework.Data\bin\Debug\TrainingManagement.Framework.Data.pdb
-E:\kuangjia\TrainingManagement.Framework.Data\bin\Debug\TrainingManagement.Framework.Common.dll
-E:\kuangjia\TrainingManagement.Framework.Data\bin\Debug\TrainingManagement.Framework.Common.pdb
-E:\kuangjia\TrainingManagement.Framework.Data\bin\Debug\TrainingManagement.Framework.Common.xml
-E:\kuangjia\TrainingManagement.Framework.Data\obj\Debug\TrainingManagement.Framework.Data.dll
-E:\kuangjia\TrainingManagement.Framework.Data\obj\Debug\TrainingManagement.Framework.Data.pdb
-E:\kuangjia\TrainingManagement.Framework.Data\bin\Debug\TrainingManagement.Framework.Data.xml
-E:\kuangjia\TrainingManagement.Framework.Data\obj\Debug\TrainingManagement.Framework.Data.csprojResolveAssemblyReference.cache
