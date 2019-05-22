@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="DetailPage.master.cs" Inherits="UI_MasterPage_DetailPage" %>
+<%@ Assembly Name="System.Web.Extensions" %>
+<%@ Register Src="../CommonControls/DatePicker.ascx" TagName="DatePicker" TagPrefix="uc1" %>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>车辆管理系统</title>
+    <link href="../../App_Themes/Default/style.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+    .modalBackground{
+    background-color:#000;
+    filter:alpha(opacity=80);
+    opacity:0.8;
+    }
+    </style>
+    <script type="text/javascript">
+    function document_keydown()
+    {  //  debugger;
+        var arrs = new Array('submit','button','textarea');
+        if(event.keyCode == 13)
+        {
+            for(var i=0;i < arrs.length ;i++)
+            {
+                if(event.srcElement.type == arrs[i] || event.srcElement.tagName == "A" )
+                return;
+            }
+            event.keyCode = 9;
+        }
+    }
+    </script>
+
+</head>
+<body id="content" onkeydown="document_keydown()">
+    <form id="form1" runat="server">
+        <div>
+            <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;
+                width: 100%; background-image: none;">
+                <tr>
+                    <td style="background-image: url(../../Images/content/up_left.JPG); height: 25px;
+                        width: 29px;">
+                    </td>
+                    <td style="background-image: url(../../Images/content/up_center.JPG);">
+                        <asp:Label ID="lblTitle" runat="server" Text='Title' Font-Bold="True" />&nbsp;</td>
+                    <td style="background-image: url(../../Images/content/up_right.JPG); width: 169px;">
+                        &nbsp;</td>
+                </tr>
+            </table>
+            <!-- overflow:auto;height:524px; height:545px-->
+            <div style="margin: 0; border-left: solid 1px #CFCDD0; border-right: solid 1px #CFCDD0;
+                width: 100%;">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;
+                width: 100%; background-image: none;">
+                
+                <tr>
+                    <td style="background-image: url(../../Images/content/down_left.JPG); height: 25px;
+                        width: 15px;">
+                    </td>
+                    <td style="background-image: url(../../Images/content/down_center.JPG);">
+                        &nbsp;
+                    </td>
+                    <td style="background-image: url(../../Images/content/down_right.JPG); width: 312px;">
+                        &nbsp;</td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

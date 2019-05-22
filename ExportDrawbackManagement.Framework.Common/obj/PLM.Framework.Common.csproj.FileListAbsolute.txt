@@ -1,0 +1,16 @@
+E:\PLM\PLM_1\PLM.Framework.Common\bin\Debug\AFD.Framework.Common.XML
+E:\PLM\PLM_1\PLM.Framework.Common\bin\Debug\PLM.Framework.Common.dll
+E:\PLM\PLM_1\PLM.Framework.Common\bin\Debug\PLM.Framework.Common.pdb
+E:\PLM\PLM_1\PLM.Framework.Common\obj\Debug\ResolveAssemblyReference.cache
+E:\PLM\PLM_1\PLM.Framework.Common\obj\Debug\PLM.Framework.Common.dll
+E:\PLM\PLM_1\PLM.Framework.Common\obj\Debug\PLM.Framework.Common.pdb
+E:\PLM\PLM.Framework.Common\bin\Release\PLM.Framework.Common.dll
+E:\PLM\PLM.Framework.Common\bin\Release\PLM.Framework.Common.pdb
+E:\PLM\PLM.Framework.Common\obj\Release\ResolveAssemblyReference.cache
+E:\PLM\PLM.Framework.Common\obj\Release\PLM.Framework.Common.dll
+E:\PLM\PLM.Framework.Common\obj\Release\PLM.Framework.Common.pdb
+E:\PLM\PLM.Framework.Common\bin\Debug\PLM.Framework.Common.dll
+E:\PLM\PLM.Framework.Common\bin\Debug\PLM.Framework.Common.pdb
+E:\PLM\PLM.Framework.Common\obj\Debug\ResolveAssemblyReference.cache
+E:\PLM\PLM.Framework.Common\obj\Debug\PLM.Framework.Common.dll
+E:\PLM\PLM.Framework.Common\obj\Debug\PLM.Framework.Common.pdb

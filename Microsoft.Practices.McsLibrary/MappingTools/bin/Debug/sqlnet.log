@@ -1,0 +1,19 @@
+
+
+***********************************************************************
+Fatal NI connect error 12514, connecting to:
+ (DESCRIPTION=(CONNECT_DATA=(SID=*)(SERVICE_NAME=10.62.5.83)(CID=(PROGRAM=E:\PLM\Microsoft.Practices.McsLibrary\MappingTools\bin\Debug\MappingTools.exe)(HOST=13-1003)(USER=chenjianwu)))(ADDRESS=(PROTOCOL=TCP)(HOST=10.62.5.83)(PORT=1521)))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 06-11ÔÂ-2009 10:09:20
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12564
+    TNS-12564: TNS£º¾Ü¾øÁ¬½Ó
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0

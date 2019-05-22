@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="78bccde6-01ba-4684-82b6-360b035e265b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://10.62.1.72/CupaaCenterService/AccreditReaderService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AccreditReaderService.wsdl" MetadataType="Wsdl" ID="e1a9ae0a-0365-4915-bc39-82608d871118" SourceId="1" SourceUrl="http://10.62.1.72/CupaaCenterService/AccreditReaderService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="AccreditReaderService.xsd" MetadataType="Schema" ID="ee0df11c-fee6-48e0-91be-08e30e7ec82d" SourceId="1" SourceUrl="http://10.62.1.72/CupaaCenterService/AccreditReaderService.svc?xsd=xsd3" />
+    <MetadataFile FileName="AccreditReaderService1.xsd" MetadataType="Schema" ID="b78bee1c-bcda-4bf4-90e2-57ce3e0acedf" SourceId="1" SourceUrl="http://10.62.1.72/CupaaCenterService/AccreditReaderService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AccreditReaderService1.wsdl" MetadataType="Wsdl" ID="66980150-925c-42d2-a3ce-db4b531d93cc" SourceId="1" SourceUrl="http://10.62.1.72/CupaaCenterService/AccreditReaderService.svc?wsdl" />
+    <MetadataFile FileName="AccreditReaderService2.xsd" MetadataType="Schema" ID="af7cbf74-5368-41b0-b96b-5327e77ca901" SourceId="1" SourceUrl="http://10.62.1.72/CupaaCenterService/AccreditReaderService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AccreditReaderService3.xsd" MetadataType="Schema" ID="98d69a8a-bcad-43d6-b9b2-c14c40d2d36f" SourceId="1" SourceUrl="http://10.62.1.72/CupaaCenterService/AccreditReaderService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AccreditReaderService.disco" MetadataType="Disco" ID="a645acc3-f5f4-4015-8cad-28e744802793" SourceId="1" SourceUrl="http://10.62.1.72/CupaaCenterService/AccreditReaderService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

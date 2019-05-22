@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:i0="http://h2010.customs.gov.cn/Cupaa/Contracts" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="OguReaderService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IOguReader_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://h2010.customs.gov.cn/Cupaa/Contracts" location="http://10.62.1.72/CupaaCenterService/OguReaderService.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="WSHttpBinding_IOguReader" type="i0:IOguReader">
+    <wsp:PolicyReference URI="#WSHttpBinding_IOguReader_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetOuView">
+      <soap12:operation soapAction="http://h2010.customs.gov.cn/Cupaa/Contracts/IOguReader/GetOuView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CupaaFaultArgsFault">
+        <soap12:fault use="literal" name="CupaaFaultArgsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRootDepartment">
+      <soap12:operation soapAction="http://h2010.customs.gov.cn/Cupaa/Contracts/IOguReader/GetRootDepartment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CupaaFaultArgsFault">
+        <soap12:fault use="literal" name="CupaaFaultArgsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationChildren">
+      <soap12:operation soapAction="http://h2010.customs.gov.cn/Cupaa/Contracts/IOguReader/GetOrganizationChildren" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CupaaFaultArgsFault">
+        <soap12:fault use="literal" name="CupaaFaultArgsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjectsDetail">
+      <soap12:operation soapAction="http://h2010.customs.gov.cn/Cupaa/Contracts/IOguReader/GetObjectsDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CupaaFaultArgsFault">
+        <soap12:fault use="literal" name="CupaaFaultArgsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjectParentOrganizations">
+      <soap12:operation soapAction="http://h2010.customs.gov.cn/Cupaa/Contracts/IOguReader/GetObjectParentOrganizations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CupaaFaultArgsFault">
+        <soap12:fault use="literal" name="CupaaFaultArgsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIdentityInfos">
+      <soap12:operation soapAction="http://h2010.customs.gov.cn/Cupaa/Contracts/IOguReader/GetUserIdentityInfos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CupaaFaultArgsFault">
+        <soap12:fault use="literal" name="CupaaFaultArgsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPwd">
+      <soap12:operation soapAction="http://h2010.customs.gov.cn/Cupaa/Contracts/IOguReader/CheckPwd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CupaaFaultArgsFault">
+        <soap12:fault use="literal" name="CupaaFaultArgsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetViewInfosByUser">
+      <soap12:operation soapAction="http://h2010.customs.gov.cn/Cupaa/Contracts/IOguReader/GetViewInfosByUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CupaaFaultArgsFault">
+        <soap12:fault use="literal" name="CupaaFaultArgsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupsOfUsers">
+      <soap12:operation soapAction="http://h2010.customs.gov.cn/Cupaa/Contracts/IOguReader/GetGroupsOfUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CupaaFaultArgsFault">
+        <soap12:fault use="literal" name="CupaaFaultArgsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInGroups">
+      <soap12:operation soapAction="http://h2010.customs.gov.cn/Cupaa/Contracts/IOguReader/GetUsersInGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CupaaFaultArgsFault">
+        <soap12:fault use="literal" name="CupaaFaultArgsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueryOguByCondition">
+      <soap12:operation soapAction="http://h2010.customs.gov.cn/Cupaa/Contracts/IOguReader/QueryOguByCondition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CupaaFaultArgsFault">
+        <soap12:fault use="literal" name="CupaaFaultArgsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDirectCustoms">
+      <soap12:operation soapAction="http://h2010.customs.gov.cn/Cupaa/Contracts/IOguReader/GetDirectCustoms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CupaaFaultArgsFault">
+        <soap12:fault use="literal" name="CupaaFaultArgsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubjectCustoms">
+      <soap12:operation soapAction="http://h2010.customs.gov.cn/Cupaa/Contracts/IOguReader/GetSubjectCustoms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CupaaFaultArgsFault">
+        <soap12:fault use="literal" name="CupaaFaultArgsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OguReaderService">
+    <wsdl:port name="WSHttpBinding_IOguReader" binding="tns:WSHttpBinding_IOguReader">
+      <soap12:address location="http://10.62.1.72/CupaaCenterService/OguReaderService.svc/ws" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://10.62.1.72/CupaaCenterService/OguReaderService.svc/ws</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,6 @@
+E:\kuangjia\TrainingManagement.Biz.Entity\bin\Debug\TrainingManagement.Biz.Entity.dll
+E:\kuangjia\TrainingManagement.Biz.Entity\bin\Debug\TrainingManagement.Biz.Entity.pdb
+E:\kuangjia\TrainingManagement.Biz.Entity\obj\Debug\TrainingManagement.Biz.Entity.dll
+E:\kuangjia\TrainingManagement.Biz.Entity\obj\Debug\TrainingManagement.Biz.Entity.pdb
+E:\kuangjia\TrainingManagement.Biz.Entity\bin\Debug\TrainingManagement.Biz.Entity.xml
+E:\kuangjia\TrainingManagement.Biz.Entity\obj\Debug\TrainingManagement.Biz.Entity.csprojResolveAssemblyReference.cache

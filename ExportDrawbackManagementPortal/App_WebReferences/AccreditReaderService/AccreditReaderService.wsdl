@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://h2010.customs.gov.cn/Cupaa/Contracts" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://h2010.customs.gov.cn/Cupaa/Contracts" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://h2010.customs.gov.cn/Cupaa/Contracts/Imports">
+      <xsd:import schemaLocation="http://10.62.1.72/CupaaCenterService/AccreditReaderService.svc?xsd=xsd0" namespace="http://h2010.customs.gov.cn/Cupaa/Contracts" />
+      <xsd:import schemaLocation="http://10.62.1.72/CupaaCenterService/AccreditReaderService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.Common.Log" />
+      <xsd:import schemaLocation="http://10.62.1.72/CupaaCenterService/AccreditReaderService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://10.62.1.72/CupaaCenterService/AccreditReaderService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.EnumsDefines" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAccreditReader_GetApplications_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplications" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetApplications_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetApplications_CupaaFaultArgsFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.Common.Log" name="detail" element="q1:CupaaFaultArgs" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetApplicationsByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationsByUser" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetApplicationsByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationsByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetApplicationsByUser_CupaaFaultArgsFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.Common.Log" name="detail" element="q2:CupaaFaultArgs" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_IsAdminUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsAdminUser" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_IsAdminUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsAdminUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_IsAdminUser_CupaaFaultArgsFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.Common.Log" name="detail" element="q3:CupaaFaultArgs" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_DoesUserHasPermissions_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoesUserHasPermissions" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_DoesUserHasPermissions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoesUserHasPermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_DoesUserHasPermissions_CupaaFaultArgsFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.Common.Log" name="detail" element="q4:CupaaFaultArgs" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_DoesUserHasAllPermissions_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoesUserHasAllPermissions" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_DoesUserHasAllPermissions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoesUserHasAllPermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_DoesUserHasAllPermissions_CupaaFaultArgsFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.Common.Log" name="detail" element="q5:CupaaFaultArgs" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_IsUserInRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserInRoles" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_IsUserInRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserInRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_IsUserInRoles_CupaaFaultArgsFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.Common.Log" name="detail" element="q6:CupaaFaultArgs" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_IsUserInAllRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserInAllRoles" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_IsUserInAllRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserInAllRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_IsUserInAllRoles_CupaaFaultArgsFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.Common.Log" name="detail" element="q7:CupaaFaultArgs" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetOuScopesByUserFunctions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOuScopesByUserFunctions" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetOuScopesByUserFunctions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOuScopesByUserFunctionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetOuScopesByUserFunctions_CupaaFaultArgsFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.Common.Log" name="detail" element="q8:CupaaFaultArgs" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetBusinessScopesByUserFunctions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusinessScopesByUserFunctions" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetBusinessScopesByUserFunctions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusinessScopesByUserFunctionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetBusinessScopesByUserFunctions_CupaaFaultArgsFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.Common.Log" name="detail" element="q9:CupaaFaultArgs" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetOuScopesOfUserRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOuScopesOfUserRoles" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetOuScopesOfUserRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOuScopesOfUserRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetOuScopesOfUserRoles_CupaaFaultArgsFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.Common.Log" name="detail" element="q10:CupaaFaultArgs" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetBusinessScopesOfUserRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusinessScopesOfUserRoles" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetBusinessScopesOfUserRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusinessScopesOfUserRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetBusinessScopesOfUserRoles_CupaaFaultArgsFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.Common.Log" name="detail" element="q11:CupaaFaultArgs" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetRolesOfUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesOfUser" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetRolesOfUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesOfUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetRolesOfUser_CupaaFaultArgsFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.Common.Log" name="detail" element="q12:CupaaFaultArgs" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetFunctionsOfUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFunctionsOfUser" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetFunctionsOfUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFunctionsOfUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetFunctionsOfUser_CupaaFaultArgsFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.Common.Log" name="detail" element="q13:CupaaFaultArgs" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetTimeScopesByUserFunctions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimeScopesByUserFunctions" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetTimeScopesByUserFunctions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimeScopesByUserFunctionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetTimeScopesByUserFunctions_CupaaFaultArgsFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.Common.Log" name="detail" element="q14:CupaaFaultArgs" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetTimeScopesOfUserRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimeScopesOfUserRoles" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetTimeScopesOfUserRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimeScopesOfUserRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetTimeScopesOfUserRoles_CupaaFaultArgsFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.Common.Log" name="detail" element="q15:CupaaFaultArgs" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoles" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetRoles_CupaaFaultArgsFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.Common.Log" name="detail" element="q16:CupaaFaultArgs" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetFunctionsInRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFunctionsInRoles" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetFunctionsInRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFunctionsInRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetFunctionsInRoles_CupaaFaultArgsFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.Common.Log" name="detail" element="q17:CupaaFaultArgs" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetUsersInRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersInRoles" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetUsersInRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersInRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetUsersInRoles_CupaaFaultArgsFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.Common.Log" name="detail" element="q18:CupaaFaultArgs" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetChildrenInRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChildrenInRoles" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetChildrenInRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChildrenInRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetChildrenInRoles_CupaaFaultArgsFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.Common.Log" name="detail" element="q19:CupaaFaultArgs" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetFunctionsInApplication_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFunctionsInApplication" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetFunctionsInApplication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFunctionsInApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetFunctionsInApplication_CupaaFaultArgsFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.Common.Log" name="detail" element="q20:CupaaFaultArgs" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetRolesByFunctions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesByFunctions" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetRolesByFunctions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesByFunctionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetRolesByFunctions_CupaaFaultArgsFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.Common.Log" name="detail" element="q21:CupaaFaultArgs" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetUsersByFunctions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersByFunctions" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetUsersByFunctions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersByFunctionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetUsersByFunctions_CupaaFaultArgsFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.Common.Log" name="detail" element="q22:CupaaFaultArgs" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetTimeScopes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimeScopes" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetTimeScopes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimeScopesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetTimeScopes_CupaaFaultArgsFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.Common.Log" name="detail" element="q23:CupaaFaultArgs" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetBusinessScopes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusinessScopes" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetBusinessScopes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusinessScopesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccreditReader_GetBusinessScopes_CupaaFaultArgsFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/ChinaCustoms.Frameworks.Cupaa.Libraries.Core.Common.Log" name="detail" element="q24:CupaaFaultArgs" />
+  </wsdl:message>
+  <wsdl:portType name="IAccreditReader">
+    <wsdl:operation name="GetApplications">
+      <wsdl:input wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetApplications" message="tns:IAccreditReader_GetApplications_InputMessage" />
+      <wsdl:output wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetApplicationsResponse" message="tns:IAccreditReader_GetApplications_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetApplicationsCupaaFaultArgsFault" name="CupaaFaultArgsFault" message="tns:IAccreditReader_GetApplications_CupaaFaultArgsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationsByUser">
+      <wsdl:input wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetApplicationsByUser" message="tns:IAccreditReader_GetApplicationsByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetApplicationsByUserResponse" message="tns:IAccreditReader_GetApplicationsByUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetApplicationsByUserCupaaFaultArgsFault" name="CupaaFaultArgsFault" message="tns:IAccreditReader_GetApplicationsByUser_CupaaFaultArgsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsAdminUser">
+      <wsdl:input wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/IsAdminUser" message="tns:IAccreditReader_IsAdminUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/IsAdminUserResponse" message="tns:IAccreditReader_IsAdminUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/IsAdminUserCupaaFaultArgsFault" name="CupaaFaultArgsFault" message="tns:IAccreditReader_IsAdminUser_CupaaFaultArgsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoesUserHasPermissions">
+      <wsdl:input wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/DoesUserHasPermissions" message="tns:IAccreditReader_DoesUserHasPermissions_InputMessage" />
+      <wsdl:output wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/DoesUserHasPermissionsResponse" message="tns:IAccreditReader_DoesUserHasPermissions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/DoesUserHasPermissionsCupaaFaultArgsFault" name="CupaaFaultArgsFault" message="tns:IAccreditReader_DoesUserHasPermissions_CupaaFaultArgsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoesUserHasAllPermissions">
+      <wsdl:input wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/DoesUserHasAllPermissions" message="tns:IAccreditReader_DoesUserHasAllPermissions_InputMessage" />
+      <wsdl:output wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/DoesUserHasAllPermissionsResponse" message="tns:IAccreditReader_DoesUserHasAllPermissions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/DoesUserHasAllPermissionsCupaaFaultArgsFault" name="CupaaFaultArgsFault" message="tns:IAccreditReader_DoesUserHasAllPermissions_CupaaFaultArgsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserInRoles">
+      <wsdl:input wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/IsUserInRoles" message="tns:IAccreditReader_IsUserInRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/IsUserInRolesResponse" message="tns:IAccreditReader_IsUserInRoles_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/IsUserInRolesCupaaFaultArgsFault" name="CupaaFaultArgsFault" message="tns:IAccreditReader_IsUserInRoles_CupaaFaultArgsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserInAllRoles">
+      <wsdl:input wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/IsUserInAllRoles" message="tns:IAccreditReader_IsUserInAllRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/IsUserInAllRolesResponse" message="tns:IAccreditReader_IsUserInAllRoles_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/IsUserInAllRolesCupaaFaultArgsFault" name="CupaaFaultArgsFault" message="tns:IAccreditReader_IsUserInAllRoles_CupaaFaultArgsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOuScopesByUserFunctions">
+      <wsdl:input wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetOuScopesByUserFunctions" message="tns:IAccreditReader_GetOuScopesByUserFunctions_InputMessage" />
+      <wsdl:output wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetOuScopesByUserFunctionsResponse" message="tns:IAccreditReader_GetOuScopesByUserFunctions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetOuScopesByUserFunctionsCupaaFaultArgsFault" name="CupaaFaultArgsFault" message="tns:IAccreditReader_GetOuScopesByUserFunctions_CupaaFaultArgsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessScopesByUserFunctions">
+      <wsdl:input wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetBusinessScopesByUserFunctions" message="tns:IAccreditReader_GetBusinessScopesByUserFunctions_InputMessage" />
+      <wsdl:output wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetBusinessScopesByUserFunctionsResponse" message="tns:IAccreditReader_GetBusinessScopesByUserFunctions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetBusinessScopesByUserFunctionsCupaaFaultArgsFault" name="CupaaFaultArgsFault" message="tns:IAccreditReader_GetBusinessScopesByUserFunctions_CupaaFaultArgsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOuScopesOfUserRoles">
+      <wsdl:input wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetOuScopesOfUserRoles" message="tns:IAccreditReader_GetOuScopesOfUserRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetOuScopesOfUserRolesResponse" message="tns:IAccreditReader_GetOuScopesOfUserRoles_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetOuScopesOfUserRolesCupaaFaultArgsFault" name="CupaaFaultArgsFault" message="tns:IAccreditReader_GetOuScopesOfUserRoles_CupaaFaultArgsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessScopesOfUserRoles">
+      <wsdl:input wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetBusinessScopesOfUserRoles" message="tns:IAccreditReader_GetBusinessScopesOfUserRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetBusinessScopesOfUserRolesResponse" message="tns:IAccreditReader_GetBusinessScopesOfUserRoles_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetBusinessScopesOfUserRolesCupaaFaultArgsFault" name="CupaaFaultArgsFault" message="tns:IAccreditReader_GetBusinessScopesOfUserRoles_CupaaFaultArgsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesOfUser">
+      <wsdl:input wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetRolesOfUser" message="tns:IAccreditReader_GetRolesOfUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetRolesOfUserResponse" message="tns:IAccreditReader_GetRolesOfUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetRolesOfUserCupaaFaultArgsFault" name="CupaaFaultArgsFault" message="tns:IAccreditReader_GetRolesOfUser_CupaaFaultArgsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFunctionsOfUser">
+      <wsdl:input wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetFunctionsOfUser" message="tns:IAccreditReader_GetFunctionsOfUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetFunctionsOfUserResponse" message="tns:IAccreditReader_GetFunctionsOfUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetFunctionsOfUserCupaaFaultArgsFault" name="CupaaFaultArgsFault" message="tns:IAccreditReader_GetFunctionsOfUser_CupaaFaultArgsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeScopesByUserFunctions">
+      <wsdl:input wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetTimeScopesByUserFunctions" message="tns:IAccreditReader_GetTimeScopesByUserFunctions_InputMessage" />
+      <wsdl:output wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetTimeScopesByUserFunctionsResponse" message="tns:IAccreditReader_GetTimeScopesByUserFunctions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetTimeScopesByUserFunctionsCupaaFaultArgsFault" name="CupaaFaultArgsFault" message="tns:IAccreditReader_GetTimeScopesByUserFunctions_CupaaFaultArgsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeScopesOfUserRoles">
+      <wsdl:input wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetTimeScopesOfUserRoles" message="tns:IAccreditReader_GetTimeScopesOfUserRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetTimeScopesOfUserRolesResponse" message="tns:IAccreditReader_GetTimeScopesOfUserRoles_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetTimeScopesOfUserRolesCupaaFaultArgsFault" name="CupaaFaultArgsFault" message="tns:IAccreditReader_GetTimeScopesOfUserRoles_CupaaFaultArgsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoles">
+      <wsdl:input wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetRoles" message="tns:IAccreditReader_GetRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetRolesResponse" message="tns:IAccreditReader_GetRoles_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetRolesCupaaFaultArgsFault" name="CupaaFaultArgsFault" message="tns:IAccreditReader_GetRoles_CupaaFaultArgsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFunctionsInRoles">
+      <wsdl:input wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetFunctionsInRoles" message="tns:IAccreditReader_GetFunctionsInRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetFunctionsInRolesResponse" message="tns:IAccreditReader_GetFunctionsInRoles_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetFunctionsInRolesCupaaFaultArgsFault" name="CupaaFaultArgsFault" message="tns:IAccreditReader_GetFunctionsInRoles_CupaaFaultArgsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInRoles">
+      <wsdl:input wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetUsersInRoles" message="tns:IAccreditReader_GetUsersInRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetUsersInRolesResponse" message="tns:IAccreditReader_GetUsersInRoles_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetUsersInRolesCupaaFaultArgsFault" name="CupaaFaultArgsFault" message="tns:IAccreditReader_GetUsersInRoles_CupaaFaultArgsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChildrenInRoles">
+      <wsdl:input wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetChildrenInRoles" message="tns:IAccreditReader_GetChildrenInRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetChildrenInRolesResponse" message="tns:IAccreditReader_GetChildrenInRoles_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetChildrenInRolesCupaaFaultArgsFault" name="CupaaFaultArgsFault" message="tns:IAccreditReader_GetChildrenInRoles_CupaaFaultArgsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFunctionsInApplication">
+      <wsdl:input wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetFunctionsInApplication" message="tns:IAccreditReader_GetFunctionsInApplication_InputMessage" />
+      <wsdl:output wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetFunctionsInApplicationResponse" message="tns:IAccreditReader_GetFunctionsInApplication_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetFunctionsInApplicationCupaaFaultArgsFault" name="CupaaFaultArgsFault" message="tns:IAccreditReader_GetFunctionsInApplication_CupaaFaultArgsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesByFunctions">
+      <wsdl:input wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetRolesByFunctions" message="tns:IAccreditReader_GetRolesByFunctions_InputMessage" />
+      <wsdl:output wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetRolesByFunctionsResponse" message="tns:IAccreditReader_GetRolesByFunctions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetRolesByFunctionsCupaaFaultArgsFault" name="CupaaFaultArgsFault" message="tns:IAccreditReader_GetRolesByFunctions_CupaaFaultArgsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersByFunctions">
+      <wsdl:input wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetUsersByFunctions" message="tns:IAccreditReader_GetUsersByFunctions_InputMessage" />
+      <wsdl:output wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetUsersByFunctionsResponse" message="tns:IAccreditReader_GetUsersByFunctions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetUsersByFunctionsCupaaFaultArgsFault" name="CupaaFaultArgsFault" message="tns:IAccreditReader_GetUsersByFunctions_CupaaFaultArgsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeScopes">
+      <wsdl:input wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetTimeScopes" message="tns:IAccreditReader_GetTimeScopes_InputMessage" />
+      <wsdl:output wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetTimeScopesResponse" message="tns:IAccreditReader_GetTimeScopes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetTimeScopesCupaaFaultArgsFault" name="CupaaFaultArgsFault" message="tns:IAccreditReader_GetTimeScopes_CupaaFaultArgsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessScopes">
+      <wsdl:input wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetBusinessScopes" message="tns:IAccreditReader_GetBusinessScopes_InputMessage" />
+      <wsdl:output wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetBusinessScopesResponse" message="tns:IAccreditReader_GetBusinessScopes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://h2010.customs.gov.cn/Cupaa/Contracts/IAccreditReader/GetBusinessScopesCupaaFaultArgsFault" name="CupaaFaultArgsFault" message="tns:IAccreditReader_GetBusinessScopes_CupaaFaultArgsFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

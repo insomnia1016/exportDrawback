@@ -1,0 +1,9 @@
+E:\export drawback\ExportDrawbackManagement.Biz.Factory\bin\Debug\ExportDrawbackManagement.Biz.Factory.dll
+E:\export drawback\ExportDrawbackManagement.Biz.Factory\bin\Debug\ExportDrawbackManagement.Biz.Factory.pdb
+E:\export drawback\ExportDrawbackManagement.Biz.Factory\obj\Debug\ExportDrawbackManagement.Biz.Factory.dll
+E:\export drawback\ExportDrawbackManagement.Biz.Factory\obj\Debug\ExportDrawbackManagement.Biz.Factory.pdb
+D:\export drawback\ExportDrawbackManagement.Biz.Factory\bin\Debug\ExportDrawbackManagement.Biz.Factory.xml
+D:\export drawback\ExportDrawbackManagement.Biz.Factory\bin\Debug\ExportDrawbackManagement.Biz.Factory.dll
+D:\export drawback\ExportDrawbackManagement.Biz.Factory\bin\Debug\ExportDrawbackManagement.Biz.Factory.pdb
+D:\export drawback\ExportDrawbackManagement.Biz.Factory\obj\Debug\ExportDrawbackManagement.Biz.Factory.dll
+D:\export drawback\ExportDrawbackManagement.Biz.Factory\obj\Debug\ExportDrawbackManagement.Biz.Factory.pdb

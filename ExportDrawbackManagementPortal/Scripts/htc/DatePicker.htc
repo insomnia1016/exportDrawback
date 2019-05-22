@@ -1,0 +1,59 @@
+﻿<PUBLIC:COMPONENT>
+<PUBLIC:ATTACH EVENT="onmouseover" ONEVENT="Hilite()" />
+<PUBLIC:ATTACH EVENT="onmouseout" ONEVENT="Restore()" />
+<PUBLIC:ATTACH EVENT="onchange" ONEVENT="OnChange()" />
+<PUBLIC:ATTACH EVENT="onkeyup" ONEVENT="OnKeyUp()" />
+<SCRIPT LANGUAGE="JScript">
+<!--
+ function Hilite()
+ {
+ // save original values
+//element.style.border = "1px #3586FF solid";
+// element.style.backgroundColor = "#F3F3F3";
+
+ }
+
+ function Restore()
+ {
+ // restore original values
+// element.style.border = "1px #ccc solid"; 
+// element.style.backgroundColor = "#fff";
+ }
+ 
+ function OnChange()
+ {
+    var str = ParseDate(element.value);
+    element.value = str;              
+    return true;
+ }
+ 
+ function OnKeyUp()
+ {
+//    if(event.keyCode == 13 || event.keyCode == 9)
+//    {
+//        var str = ParseDate(element.value);
+//   if(element.value != str)
+//        element.value = str;                
+//    }
+    return true;
+ }
+ 
+ function ParseDate(str)
+ {
+    if(str.length == 8)
+    {
+        var strY = str.substring(0,4);
+        var strM = str.substring(4,6);
+        var strD = str.substring(6,8);
+        str = strY + "-" + strM.toString() + "-" + strD;
+
+    }
+    if(ValidatorConvert(str,"Date","ymd") != null)
+        return str;
+    else
+        return '';        
+ }
+-->
+</SCRIPT>
+</PUBLIC:COMPONENT>
+

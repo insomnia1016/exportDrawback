@@ -1,0 +1,6 @@
+E:\kuangjia\TrainingManagement.Service.Common\bin\Debug\TrainingManagement.Service.Common.dll
+E:\kuangjia\TrainingManagement.Service.Common\bin\Debug\TrainingManagement.Service.Common.pdb
+E:\kuangjia\TrainingManagement.Service.Common\obj\Debug\TrainingManagement.Service.Common.dll
+E:\kuangjia\TrainingManagement.Service.Common\obj\Debug\TrainingManagement.Service.Common.pdb
+E:\kuangjia\TrainingManagement.Service.Common\bin\Debug\TrainingManagement.Service.Common.xml
+E:\kuangjia\TrainingManagement.Service.Common\obj\Debug\TrainingManagement.Service.Common.csprojResolveAssemblyReference.cache

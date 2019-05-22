@@ -1,0 +1,9 @@
+E:\export drawback\ExportDrawbackManagement.Framework.Common\bin\Debug\ExportDrawbackManagement.Framework.Common.dll
+E:\export drawback\ExportDrawbackManagement.Framework.Common\bin\Debug\ExportDrawbackManagement.Framework.Common.pdb
+E:\export drawback\ExportDrawbackManagement.Framework.Common\obj\Debug\ExportDrawbackManagement.Framework.Common.dll
+E:\export drawback\ExportDrawbackManagement.Framework.Common\obj\Debug\ExportDrawbackManagement.Framework.Common.pdb
+D:\export drawback\ExportDrawbackManagement.Framework.Common\bin\Debug\ExportDrawbackManagement.Framework.Common.xml
+D:\export drawback\ExportDrawbackManagement.Framework.Common\bin\Debug\ExportDrawbackManagement.Framework.Common.dll
+D:\export drawback\ExportDrawbackManagement.Framework.Common\bin\Debug\ExportDrawbackManagement.Framework.Common.pdb
+D:\export drawback\ExportDrawbackManagement.Framework.Common\obj\Debug\ExportDrawbackManagement.Framework.Common.dll
+D:\export drawback\ExportDrawbackManagement.Framework.Common\obj\Debug\ExportDrawbackManagement.Framework.Common.pdb

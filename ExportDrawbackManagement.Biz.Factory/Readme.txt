@@ -1,0 +1,1 @@
+BizFactoryBuilder 需要读取配置信息BizFactoryType来确定工厂类的类型

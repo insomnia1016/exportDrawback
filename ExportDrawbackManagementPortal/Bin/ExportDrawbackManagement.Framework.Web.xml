@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ExportDrawbackManagement.Framework.Web</name>
+    </assembly>
+    <members>
+        <member name="T:ExportDrawbackManagement.Framework.Web.TypeCacheManager`1">
+            <summary>
+            类型化缓存管理器
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:ExportDrawbackManagement.Framework.Web.TypeCacheManager`1.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:ExportDrawbackManagement.Framework.Web.TypeCacheManager`1.Add(System.String,`0,System.TimeSpan)">
+            <summary>
+            向缓存添加数据
+            </summary>
+            <param name="key"></param>
+            <param name="obj"></param>
+            <param name="timeSpan"></param>
+        </member>
+        <member name="M:ExportDrawbackManagement.Framework.Web.TypeCacheManager`1.Add(System.String,`0)">
+            <summary>
+            向缓存添加数据
+            </summary>
+            <param name="key"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:ExportDrawbackManagement.Framework.Web.TypeCacheManager`1.Get(System.String)">
+            <summary>
+            从缓存中获取数据
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExportDrawbackManagement.Framework.Web.TypeCacheManager`1.TryGet(System.String,`0@)">
+            <summary>
+            从缓存中获取数据
+            </summary>
+            <param name="key"></param>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,380 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PreferentialTrade.Framework.Data</name>
+    </assembly>
+    <members>
+        <member name="T:PreferentialTrade.Framework.Data.EntityCompareResult">
+            <summary>
+            实体对比结果对象
+            </summary>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.EntityCompareResult.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.EntityCompareResult.#ctor(System.String,System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="objectClassName"></param>
+            <param name="tableName"></param>
+            <param name="displayName"></param>
+        </member>
+        <member name="F:PreferentialTrade.Framework.Data.EntityCompareResult.DifferenceItems">
+            <summary>
+            差异对象集合
+            </summary>
+        </member>
+        <member name="P:PreferentialTrade.Framework.Data.EntityCompareResult.ObjectClassName">
+            <summary>
+            对象类名
+            </summary>
+        </member>
+        <member name="P:PreferentialTrade.Framework.Data.EntityCompareResult.TableName">
+            <summary>
+            表名
+            </summary>
+        </member>
+        <member name="P:PreferentialTrade.Framework.Data.EntityCompareResult.DisplayName">
+            <summary>
+            显示名称
+            </summary>
+        </member>
+        <member name="T:PreferentialTrade.Framework.Data.DataAccessObject`1">
+            <summary>
+            数据访问对象
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="databaseName"></param>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.#ctor(System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="databaseName"></param>
+            <param name="tableName"></param>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.GetKeysExpression(System.Object,System.Object[])">
+            <summary>
+            根据关键字段值列表创建表达式
+            </summary>
+            <param name="keyValue"></param>
+            <param name="keyValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.GetDatabase">
+            <summary>
+            获得数据库对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.GetDatabase(System.String)">
+            <summary>
+            获得数据库对象
+            </summary>
+            <param name="databaseName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.NewConnection">
+            <summary>
+            获得新连接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.Compare(`0,`0)">
+            <summary>
+            比较两个实体对象
+            </summary>
+            <param name="originalEntity"></param>
+            <param name="currentEntity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.GetList(Microsoft.Practices.McsLibrary.Data.Filtering.Criteria,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            获得对象集合
+            </summary>
+            <param name="criteria"></param>
+            <param name="startRowIndex"></param>
+            <param name="pageSize"></param>
+            <param name="allCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.GetList(Microsoft.Practices.McsLibrary.Data.Filtering.Criteria)">
+            <summary>
+            获得对象集合
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.GetList">
+            <summary>
+            获得对象集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.GetList(System.Data.Common.DbCommand)">
+            <summary>
+             获得对象集合
+            </summary>
+            <param name="cmd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.GetDataSet">
+            <summary>
+            获得数据集
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.GetDataSet(Microsoft.Practices.McsLibrary.Data.Filtering.Criteria)">
+            <summary>
+            获得数据集
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.GetEntity(System.Object,System.Object[])">
+            <summary>
+            按照关键字段查找对象
+            </summary>
+            <param name="keyValue"></param>
+            <param name="keyValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.GetEntity(System.Data.Common.DbTransaction,System.Object,System.Object[])">
+            <summary>
+            按照关键字段查找对象
+            </summary>
+            <param name="tx"></param>
+            <param name="keyValue"></param>
+            <param name="keyValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.GetEntity(Microsoft.Practices.McsLibrary.Data.Filtering.Criteria)">
+            <summary>
+            按照关键字段查找对象
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.GetEntity(System.Data.Common.DbTransaction,Microsoft.Practices.McsLibrary.Data.Filtering.Criteria)">
+            <summary>
+            按照关键字段查找对象
+            </summary>
+            <param name="tx"></param>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.Create(`0)">
+            <summary>
+            创建实体
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.Create(System.Data.Common.DbTransaction,`0)">
+            <summary>
+            创建实体
+            </summary>
+            <param name="tx"></param>
+            <param name="entity"></param>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.Update(`0)">
+            <summary>
+            更新实体
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.Update(System.Data.Common.DbTransaction,`0)">
+            <summary>
+            更新实体
+            </summary>
+            <param name="tx"></param>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.Update(Microsoft.Practices.McsLibrary.Data.Filtering.Target,Microsoft.Practices.McsLibrary.Data.Filtering.Criteria)">
+            <summary>
+            更新实体
+            </summary>
+            <param name="target"></param>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.Update(System.Data.Common.DbTransaction,Microsoft.Practices.McsLibrary.Data.Filtering.Target,Microsoft.Practices.McsLibrary.Data.Filtering.Criteria)">
+            <summary>
+            更新实体
+            </summary>
+            <param name="tx"></param>
+            <param name="target"></param>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.Update(Microsoft.Practices.McsLibrary.Data.Filtering.Target,System.Object,System.Object[])">
+            <summary>
+            更新实体
+            </summary>
+            <param name="target"></param>
+            <param name="keyValue"></param>
+            <param name="keyValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.Update(System.Data.Common.DbTransaction,Microsoft.Practices.McsLibrary.Data.Filtering.Target,System.Object,System.Object[])">
+            <summary>
+            更新实体
+            </summary>
+            <param name="tx"></param>
+            <param name="target"></param>
+            <param name="keyValue"></param>
+            <param name="keyValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.CreateOrUpdate(`0)">
+            <summary>
+            创建或更新实体
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.CreateOrUpdate(System.Data.Common.DbTransaction,`0)">
+            <summary>
+            创建或更新实体
+            </summary>
+            <param name="tx"></param>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.CreateOrUpdate(System.Data.Common.DbTransaction,`0,System.String)">
+            <summary>
+            创建或更新实体
+            </summary>
+            <param name="tx"></param>
+            <param name="entity"></param>
+            <param name="TableName">表名</param>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.Delete(System.Object,System.Object[])">
+            <summary>
+            删除实体
+            </summary>
+            <param name="keyValue"></param>
+            <param name="keyValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.Delete(System.Data.Common.DbTransaction,System.Object,System.Object[])">
+            <summary>
+            删除实体
+            </summary>
+            <param name="tx"></param>
+            <param name="keyValue"></param>
+            <param name="keyValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.Delete(Microsoft.Practices.McsLibrary.Data.Filtering.Criteria)">
+            <summary>
+            删除实体
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DataAccessObject`1.Delete(System.Data.Common.DbTransaction,Microsoft.Practices.McsLibrary.Data.Filtering.Criteria)">
+            <summary>
+            删除实体
+            </summary>
+            <param name="tx"></param>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="P:PreferentialTrade.Framework.Data.DataAccessObject`1.DefaultTableName">
+            <summary>
+            默认表名
+            </summary>
+        </member>
+        <member name="P:PreferentialTrade.Framework.Data.DataAccessObject`1.KeyItems">
+            <summary>
+            获取关键字段集合
+            </summary>
+        </member>
+        <member name="P:PreferentialTrade.Framework.Data.DataAccessObject`1.MemberItems">
+            <summary>
+            获取成员字段集合
+            </summary>
+        </member>
+        <member name="P:PreferentialTrade.Framework.Data.DataAccessObject`1.EntityType">
+            <summary>
+            获取或设置实体类型
+            </summary>
+        </member>
+        <member name="P:PreferentialTrade.Framework.Data.DataAccessObject`1.TableName">
+            <summary>
+            获取或设置表名
+            </summary>
+        </member>
+        <member name="P:PreferentialTrade.Framework.Data.DataAccessObject`1.ORMapping">
+            <summary>
+            ORMaping对象
+            </summary>
+        </member>
+        <member name="P:PreferentialTrade.Framework.Data.DataAccessObject`1.DatabaseName">
+            <summary>
+            数据库名称
+            </summary>
+        </member>
+        <member name="T:PreferentialTrade.Framework.Data.DifferenceItem">
+            <summary>
+            实体差异对象
+            </summary>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DifferenceItem.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:PreferentialTrade.Framework.Data.DifferenceItem.#ctor(System.String,System.String,System.String,System.Object,System.Object)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="propertyName"></param>
+            <param name="columnName"></param>
+            <param name="displayName"></param>
+            <param name="originalValue"></param>
+            <param name="currentValue"></param>
+        </member>
+        <member name="P:PreferentialTrade.Framework.Data.DifferenceItem.PropertyName">
+            <summary>
+            属性名称
+            </summary>
+        </member>
+        <member name="P:PreferentialTrade.Framework.Data.DifferenceItem.ColumnName">
+            <summary>
+            列名称
+            </summary>
+        </member>
+        <member name="P:PreferentialTrade.Framework.Data.DifferenceItem.DisplayName">
+            <summary>
+            显示名称
+            </summary>
+        </member>
+        <member name="P:PreferentialTrade.Framework.Data.DifferenceItem.OriginalValue">
+            <summary>
+            原始值
+            </summary>
+        </member>
+        <member name="P:PreferentialTrade.Framework.Data.DifferenceItem.CurrentValue">
+            <summary>
+            当前值
+            </summary>
+        </member>
+    </members>
+</doc>

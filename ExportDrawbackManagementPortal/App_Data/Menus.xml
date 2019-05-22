@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+  <MenuItems>
+    <MenuItem Visible="True" ImageUrl="~/Images/16/edit.gif" Target="contentFrame" Url="../QueryAndReports/Default.aspx" FunctionName="" MenuCode="" Roles="" DisplayName="测试" Title="测试" />
+    <!--<MenuItem Visible="True" ImageUrl="~/Images/16/AD.gif" Target="contentFrame" Url="../QueryAndReports/F004.aspx" FunctionName="" MenuCode="" Roles="" DisplayName="申请车辆派车" Title="申请车辆派车"/>
+    <MenuItem Visible="True" ImageUrl="~/Images/16/righta.ico" Target="contentFrame" Url="../QueryAndReports/F005.aspx" FunctionName="" MenuCode="" Roles="" DisplayName="出车情况统计" Title="出车情况统计"/>
+    <MenuItem Visible="True" ImageUrl="~/Images/16/weekCalendar.gif" Target="contentFrame" Url="../QueryAndReports/F006.aspx" FunctionName="" MenuCode="" Roles="" DisplayName="考勤情况统计" Title="考勤情况统计"/>
+    <MenuItem Visible="True" ImageUrl="~/Images/16/edit.gif" Target="contentFrame" Url="../QueryAndReports/F007.aspx" FunctionName="" MenuCode="" Roles="" DisplayName="加油情况统计" Title="加油情况统计"/>
+    <MenuItem Visible="True" ImageUrl="~/Images/16/edit.gif" Target="contentFrame" Url="../QueryAndReports/F008.aspx" FunctionName="" MenuCode="" Roles="" DisplayName="车辆档案管理" Title="车辆档案管理"/>
+    <MenuItem Visible="True" ImageUrl="~/Images/16/newgroup.gif" Target="contentFrame" Url="../QueryAndReports/Default.aspx" FunctionName="" MenuCode="" Roles="" DisplayName="驾驶人员管理" Title="驾驶人员管理"/>-->
+  </MenuItems>
+</Root>

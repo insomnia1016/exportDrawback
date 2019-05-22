@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e54711d7-a9ae-4568-b694-e4bbe5d6c48c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://10.62.1.72/CupaaCenterService/AuthenticationReaderService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AuthenticationReaderService.disco" MetadataType="Disco" ID="1d8cde0c-bfed-42c6-8388-bdceccb8050d" SourceId="1" SourceUrl="http://10.62.1.72/CupaaCenterService/AuthenticationReaderService.svc?disco" />
+    <MetadataFile FileName="AuthenticationReaderService.wsdl" MetadataType="Wsdl" ID="5a87e8d7-1c23-49cf-9cac-b39935b4084e" SourceId="1" SourceUrl="http://10.62.1.72/CupaaCenterService/AuthenticationReaderService.svc?wsdl" />
+    <MetadataFile FileName="AuthenticationReaderService.xsd" MetadataType="Schema" ID="846ad736-dccd-43ce-904d-ae8278f8e193" SourceId="1" SourceUrl="http://10.62.1.72/CupaaCenterService/AuthenticationReaderService.svc?xsd=xsd3" />
+    <MetadataFile FileName="AuthenticationReaderService1.xsd" MetadataType="Schema" ID="93391023-30ec-426e-9d13-314d23a0bde6" SourceId="1" SourceUrl="http://10.62.1.72/CupaaCenterService/AuthenticationReaderService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AuthenticationReaderService2.xsd" MetadataType="Schema" ID="b0093eee-4ed0-4e46-a336-eee2a66b20cb" SourceId="1" SourceUrl="http://10.62.1.72/CupaaCenterService/AuthenticationReaderService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AuthenticationReaderService3.xsd" MetadataType="Schema" ID="0b7cf038-3f60-473a-9dfc-22c0eacd8ef9" SourceId="1" SourceUrl="http://10.62.1.72/CupaaCenterService/AuthenticationReaderService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AuthenticationReaderService1.wsdl" MetadataType="Wsdl" ID="24c27076-b5e7-4d7c-8f7f-79cd1a2cf557" SourceId="1" SourceUrl="http://10.62.1.72/CupaaCenterService/AuthenticationReaderService.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

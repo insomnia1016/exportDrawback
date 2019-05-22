@@ -1,0 +1,28 @@
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Framework.Data\bin\Debug\PLM.Framework.Data.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Framework.Data\bin\Debug\PLM.Framework.Data.pdb
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Framework.Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Framework.Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Framework.Data\bin\Debug\Microsoft.Practices.McsLibrary.Data.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Framework.Data\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Framework.Data\bin\Debug\PLM.Framework.Common.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Framework.Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Framework.Data\bin\Debug\PLM.Framework.Common.pdb
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Framework.Data\bin\Debug\Microsoft.Practices.ObjectBuilder.xml
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Framework.Data\obj\Debug\ResolveAssemblyReference.cache
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Framework.Data\obj\Debug\PLM.Framework.Data.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Framework.Data\obj\Debug\PLM.Framework.Data.pdb
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Framework.Data\bin\Debug\PreferentialTrade.Framework.Data.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Framework.Data\bin\Debug\PreferentialTrade.Framework.Data.pdb
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Framework.Data\bin\Debug\PreferentialTrade.Framework.Common.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Framework.Data\bin\Debug\PreferentialTrade.Framework.Common.pdb
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Framework.Data\obj\Debug\ResolveAssemblyReference.cache
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Framework.Data\obj\Debug\PreferentialTrade.Framework.Data.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Framework.Data\obj\Debug\PreferentialTrade.Framework.Data.pdb
+E:\PreferentialTrade\PreferentialTrade.Framework.Data\bin\Debug\PreferentialTrade.Framework.Data.dll
+E:\PreferentialTrade\PreferentialTrade.Framework.Data\bin\Debug\PreferentialTrade.Framework.Data.pdb
+E:\PreferentialTrade\PreferentialTrade.Framework.Data\bin\Debug\PreferentialTrade.Framework.Common.dll
+E:\PreferentialTrade\PreferentialTrade.Framework.Data\bin\Debug\PreferentialTrade.Framework.Common.pdb
+E:\PreferentialTrade\PreferentialTrade.Framework.Data\obj\Debug\ResolveAssemblyReference.cache
+E:\PreferentialTrade\PreferentialTrade.Framework.Data\obj\Debug\PreferentialTrade.Framework.Data.dll
+E:\PreferentialTrade\PreferentialTrade.Framework.Data\obj\Debug\PreferentialTrade.Framework.Data.pdb
+E:\PreferentialTrade\PreferentialTrade.Framework.Data\bin\Debug\PreferentialTrade.Framework.Common.xml

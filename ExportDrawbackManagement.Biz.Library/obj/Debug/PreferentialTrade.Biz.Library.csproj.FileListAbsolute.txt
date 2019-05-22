@@ -1,0 +1,62 @@
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\bin\Debug\PreferentialTrade.Biz.Library.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\bin\Debug\PreferentialTrade.Biz.Library.pdb
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\bin\Debug\Microsoft.Practices.McsLibrary.Data.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\bin\Debug\PLM.Biz.Entity.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\bin\Debug\PLM.Biz.Factory.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\bin\Debug\PLM.Biz.Interface.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\bin\Debug\PLM.Framework.Common.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\bin\Debug\PLM.Framework.Data.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\bin\Debug\PLM.Framework.Common.pdb
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\bin\Debug\PLM.Biz.Factory.pdb
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\bin\Debug\PLM.Biz.Entity.pdb
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\bin\Debug\Microsoft.Practices.ObjectBuilder.xml
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\bin\Debug\PLM.Biz.Interface.pdb
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.xml
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\bin\Debug\PLM.Framework.Data.pdb
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\obj\Debug\ResolveAssemblyReference.cache
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\obj\Debug\PreferentialTrade.Biz.Library.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Biz.Library\obj\Debug\PreferentialTrade.Biz.Library.pdb
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Biz.Library.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Biz.Library.pdb
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Biz.Entity.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Biz.Factory.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Biz.Interface.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Framework.Common.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Framework.Data.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Framework.Common.pdb
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Biz.Entity.pdb
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Framework.Data.pdb
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Biz.Interface.pdb
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Biz.Factory.pdb
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Biz.Library\obj\Debug\ResolveAssemblyReference.cache
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Biz.Library\obj\Debug\PreferentialTrade.Biz.Library.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Biz.Library\obj\Debug\PreferentialTrade.Biz.Library.pdb
+E:\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Biz.Library.dll
+E:\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Biz.Library.pdb
+E:\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Biz.Entity.dll
+E:\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Biz.Factory.dll
+E:\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Biz.Interface.dll
+E:\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Framework.Common.dll
+E:\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Framework.Data.dll
+E:\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Framework.Common.pdb
+E:\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Biz.Entity.pdb
+E:\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Framework.Data.pdb
+E:\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Biz.Interface.pdb
+E:\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Biz.Factory.pdb
+E:\PreferentialTrade\PreferentialTrade.Biz.Library\obj\Debug\ResolveAssemblyReference.cache
+E:\PreferentialTrade\PreferentialTrade.Biz.Library\obj\Debug\PreferentialTrade.Biz.Library.dll
+E:\PreferentialTrade\PreferentialTrade.Biz.Library\obj\Debug\PreferentialTrade.Biz.Library.pdb
+E:\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Biz.Entity.xml
+E:\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Framework.Common.xml
+E:\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Framework.Data.xml
+E:\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Biz.Factory.xml
+E:\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Biz.Interface.xml
+E:\PreferentialTrade\PreferentialTrade.Biz.Library\bin\Debug\PreferentialTrade.Biz.Library.XML

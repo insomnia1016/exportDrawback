@@ -1,0 +1,25 @@
+﻿<PUBLIC:COMPONENT>
+<PUBLIC:ATTACH EVENT="onmouseover" ONEVENT="Hilite()" />
+<PUBLIC:ATTACH EVENT="onmouseout" ONEVENT="Restore()" />
+<SCRIPT LANGUAGE="JScript">
+<!--
+ function Hilite()
+ {
+ // save original values
+ element.style.border = "1px #f60 solid";
+ element.style.backgroundColor = "#D5D5D5";
+ //element.style.backgroundColor = "blue";
+ }
+
+ function Restore()
+ {
+ // restore original values
+ element.style.border = "0px #ccc solid"; 
+ element.style.backgroundColor = "#fff";
+ //element.style.backgroundColor = "red";
+ }
+-->
+</SCRIPT>
+</PUBLIC:COMPONENT>
+
+

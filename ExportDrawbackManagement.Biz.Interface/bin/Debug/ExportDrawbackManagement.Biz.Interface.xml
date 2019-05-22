@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ExportDrawbackManagement.Biz.Interface</name>
+    </assembly>
+    <members>
+        <member name="T:ExportDrawbackManagement.Biz.Interface.BaseQueryPara">
+            <summary>
+            基本查询参数
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Interface.BaseQueryPara.Option">
+            <summary>
+            查询表
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Interface.BaseQueryPara.Item(System.String)">
+            <summary>
+            获取一个public属性的值
+            </summary>
+            <param name="PropertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ExportDrawbackManagement.Biz.Interface.IDeclareManager`1">
+            <summary>
+            申报单操作接口
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:ExportDrawbackManagement.Biz.Interface.IDeclareManager`1.GetEntityByKeys(ExportDrawbackManagement.Biz.Interface.TableOption,System.Object,System.Object[])">
+            <summary>
+            获得实体
+            </summary>
+            <param name="option"></param>
+            <param name="keyValue"></param>
+            <param name="keyValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExportDrawbackManagement.Biz.Interface.IDeclareManager`1.GetEntityByEntryID(ExportDrawbackManagement.Biz.Interface.TableOption,System.Int64)">
+            <summary>
+            获得实体
+            </summary>
+            <param name="entryID"></param>
+            <param name="option"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExportDrawbackManagement.Biz.Interface.IDeclareManager`1.GetEntityBySignNo(ExportDrawbackManagement.Biz.Interface.TableOption,System.String)">
+            <summary>
+            获得实体
+            </summary>
+            <param name="option"></param>
+            <param name="signNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExportDrawbackManagement.Biz.Interface.IDeclareManager`1.GetEntityByExternalNo(ExportDrawbackManagement.Biz.Interface.TableOption,System.String)">
+            <summary>
+            获得实体
+            </summary>
+            <param name="externalNo"></param>
+            <param name="option"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExportDrawbackManagement.Biz.Interface.IDeclareManager`1.SaveToTmp(`0)">
+            <summary>
+            暂存
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:ExportDrawbackManagement.Biz.Interface.IDeclareManager`1.Submit(`0)">
+            <summary>
+            提交
+            之前状态={草稿|退单}
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:ExportDrawbackManagement.Biz.Interface.IDeclareManager`1.Reject(`0)">
+            <summary>
+            拒绝
+            之前的状态={已提交|已受理}
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:ExportDrawbackManagement.Biz.Interface.IDeclareManager`1.Accept(`0)">
+            <summary>
+            受理
+            之前状态={已提交}
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:ExportDrawbackManagement.Biz.Interface.IDeclareManager`1.FinalCheck(`0)">
+            <summary>
+            终审
+            之前状态={受理通过}
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:ExportDrawbackManagement.Biz.Interface.IDeclareManager`1.Modify(`0)">
+            <summary>
+            变更
+            之前状态={可执行}
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:ExportDrawbackManagement.Biz.Interface.IDeclareManager`1.AcceptModify(`0)">
+            <summary>
+            确认变更
+            之前状态={申请变更}
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:ExportDrawbackManagement.Biz.Interface.IDeclareManager`1.Freeze(`0)">
+            <summary>
+            冻结
+            之前状态={可执行}
+            同时冻结所有人员
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:ExportDrawbackManagement.Biz.Interface.IDeclareManager`1.Thaw(`0)">
+            <summary>
+            解冻
+            之前状态={冻结}
+            不解冻下属人员
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:ExportDrawbackManagement.Biz.Interface.IDeclareManager`1.Logout(`0)">
+            <summary>
+            注销
+            之前状态={可执行}
+            没有反向动作
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:ExportDrawbackManagement.Biz.Interface.IDeclareManager`1.DeleteEntityFromTmp(`0)">
+            <summary>
+            从TMP表删除，删除后同时删除表体
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="T:ExportDrawbackManagement.Biz.Interface.IDictionaryManager`1">
+            <summary>
+            字典管理器基类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:ExportDrawbackManagement.Biz.Interface.IDictionaryManager`1.GetList">
+            <summary>
+            获得字典列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ExportDrawbackManagement.Biz.Interface.IDictionaryManager`1.GetDataSet">
+            <summary>
+            获得字典数据集
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ExportDrawbackManagement.Biz.Interface.IDictionaryManager`1.Create(`0)">
+            <summary>
+            创建字典
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:ExportDrawbackManagement.Biz.Interface.IDictionaryManager`1.Update(`0)">
+            <summary>
+            更新字典
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:ExportDrawbackManagement.Biz.Interface.IDictionaryManager`1.Delete(`0)">
+            <summary>
+            删除字典
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="T:ExportDrawbackManagement.Biz.Interface.TableOption">
+            <summary>
+            表名后缀
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Interface.TableOption.OtherSystem">
+            <summary>
+            其他系统
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Interface.TableOption.TempTable">
+            <summary>
+            临时表
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Interface.TableOption.QueueTable">
+            <summary>
+            队列表
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Interface.TableOption.PreparationTable">
+            <summary>
+            预录入表
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Interface.TableOption.OfficialTable">
+            <summary>
+            正式表
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Interface.TableOption.HistoryTable">
+            <summary>
+            历史表
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,60 @@
+﻿<%--
+默认的外观模板。以下外观仅作为示例提供。
+
+1. 命名的控件外观。SkinId 的定义应唯一，因为在同一主题中不允许一个控件类型有重复的 SkinId。
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. 默认外观。未定义 SkinId。在同一主题中每个控件类型只允许有一个默认的控件外观。
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+<asp:Button runat="server" CssClass="Button" />
+<asp:Button runat="server" CssClass="LargeButton"  SkinId="LargeButton" />
+<asp:ImageButton runat="server" CssClass="ImageButton" />
+<asp:LinkButton runat="server" CssClass="LinkButton" BackColor="Transparent" />
+<asp:LinkButton SkinId="MenuLinkButton"  runat="server" CssClass="MenuLinkButton" />
+<asp:TextBox runat="server" CssClass="TextBox" Columns="19" />
+<asp:TextBox runat="server" CssClass="BigfontTextBox" Columns="19" SkinId="BigfontTextBox"/>
+<asp:TextBox runat="server" CssClass="DictTextBox" Columns="19" SkinId="DictTextBox" />
+<asp:TextBox runat="server" CssClass="DateTextBox" Columns="19" SkinId="DateTextBox" />
+<asp:TextBox runat="server" CssClass="DisableTextBox" Columns="19" SkinId="DisableTextBox" />
+<asp:TextBox runat="server" CssClass="TextBox" SkinId="LongTextBox" Width="95%" />
+<asp:FormView runat="server" />
+<asp:RequiredFieldValidator runat="server" CssClass="ErrorInfo"/>
+<asp:GridView runat="server" CssClass="GridView" Width="100%">
+    <HeaderStyle CssClass="Header" />
+    <RowStyle CssClass="Row" HorizontalAlign="Center" />
+    <AlternatingRowStyle CssClass="AlternatingRow" HorizontalAlign="Center" />
+    <EmptyDataRowStyle CssClass="EmptyDataRow" />
+    <EditRowStyle CssClass="EditRow" />
+    <SelectedRowStyle CssClass="SelectedRow" />
+    <EditRowStyle CssClass="SelectedRow" /> 
+    <FooterStyle CssClass="Footer" />
+    <PagerStyle CssClass="Pager" />
+</asp:GridView>
+<asp:RadioButtonList runat="server" RepeatDirection="Horizontal" Font-Bold="False" Font-Overline="False" Font-Size="Smaller" Font-Strikeout="False" Font-Underline="False" ForeColor="Black">
+</asp:RadioButtonList>
+<asp:Menu SkinId="ContentMenu"  Font-Names="Verdana" Font-Size="0.8em" ForeColor="black"  StaticSubMenuIndent="10px" runat="server" DynamicEnableDefaultPopOutImage="False" DynamicVerticalOffset="5">
+    <StaticMenuItemStyle HorizontalPadding="0px" VerticalPadding="2px" />
+    <StaticSelectedStyle BackColor="#E0DFE4" />
+    <StaticHoverStyle BackColor="#666666" ForeColor="White" /> 
+    <DynamicHoverStyle BackColor="#666666" ForeColor="White" /> 
+  <LevelMenuItemStyles>
+      <asp:MenuItemStyle Font-Underline="False" Font-Size="13px" />
+  </LevelMenuItemStyles>
+    <DynamicSelectedStyle BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" />
+    <DynamicMenuStyle HorizontalPadding="2px" />
+    <DynamicMenuItemStyle HorizontalPadding="2px" />
+</asp:Menu>
+<asp:Menu SkinId="MainMenu" runat="server" BackColor="#E0DFE4" Width="100%" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="16px" ForeColor="#666666" StaticSubMenuIndent="10px" MaximumDynamicDisplayLevels="0" StaticBottomSeparatorImageUrl="~/Images/menu/sp.jpg">
+    <LevelMenuItemStyles>
+        <asp:MenuItemStyle Font-Names="黑体" Font-Size="14px" Font-Underline="False" Font-Bold="True" Font-Overline="False" ForeColor="#134478" CssClass="MainMenu" ItemSpacing="1px"/>
+    </LevelMenuItemStyles>
+    <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+    <StaticSelectedStyle BackColor="#E0DFE4" />
+    <StaticHoverStyle BackColor="#666666" ForeColor="White" Font-Bold="True" />
+</asp:Menu>

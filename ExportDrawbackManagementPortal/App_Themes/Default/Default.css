@@ -1,0 +1,439 @@
+﻿body 
+{
+	font-weight: normal; 
+	font-size: 12px; 
+	text-indent: 0px; 
+	line-height: 17px; 
+	font-family: arial,sans-serif;
+	margin:0;
+	background-color:#E8E7EC;
+	word-spacing: normal;
+	text-transform: none;
+	letter-spacing: normal;
+/*
+	scrollbar-base-color: #F8F8F8;
+	scrollbar-highlight-color: #F8F8F8;
+	scrollbar-3dlight-color: #D8D8D8;
+	scrollbar-darkshadow-color: #D8D8D8;
+	scrollbar-shadow-color: #F8F8F8;
+	scrollbar-face-color: blue;
+	scrollbar-track-color: #F8F8F8;
+	scrollbar-arrow-color: black;
+
+	scrollbar-face-color: #f892cc;
+	scrollbar-highlight-color: #f256c6;
+	scrollbar-shadow-color: #fd76c2;
+	scrollbar-3dlight-color: #fd76c2;
+	scrollbar-arrow-color: #fd76c2;
+	scrollbar-track-color: #fd76c2;
+	scrollbar-darkshadow-color: #f629b9;
+	scrollbar-base-color: #e9cfe0
+*/
+}
+
+div
+{
+	font-weight: normal; 
+	font-size: 12px; 
+	text-indent: 0px; 
+	line-height: 17px; 
+	font-family: arial,sans-serif;
+}
+
+
+span
+{
+	font-weight: normal; 
+	font-size: 12px; 
+	text-indent: 0px; 
+	line-height: 17px; 
+	font-family: arial,sans-serif;
+}
+#content
+{
+	margin: 0;
+	/*width: 620px;*/
+	/*height: 600px;*/
+	background-image: url(../../Images/bg/content_small.JPG);
+}   
+
+.ErrorInfo
+{
+	font-weight: normal; 
+	font-size: 12pt; 
+	text-indent: 0px; 
+	line-height: 17px; 
+	font-style: normal; 
+	font-family: arial,sans-serif;
+	color:red;
+}
+
+.MainMenu td
+{
+	/*background-image: url(D:\MyDocument\My Pictures\l_07.bmp);*/
+	font-weight: bold;
+	font-family: 黑体;
+	font-size: 14px;
+	background-repeat: no-repeat;
+}
+
+
+.ListItem
+{
+	width: 100%;
+	padding: 0;
+	margin:0;
+	border: solid 0px gray;
+	border-bottom:solid 1px gray;
+	cursor: hand;
+	background-color: #f0fff0;
+	text-align: left;
+}
+        
+.TextBox
+{
+	width:150px; 
+	font-family: "Verdana" , "Arial" , "Helvetica" , "sans-serif";
+	font-size: 12px;
+	border: lightgrey 1px solid;
+	behavior: url(../../Scripts/htc/ActiveItem.htc);	
+}
+.BigfontTextBox
+{ font-size:14px;
+	
+	}
+
+.DisableTextBox
+{
+	width:150px; 
+	font-family: "Verdana" , "Arial" , "Helvetica" , "sans-serif";
+	font-size: 12px;
+	border: lightgrey 1px solid;
+	background-color: #99ffff;
+}
+
+.DictTextBox
+{
+	width:150px; 
+	font-family: "Verdana" , "Arial" , "Helvetica" , "sans-serif";
+	font-size: 12px;
+	border: lightgrey 1px solid;
+	 /*behavior: url(../../Scripts/htc/ActiveItem.htc);*/
+	cursor: pointer;
+	background-color: #d5e6e6;
+}
+
+.DateTextBox
+{
+	width:150px; 
+	font-family: "Verdana" , "Arial" , "Helvetica" , "sans-serif";
+	font-size: 12px;
+	border: lightgrey 1px solid;
+	behavior: url(../../Scripts/htc/DatePicker.htc);
+	cursor: pointer;
+	background-color: #d5e6e6;
+}
+
+.Button
+{ 
+	padding-top: 2px;
+	font-family: SimSun;
+	font-size: 12px;/*
+	border-left:none;
+	border-top:none;
+	border-bottom:1px solid gray;
+	border-right:1px solid gray;
+	background-color:gray;*/
+	border:1px #ccc solid; 
+	background-color:#fff;
+    cursor : hand;
+	behavior: url(../../Scripts/htc/ActiveItem.htc);
+	/*filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#f0ffffff', EndColorStr='#50ffffff')progid:DXImageTransform.Microsoft.Glow(color='silver', Strength='1')*/
+ }
+ .LargeButton
+{ 
+	padding-top: 2px;
+	font-family: SimSun;
+	font-size: 18px;/*
+	border-left:none;
+	border-top:none;
+	border-bottom:1px solid gray;
+	border-right:1px solid gray;
+	background-color:gray;*/
+	border:1px #ccc solid; 
+	background-color:#fff;
+    cursor : hand;
+	behavior: url(../../Scripts/htc/ActiveItem.htc);
+	/*filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#f0ffffff', EndColorStr='#50ffffff')progid:DXImageTransform.Microsoft.Glow(color='silver', Strength='1')*/
+ }
+
+td
+{font-size:12px;}
+.LinkButton
+{
+	background-color:Transparent;
+	padding-top: 2px;
+	font-family: SimSun;
+	font-size: 12px;
+}
+.MenuLinkButton A
+{
+	padding-top: 2px;
+	font-family: SimSun;
+	font-size: 18px;
+	padding-left: 20;
+	background-image: url(Images/pic/LinkButtonMenu.gif);
+	background-repeat: no-repeat;
+	behavior: url(../../Scripts/htc/LinkMenuItem.htc);
+}
+
+.ListTable table
+{
+	border-collapse: collapse;
+	border: 1px solid silver;
+	font-size: 12px;
+	width: 100%;
+	background-color:#D4D0C8;
+}
+.ListTable th
+{
+	text-align:center;
+	font-weight:bold;
+	background-color: ghostwhite;
+}
+/*
+.ListTable td
+{
+	text-align: left;
+	background-color: #f0fff0;
+}
+*/
+.GridItemMouseOver
+{
+	border: 1px #3586FF solid;
+	background-color: #F3F3F3;
+	cursor: hand;
+}
+
+GridItemMouseOut
+{
+	border:0px;
+	background-color:inherit;
+}
+
+.DetailTable table
+{	
+	border: 0px solid black;
+	font-size: 9px;
+	background:#D6D6D8;
+}
+.DetailTable caption
+{
+	font-family: "新宋体";
+	font-size: 18px;
+	font-style: normal;
+	font-weight: bold;
+	color: #18309E;
+	background-image:url(../../Images/bg/caption.jpg);
+	height:26px;
+}
+
+.DetailTable .Caption
+{
+	font-family: "新宋体";
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #18309E;
+	background-image:url(../../Images/bg/caption.jpg);
+	height:26px;
+	text-align:center;
+}
+.DetailTable th
+{
+	background-image: url(../../Images/bg/content_small.JPG);
+	text-align: right;
+	background-color: #f3f3f8;
+	font-weight: normal;
+	font-size: 9pt;
+	color: #000056;
+	text-indent: 0px;
+	line-height: 17px;
+	font-style: normal;
+	font-family: arial,sans-serif;
+}
+
+.DetailTable td
+{	
+	/*background-image: url(../../Images/bg/content_small.JPG);*/
+	background-color: #f3f3f8;
+	text-align:left;
+	font-weight: normal; 
+	font-size: 9pt; 
+	text-indent: 0px; 
+	line-height: 17px; 
+	font-style: normal; 
+	font-family: arial,sans-serif
+}
+
+.DetailTable .ControlPanel
+{
+	background-image:url(../../Images/bg/ControlPanel.jpg);
+	height:24px;
+	text-align:center;
+}
+
+.GridView TABLE {
+	border: silver 1px solid; 
+	border-collapse: collapse
+}
+.GridView TH1 {
+	font-weight: bold; 
+	font-size: 12px; 
+	color: black; 
+	font-family: "Verdana" , "Arial" , "Helvetica" , "sans-serif"; 
+	background-color: ghostwhite; 
+	text-align: center
+}
+.GridView .Header TH {
+	font-weight: bold; 
+	font-size: 12px; 
+	color: #000000; 
+	font-family: "verdana", "arial", "helvetica", "sans-serif"; 
+	background-color: #71afd5; 
+	text-align: center
+}
+.GridView .HighLight TD {
+	FONT-WEIGHT: bold; COLOR: #000000; BACKGROUND-COLOR: #f5f6f8
+}
+.GridView .Row TD {
+	border: 1px solid; 
+	font-weight: normal; 
+	font-size: 12px; 
+	color: #000000; 
+	word-break: break-all; 
+	font-family: "verdana", "arial", "helvetica", "sans-serif"; 
+	background-color: #faf9f5
+}
+.GridView .Row .TEXTBOX {
+	text-align:right;
+}
+.GridView .AlternatingRow .TEXTBOX {
+	text-align:right;
+}
+.GridView .AlternatingRow TD {
+	border: 1px solid; 
+	font-weight: normal; 
+	font-size: 12px; 
+	color: #000000; 
+	font-family: "verdana" , "arial" , "helvetica" , "sans-serif"; 
+	background-color: #c2d6e9
+}
+.GridView .SelectedRow TD {
+	border: 1px solid; 
+	FONT-WEIGHT: normal; 
+	FONT-SIZE: 12px; 
+	COLOR: #000000; 
+	FONT-FAMILY: "Verdana" , "Arial" , "Helvetica" , "sans-serif"; 
+	BACKGROUND-COLOR: #ffcc33
+}
+.GridView .Pager TD {
+	FONT-SIZE: 12px; 
+	FONT-FAMILY: "Verdana" , "Arial" , "Helvetica" , "sans-serif"; 
+	BACKGROUND-COLOR: #faf9f5; 
+	TEXT-ALIGN: right;
+	color:Red;
+}
+.GridView TD1 {
+	FONT-SIZE: 12px; 
+	COLOR: #000000; 
+	FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; 
+	BACKGROUND-COLOR: #ffffff
+}
+.GridView CAPTION {
+	border: #cdcfbe 1px solid; 
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: 14px; 
+	BACKGROUND-IMAGE: url(/YWWebApp2_0/Images/toolgrad.jpg); 
+	PADDING-TOP: 5px; 
+	BACKGROUND-REPEAT: repeat-x; 
+	FONT-FAMILY: "Verdana" , "Arial" , "Helvetica" , "sans-serif"; 
+	BACKGROUND-COLOR: silver; 
+	TEXT-ALIGN: center
+}
+.GridView .CaptionRow TD {
+	BORDER: 0px; 
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: 14px; 
+	BACKGROUND-IMAGE: url(/YWWebApp2_0/Images/toolgrad.jpg); 
+	PADDING-BOTTOM: 0px; 
+	PADDING-TOP: 5px; 
+	BACKGROUND-REPEAT: repeat-x; 
+	FONT-FAMILY: "Verdana" , "Arial" , "Helvetica" , "sans-serif"; 
+	BACKGROUND-COLOR: silver; 
+	TEXT-ALIGN: center
+}
+.GridView A:link {
+	FONT-SIZE: 12px; 
+	FILTER: Shadow(Color=white, Direction=135); 
+	COLOR: #333399; 
+	TEXT-DECORATION: none
+}
+.GridView A:visited {
+	FONT-SIZE: 12px; 
+	FILTER: DropShadow(Color=#ffffff, OffX=-1, OffY=1, Positive=true); 
+	COLOR: #333399; 
+	TEXT-DECORATION: none
+}
+.GridView A:hover {
+	FONT-SIZE: 12px; 
+	FILTER: DropShadow(Color=#ffffff, OffX=-1, OffY=1, Positive=true); 
+	COLOR: #000033; 
+	TEXT-DECORATION: none
+}
+.GridView A:active {
+	FONT-SIZE: 12px;
+	FILTER: DropShadow(Color=#ffffff, OffX=-1, OffY=1, Positive=true);
+	COLOR: #FF6600;
+	TEXT-DECORATION: none;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+    
+ul.queryarea li
+{
+    width:33%;
+    margin:0;
+    float:left;
+    position:static;
+	padding:0;
+}
+
+ul.queryarea
+{
+    list-style-type:none;
+    width:100%;
+    margin-bottom:10px;
+    margin-left:0px;
+    padding:0px;
+    position:static;
+  
+}
+
+
+span.queryarea.title
+{
+   font-weight:bold;
+   float:left;
+   position:static;
+   display:inline-block;
+   width:100px;
+}
+
+span.queryarea.control
+{
+   font-style:italic;
+   float:left;
+   display:inline-block;  
+   position:static;
+}

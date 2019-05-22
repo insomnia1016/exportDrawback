@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="da172ea8-d1e3-4814-b77b-0a09466df968" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://10.62.1.72/CupaaCenterService/OguReaderService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="OguReaderService.xsd" MetadataType="Schema" ID="836048be-2138-4716-9fd2-fbe69d5617db" SourceId="1" SourceUrl="http://10.62.1.72/CupaaCenterService/OguReaderService.svc?xsd=xsd1" />
+    <MetadataFile FileName="OguReaderService.disco" MetadataType="Disco" ID="2061d818-423e-40bb-868d-d3b2f76a5ed8" SourceId="1" SourceUrl="http://10.62.1.72/CupaaCenterService/OguReaderService.svc?disco" />
+    <MetadataFile FileName="OguReaderService.wsdl" MetadataType="Wsdl" ID="bbfd55bc-cccb-43ad-b627-015a0796a893" SourceId="1" SourceUrl="http://10.62.1.72/CupaaCenterService/OguReaderService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="OguReaderService1.wsdl" MetadataType="Wsdl" ID="475314b9-a644-424a-9062-c2f5a79e3a09" SourceId="1" SourceUrl="http://10.62.1.72/CupaaCenterService/OguReaderService.svc?wsdl" />
+    <MetadataFile FileName="OguReaderService1.xsd" MetadataType="Schema" ID="89f14d42-81b8-4b73-8b73-b505c5d634c7" SourceId="1" SourceUrl="http://10.62.1.72/CupaaCenterService/OguReaderService.svc?xsd=xsd2" />
+    <MetadataFile FileName="OguReaderService2.xsd" MetadataType="Schema" ID="51c2fefe-5733-4cda-967e-6bc4a8038e71" SourceId="1" SourceUrl="http://10.62.1.72/CupaaCenterService/OguReaderService.svc?xsd=xsd3" />
+    <MetadataFile FileName="OguReaderService3.xsd" MetadataType="Schema" ID="9179a2f9-b36f-4406-85a3-dd164b178fb8" SourceId="1" SourceUrl="http://10.62.1.72/CupaaCenterService/OguReaderService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

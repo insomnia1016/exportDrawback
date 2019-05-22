@@ -1,0 +1,22 @@
+﻿<PUBLIC:COMPONENT>
+<PUBLIC:ATTACH EVENT="onmouseover" ONEVENT="Hilite()" />
+<PUBLIC:ATTACH EVENT="onmouseout" ONEVENT="Restore()" />
+<SCRIPT LANGUAGE="JScript">
+<!--
+ function Hilite()
+ {
+ // save original values
+//element.style.border = "1px #3586FF solid";
+// element.style.backgroundColor = "#F3F3F3";
+	element.style.backgroundImage= 'url(Images/pic/LinkButtonMenuHover.gif)';
+ }
+
+ function Restore()
+ {
+ // restore original values
+	element.style.backgroundImage= 'url(Images/pic/LinkButtonMenu.gif)';
+ }
+-->
+</SCRIPT>
+</PUBLIC:COMPONENT>
+

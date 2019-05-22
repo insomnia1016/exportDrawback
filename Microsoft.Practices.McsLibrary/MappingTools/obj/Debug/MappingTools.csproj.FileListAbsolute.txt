@@ -1,0 +1,37 @@
+E:\kuangjia\Microsoft.Practices.McsLibrary\MappingTools\bin\Debug\MappingTools.exe.config
+E:\kuangjia\Microsoft.Practices.McsLibrary\MappingTools\bin\Debug\MappingTools.exe
+E:\kuangjia\Microsoft.Practices.McsLibrary\MappingTools\bin\Debug\MappingTools.pdb
+E:\kuangjia\Microsoft.Practices.McsLibrary\MappingTools\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\kuangjia\Microsoft.Practices.McsLibrary\MappingTools\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\kuangjia\Microsoft.Practices.McsLibrary\MappingTools\bin\Debug\Microsoft.Practices.McsLibrary.Data.dll
+E:\kuangjia\Microsoft.Practices.McsLibrary\MappingTools\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\kuangjia\Microsoft.Practices.McsLibrary\MappingTools\obj\Debug\MappingTools.FormMain.resources
+E:\kuangjia\Microsoft.Practices.McsLibrary\MappingTools\obj\Debug\MappingTools.Properties.Resources.resources
+E:\kuangjia\Microsoft.Practices.McsLibrary\MappingTools\obj\Debug\MappingTools.exe
+E:\kuangjia\Microsoft.Practices.McsLibrary\MappingTools\obj\Debug\MappingTools.pdb
+E:\kuangjia\Microsoft.Practices.McsLibrary\MappingTools\obj\Debug\MappingTools.csprojResolveAssemblyReference.cache
+E:\kuangjia\Microsoft.Practices.McsLibrary\MappingTools\obj\Debug\MappingTools.csproj.GenerateResource.Cache
+E:\export drawback\Microsoft.Practices.McsLibrary\MappingTools\bin\Debug\MappingTools.exe.config
+E:\export drawback\Microsoft.Practices.McsLibrary\MappingTools\bin\Debug\MappingTools.exe
+E:\export drawback\Microsoft.Practices.McsLibrary\MappingTools\bin\Debug\MappingTools.pdb
+E:\export drawback\Microsoft.Practices.McsLibrary\MappingTools\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\export drawback\Microsoft.Practices.McsLibrary\MappingTools\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\export drawback\Microsoft.Practices.McsLibrary\MappingTools\bin\Debug\Microsoft.Practices.McsLibrary.Data.dll
+E:\export drawback\Microsoft.Practices.McsLibrary\MappingTools\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+E:\export drawback\Microsoft.Practices.McsLibrary\MappingTools\obj\Debug\MappingTools.FormMain.resources
+E:\export drawback\Microsoft.Practices.McsLibrary\MappingTools\obj\Debug\MappingTools.Properties.Resources.resources
+E:\export drawback\Microsoft.Practices.McsLibrary\MappingTools\obj\Debug\MappingTools.csproj.GenerateResource.Cache
+E:\export drawback\Microsoft.Practices.McsLibrary\MappingTools\obj\Debug\MappingTools.exe
+E:\export drawback\Microsoft.Practices.McsLibrary\MappingTools\obj\Debug\MappingTools.pdb
+D:\export drawback\Microsoft.Practices.McsLibrary\MappingTools\bin\Debug\MappingTools.exe.config
+D:\export drawback\Microsoft.Practices.McsLibrary\MappingTools\bin\Debug\MappingTools.exe
+D:\export drawback\Microsoft.Practices.McsLibrary\MappingTools\bin\Debug\MappingTools.pdb
+D:\export drawback\Microsoft.Practices.McsLibrary\MappingTools\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\export drawback\Microsoft.Practices.McsLibrary\MappingTools\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\export drawback\Microsoft.Practices.McsLibrary\MappingTools\bin\Debug\Microsoft.Practices.McsLibrary.Data.dll
+D:\export drawback\Microsoft.Practices.McsLibrary\MappingTools\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+D:\export drawback\Microsoft.Practices.McsLibrary\MappingTools\obj\Debug\MappingTools.FormMain.resources
+D:\export drawback\Microsoft.Practices.McsLibrary\MappingTools\obj\Debug\MappingTools.Properties.Resources.resources
+D:\export drawback\Microsoft.Practices.McsLibrary\MappingTools\obj\Debug\MappingTools.csproj.GenerateResource.Cache
+D:\export drawback\Microsoft.Practices.McsLibrary\MappingTools\obj\Debug\MappingTools.exe
+D:\export drawback\Microsoft.Practices.McsLibrary\MappingTools\obj\Debug\MappingTools.pdb

@@ -1,0 +1,20 @@
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Service.Common\bin\Debug\PLM.Service.Common.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Service.Common\bin\Debug\PLM.Service.Common.pdb
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Service.Common\obj\Debug\ResolveAssemblyReference.cache
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Service.Common\obj\Debug\PLM.Service.Common.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PLM.Service.Common\obj\Debug\PLM.Service.Common.pdb
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Service.Common\bin\Debug\PreferentialTrade.Service.Common.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Service.Common\bin\Debug\PreferentialTrade.Service.Common.pdb
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Service.Common\obj\Debug\ResolveAssemblyReference.cache
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Service.Common\obj\Debug\PreferentialTrade.Service.Common.dll
+E:\关税处 优惠贸易监控分析系统\PreferentialTrade\PreferentialTrade.Service.Common\obj\Debug\PreferentialTrade.Service.Common.pdb
+E:\PreferentialTrade\PreferentialTrade.Service.Common\bin\Debug\PreferentialTrade.Service.Common.dll
+E:\PreferentialTrade\PreferentialTrade.Service.Common\bin\Debug\PreferentialTrade.Service.Common.pdb
+E:\PreferentialTrade\PreferentialTrade.Service.Common\obj\Debug\ResolveAssemblyReference.cache
+E:\PreferentialTrade\PreferentialTrade.Service.Common\obj\Debug\PreferentialTrade.Service.Common.dll
+E:\PreferentialTrade\PreferentialTrade.Service.Common\obj\Debug\PreferentialTrade.Service.Common.pdb
+E:\kuangjia\TrainingManagement.Service.Common\bin\Debug\PreferentialTrade.Service.Common.dll
+E:\kuangjia\TrainingManagement.Service.Common\bin\Debug\PreferentialTrade.Service.Common.pdb
+E:\kuangjia\TrainingManagement.Service.Common\obj\Debug\ResolveAssemblyReference.cache
+E:\kuangjia\TrainingManagement.Service.Common\obj\Debug\PreferentialTrade.Service.Common.dll
+E:\kuangjia\TrainingManagement.Service.Common\obj\Debug\PreferentialTrade.Service.Common.pdb
