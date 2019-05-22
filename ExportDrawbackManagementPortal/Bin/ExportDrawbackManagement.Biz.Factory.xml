@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ExportDrawbackManagement.Biz.Factory</name>
+    </assembly>
+    <members>
+        <member name="T:ExportDrawbackManagement.Biz.Factory.BizFactoryBuilder">
+            <summary>
+            业务对象工厂建造器
+            </summary>
+        </member>
+        <member name="T:ExportDrawbackManagement.Biz.Interface.IBizFactory">
+            <summary>
+            业务对象工厂
+            </summary>
+        </member>
+        <member name="M:ExportDrawbackManagement.Biz.Interface.IBizFactory.CreateInstance(System.Type)">
+            <summary>
+            创建业对象实例
+            </summary>
+            <param name="interfaceType"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
