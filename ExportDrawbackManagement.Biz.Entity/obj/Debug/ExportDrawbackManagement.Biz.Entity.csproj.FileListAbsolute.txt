@@ -1,9 +1,0 @@
-E:\export drawback\ExportDrawbackManagement.Biz.Entity\bin\Debug\ExportDrawbackManagement.Biz.Entity.dll
-E:\export drawback\ExportDrawbackManagement.Biz.Entity\bin\Debug\ExportDrawbackManagement.Biz.Entity.pdb
-E:\export drawback\ExportDrawbackManagement.Biz.Entity\obj\Debug\ExportDrawbackManagement.Biz.Entity.dll
-E:\export drawback\ExportDrawbackManagement.Biz.Entity\obj\Debug\ExportDrawbackManagement.Biz.Entity.pdb
-D:\export drawback\ExportDrawbackManagement.Biz.Entity\bin\Debug\ExportDrawbackManagement.Biz.Entity.xml
-D:\export drawback\ExportDrawbackManagement.Biz.Entity\bin\Debug\ExportDrawbackManagement.Biz.Entity.dll
-D:\export drawback\ExportDrawbackManagement.Biz.Entity\bin\Debug\ExportDrawbackManagement.Biz.Entity.pdb
-D:\export drawback\ExportDrawbackManagement.Biz.Entity\obj\Debug\ExportDrawbackManagement.Biz.Entity.dll
-D:\export drawback\ExportDrawbackManagement.Biz.Entity\obj\Debug\ExportDrawbackManagement.Biz.Entity.pdb
