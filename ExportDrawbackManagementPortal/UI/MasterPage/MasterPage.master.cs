@@ -20,18 +20,29 @@ public partial class MasterPage_MasterPage : System.Web.UI.MasterPage
 
     protected override void OnPreRender(EventArgs e)
     {
-        if (UserInfoAdapter.CurrentUser!= null)
+        try
         {
-            pnlOpInfo.Visible = true;
-            UserInfo user = UserInfoAdapter.CurrentUser;
-            lblOpInfo.Text = string.Format("<b>操作员:</b>{0}　　<b>工号:</b>{1}　　", 
-                user.displayName, user.person_id);
+            if (UserInfoAdapter.CurrentUser != null)
+            {
+                pnlOpInfo.Visible = true;
+                UserInfo user = UserInfoAdapter.CurrentUser;
+                lblOpInfo.Text = string.Format("<b>操作员:</b>{0}    <b>部门:</b>{1}    ",
+                    user.Name,user.Derpartment);
+            }
+            else
+            {
+                pnlOpInfo.Visible = false;
+                lblOpInfo.Text = "";
+            }
+            base.OnPreRender(e);
         }
-        else
+        catch (Exception ex)
         {
-            pnlOpInfo.Visible = false;
-            lblOpInfo.Text = "";
+            if (ex.Message == "未登录访问出错，将跳转")
+            {
+                Response.Redirect("../../login.aspx");
+            }
+
         }
-        base.OnPreRender(e);
     }
 }

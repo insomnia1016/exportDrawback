@@ -28,18 +28,35 @@ public class Common
         // TODO: 在此处添加构造函数逻辑
         //
     }
+
           
     public static bool LoginCheck()
     {
         try
         {
-            UserInfo user = new UserInfo();
+            if (HttpContext.Current.Session["PersonId"] == null)
+            {
+                return false;
+            }
+            Int32 personId =Int32.Parse(HttpContext.Current.Session["PersonId"].ToString());
 
+            CommonAdapter ca = new CommonAdapter();
+
+            DataSet ds = ca.getUserInfoById(personId);
+            DataRow dr = ds.Tables[0].Rows[0];
+            UserInfo user = new UserInfo();
+            
+            user.Derpartment = dr["derpartment"].ToString().Trim();
+            user.Name = dr["name"].ToString().Trim();
+            user.PersonId = dr["person_id"].ToString().Trim();
+            user.Roles = dr["roles"].ToString().Trim();
+            user.Rank = dr["rank"].ToString().Trim();
+            user.Username = dr["username"].ToString().Trim();
             
            
             ExportDrawbackManagementIdentity identity = new ExportDrawbackManagementIdentity(user);
-                        
-            ExportDrawbackManagementPrincipal edPrincipal = new ExportDrawbackManagementPrincipal(identity, user.UserRight.ToArray());
+
+            ExportDrawbackManagementPrincipal edPrincipal = new ExportDrawbackManagementPrincipal(identity, user.Roles.Split(',').ToArray());
 
             HttpContext.Current.Session["CurrentUser"] = edPrincipal;
             return true;
@@ -47,7 +64,7 @@ public class Common
         }
         catch
         {
-            throw new ZHNException("用户无法认证，登录失败！");
+            throw new ZHNException("未登录访问出错，将跳转");
         }
     }
 }

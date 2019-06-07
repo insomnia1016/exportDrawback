@@ -4,19 +4,1454 @@
         <name>ExportDrawbackManagement.Biz.Entity</name>
     </assembly>
     <members>
-        <member name="P:ExportDrawbackManagement.Biz.Entity.UserInfo.displayName">
+        <member name="T:ExportDrawbackManagement.Biz.Entity.T_ContractHead">
             <summary>
-            用户名称
+            
             </summary>
         </member>
-        <member name="P:ExportDrawbackManagement.Biz.Entity.UserInfo.person_id">
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractHead.XufangDailiren">
             <summary>
-            用户7位工号
+            
             </summary>
         </member>
-        <member name="P:ExportDrawbackManagement.Biz.Entity.UserInfo.UserRight">
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractHead.GongfangJingbanren">
             <summary>
-            用户权限 
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractHead.GongfangAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractHead.DeliveryDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractHead.GongfangQianziDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractHead.GongfangFadingdaibiaoren">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractHead.XufangTel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractHead.XufangFadingdaibiaoren">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractHead.XufangQianziDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractHead.Gongfang">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractHead.GongfangDailiren">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractHead.DeliveryMode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractHead.Xufang">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractHead.XufangAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractHead.XufangJingbanren">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractHead.PaymentDays">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractHead.ContractId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractHead.GongfangTel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractHead.InvoiceAll">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine">
+            <summary>
+            名称常量定义
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.DefaultTableName">
+            <summary>
+            默认表名
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.PropertyNameXufangDailiren">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.FieldNameXufangDailiren">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.PropertyNameGongfangJingbanren">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.FieldNameGongfangJingbanren">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.PropertyNameGongfangAddress">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.FieldNameGongfangAddress">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.PropertyNameDeliveryDate">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.FieldNameDeliveryDate">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.PropertyNameGongfangQianziDate">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.FieldNameGongfangQianziDate">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.PropertyNameGongfangFadingdaibiaoren">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.FieldNameGongfangFadingdaibiaoren">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.PropertyNameXufangTel">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.FieldNameXufangTel">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.PropertyNameXufangFadingdaibiaoren">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.FieldNameXufangFadingdaibiaoren">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.PropertyNameXufangQianziDate">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.FieldNameXufangQianziDate">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.PropertyNameGongfang">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.FieldNameGongfang">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.PropertyNameGongfangDailiren">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.FieldNameGongfangDailiren">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.PropertyNameDeliveryMode">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.FieldNameDeliveryMode">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.PropertyNameXufang">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.FieldNameXufang">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.PropertyNameXufangAddress">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.FieldNameXufangAddress">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.PropertyNameXufangJingbanren">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.FieldNameXufangJingbanren">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.PropertyNamePaymentDays">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.FieldNamePaymentDays">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.PropertyNameContractId">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.FieldNameContractId">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.PropertyNameGongfangTel">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.FieldNameGongfangTel">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.PropertyNameInvoiceAll">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractHead.NameDefine.FieldNameInvoiceAll">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="T:ExportDrawbackManagement.Biz.Entity.T_ContractList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractList.GNo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractList.ContractId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractList.EntryId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractList.ContractNo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractList.InvoicePrice">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractList.GName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractList.GUnit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractList.InvoiceTotal">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_ContractList.GQty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ExportDrawbackManagement.Biz.Entity.T_ContractList.NameDefine">
+            <summary>
+            名称常量定义
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractList.NameDefine.DefaultTableName">
+            <summary>
+            默认表名
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractList.NameDefine.PropertyNameGNo">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractList.NameDefine.FieldNameGNo">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractList.NameDefine.PropertyNameContractId">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractList.NameDefine.FieldNameContractId">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractList.NameDefine.PropertyNameEntryId">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractList.NameDefine.FieldNameEntryId">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractList.NameDefine.PropertyNameContractNo">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractList.NameDefine.FieldNameContractNo">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractList.NameDefine.PropertyNameInvoicePrice">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractList.NameDefine.FieldNameInvoicePrice">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractList.NameDefine.PropertyNameGName">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractList.NameDefine.FieldNameGName">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractList.NameDefine.PropertyNameGUnit">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractList.NameDefine.FieldNameGUnit">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractList.NameDefine.PropertyNameInvoiceTotal">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractList.NameDefine.FieldNameInvoiceTotal">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractList.NameDefine.PropertyNameGQty">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_ContractList.NameDefine.FieldNameGQty">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="T:ExportDrawbackManagement.Biz.Entity.T_EntryList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_EntryList.GNo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_EntryList.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_EntryList.AgentCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_EntryList.DDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_EntryList.DrawbackRate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_EntryList.CodeTs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_EntryList.OwnerName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_EntryList.InvoiceFlag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_EntryList.EntryId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_EntryList.GName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_EntryList.DeclTotal">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_EntryList.OperateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_EntryList.GUnit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_EntryList.AgentName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_EntryList.Operator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_EntryList.DeclPrice">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_EntryList.GQty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine">
+            <summary>
+            名称常量定义
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.DefaultTableName">
+            <summary>
+            默认表名
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.PropertyNameGNo">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.FieldNameGNo">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.PropertyNameId">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.FieldNameId">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.PropertyNameAgentCode">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.FieldNameAgentCode">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.PropertyNameDDate">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.FieldNameDDate">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.PropertyNameDrawbackRate">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.FieldNameDrawbackRate">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.PropertyNameCodeTs">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.FieldNameCodeTs">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.PropertyNameOwnerName">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.FieldNameOwnerName">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.PropertyNameInvoiceFlag">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.FieldNameInvoiceFlag">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.PropertyNameEntryId">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.FieldNameEntryId">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.PropertyNameGName">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.FieldNameGName">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.PropertyNameDeclTotal">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.FieldNameDeclTotal">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.PropertyNameOperateTime">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.FieldNameOperateTime">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.PropertyNameGUnit">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.FieldNameGUnit">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.PropertyNameAgentName">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.FieldNameAgentName">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.PropertyNameOperator">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.FieldNameOperator">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.PropertyNameDeclPrice">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.FieldNameDeclPrice">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.PropertyNameGQty">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_EntryList.NameDefine.FieldNameGQty">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="T:ExportDrawbackManagement.Biz.Entity.T_TaxList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_TaxList.OwnerCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_TaxList.TaxReturnDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_TaxList.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_TaxList.StateCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_TaxList.GUnit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_TaxList.InvoicePrice">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_TaxList.DDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_TaxList.DrawbackRate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_TaxList.CodeTs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_TaxList.TaxReturnTotal">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_TaxList.TaxRetutnDDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_TaxList.Customer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_TaxList.OwnerName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_TaxList.EntryId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_TaxList.ContractDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_TaxList.GName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_TaxList.TaxReturnNo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_TaxList.DeclTotal">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_TaxList.Supplier">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_TaxList.TaxReturnPrice">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_TaxList.DeclPrice">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_TaxList.InvoiceTotal">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_TaxList.DeliveryDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_TaxList.GQty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine">
+            <summary>
+            名称常量定义
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.DefaultTableName">
+            <summary>
+            默认表名
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.PropertyNameOwnerCode">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.FieldNameOwnerCode">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.PropertyNameTaxReturnDate">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.FieldNameTaxReturnDate">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.PropertyNameId">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.FieldNameId">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.PropertyNameStateCode">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.FieldNameStateCode">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.PropertyNameGUnit">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.FieldNameGUnit">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.PropertyNameInvoicePrice">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.FieldNameInvoicePrice">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.PropertyNameDDate">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.FieldNameDDate">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.PropertyNameDrawbackRate">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.FieldNameDrawbackRate">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.PropertyNameCodeTs">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.FieldNameCodeTs">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.PropertyNameTaxReturnTotal">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.FieldNameTaxReturnTotal">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.PropertyNameTaxRetutnDDate">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.FieldNameTaxRetutnDDate">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.PropertyNameCustomer">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.FieldNameCustomer">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.PropertyNameOwnerName">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.FieldNameOwnerName">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.PropertyNameEntryId">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.FieldNameEntryId">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.PropertyNameContractDate">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.FieldNameContractDate">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.PropertyNameGName">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.FieldNameGName">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.PropertyNameTaxReturnNo">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.FieldNameTaxReturnNo">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.PropertyNameDeclTotal">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.FieldNameDeclTotal">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.PropertyNameSupplier">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.FieldNameSupplier">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.PropertyNameTaxReturnPrice">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.FieldNameTaxReturnPrice">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.PropertyNameDeclPrice">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.FieldNameDeclPrice">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.PropertyNameInvoiceTotal">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.FieldNameInvoiceTotal">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.PropertyNameDeliveryDate">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.FieldNameDeliveryDate">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.PropertyNameGQty">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_TaxList.NameDefine.FieldNameGQty">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="T:ExportDrawbackManagement.Biz.Entity.T_Users">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_Users.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_Users.Rank">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_Users.Derpartment">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_Users.PersonId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_Users.Roles">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_Users.Password">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_Users.Username">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ExportDrawbackManagement.Biz.Entity.T_Users.NameDefine">
+            <summary>
+            名称常量定义
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Users.NameDefine.DefaultTableName">
+            <summary>
+            默认表名
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Users.NameDefine.PropertyNameName">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Users.NameDefine.FieldNameName">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Users.NameDefine.PropertyNameRank">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Users.NameDefine.FieldNameRank">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Users.NameDefine.PropertyNameDerpartment">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Users.NameDefine.FieldNameDerpartment">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Users.NameDefine.PropertyNamePersonId">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Users.NameDefine.FieldNamePersonId">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Users.NameDefine.PropertyNameRoles">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Users.NameDefine.FieldNameRoles">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Users.NameDefine.PropertyNamePassword">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Users.NameDefine.FieldNamePassword">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Users.NameDefine.PropertyNameUsername">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Users.NameDefine.FieldNameUsername">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="T:ExportDrawbackManagement.Biz.Entity.T_Customers">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_Customers.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_Customers.Tel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_Customers.Fadingdaibiaoren">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_Customers.Dailiren">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_Customers.CompanyName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_Customers.Jingban">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.T_Customers.Address">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ExportDrawbackManagement.Biz.Entity.T_Customers.NameDefine">
+            <summary>
+            名称常量定义
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Customers.NameDefine.DefaultTableName">
+            <summary>
+            默认表名
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Customers.NameDefine.PropertyNameId">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Customers.NameDefine.FieldNameId">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Customers.NameDefine.PropertyNameTel">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Customers.NameDefine.FieldNameTel">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Customers.NameDefine.PropertyNameFadingdaibiaoren">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Customers.NameDefine.FieldNameFadingdaibiaoren">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Customers.NameDefine.PropertyNameDailiren">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Customers.NameDefine.FieldNameDailiren">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Customers.NameDefine.PropertyNameCompanyName">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Customers.NameDefine.FieldNameCompanyName">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Customers.NameDefine.PropertyNameJingban">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Customers.NameDefine.FieldNameJingban">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Customers.NameDefine.PropertyNameAddress">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.T_Customers.NameDefine.FieldNameAddress">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.UserInfo.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.UserInfo.Rank">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.UserInfo.Derpartment">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.UserInfo.PersonId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.UserInfo.Roles">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.UserInfo.Password">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Entity.UserInfo.Username">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ExportDrawbackManagement.Biz.Entity.UserInfo.NameDefine">
+            <summary>
+            名称常量定义
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.UserInfo.NameDefine.DefaultTableName">
+            <summary>
+            默认表名
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.UserInfo.NameDefine.PropertyNameName">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.UserInfo.NameDefine.FieldNameName">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.UserInfo.NameDefine.PropertyNameRank">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.UserInfo.NameDefine.FieldNameRank">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.UserInfo.NameDefine.PropertyNameDerpartment">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.UserInfo.NameDefine.FieldNameDerpartment">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.UserInfo.NameDefine.PropertyNamePersonId">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.UserInfo.NameDefine.FieldNamePersonId">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.UserInfo.NameDefine.PropertyNameRoles">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.UserInfo.NameDefine.FieldNameRoles">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.UserInfo.NameDefine.PropertyNamePassword">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.UserInfo.NameDefine.FieldNamePassword">
+            <summary>
+            字段名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.UserInfo.NameDefine.PropertyNameUsername">
+            <summary>
+            属性名称定义 
+            </summary>
+        </member>
+        <member name="F:ExportDrawbackManagement.Biz.Entity.UserInfo.NameDefine.FieldNameUsername">
+            <summary>
+            字段名称定义 
             </summary>
         </member>
     </members>

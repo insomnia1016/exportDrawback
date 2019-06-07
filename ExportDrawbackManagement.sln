@@ -19,7 +19,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ExportDrawbackManagementPor
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "22839"
+		VWDPort = "46760"
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportDrawbackManagement.Biz.Entity", "ExportDrawbackManagement.Biz.Entity\ExportDrawbackManagement.Biz.Entity.csproj", "{9203F77C-10CB-4271-9DC5-DDF97D13ED4A}"
@@ -39,6 +39,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportDrawbackManagement.Service.Common", "ExportDrawbackManagement.Service.Common\ExportDrawbackManagement.Service.Common.csproj", "{B32C5877-4BB0-4034-B7AD-CDF50BE66403}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MappingTools", "Microsoft.Practices.McsLibrary\MappingTools\MappingTools.csproj", "{8A42CC63-AFCB-4433-800A-9B722D253D6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportDrawbackManagement.WebControls", "ExportDrawbackManagement.WebControls\ExportDrawbackManagement.WebControls.csproj", "{DD9D8662-D5A6-4E77-800C-7BA1E28F7789}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -150,6 +152,16 @@ Global
 		{8A42CC63-AFCB-4433-800A-9B722D253D6A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8A42CC63-AFCB-4433-800A-9B722D253D6A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{8A42CC63-AFCB-4433-800A-9B722D253D6A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{DD9D8662-D5A6-4E77-800C-7BA1E28F7789}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{DD9D8662-D5A6-4E77-800C-7BA1E28F7789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD9D8662-D5A6-4E77-800C-7BA1E28F7789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD9D8662-D5A6-4E77-800C-7BA1E28F7789}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{DD9D8662-D5A6-4E77-800C-7BA1E28F7789}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{DD9D8662-D5A6-4E77-800C-7BA1E28F7789}.Release|.NET.ActiveCfg = Release|Any CPU
+		{DD9D8662-D5A6-4E77-800C-7BA1E28F7789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD9D8662-D5A6-4E77-800C-7BA1E28F7789}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD9D8662-D5A6-4E77-800C-7BA1E28F7789}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{DD9D8662-D5A6-4E77-800C-7BA1E28F7789}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

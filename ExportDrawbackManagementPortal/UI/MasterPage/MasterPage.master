@@ -1,31 +1,27 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage_MasterPage" %>
 
 
-<html xmlns="http://www.w3.org/1999/xhtml" >
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>车辆管理系统 </title>
+    <title>出口退税管理系统 </title>
 </head>
-<body  id="content" style="text-align: center;" >   
-<script type="text/javascript" src="../../Scripts/js/CommonFunction.js" ></script>
-   <script type="text/javascript" src="../../Scripts/js/prototype-1.4.0.js" ></script>
+<body id="content" style="text-align: center;">
+    <script type="text/javascript" src="../../Scripts/js/CommonFunction.js"></script>
+    <script type="text/javascript" src="../../Scripts/js/prototype-1.4.0.js"></script>
     <form id="form1" runat="server">
-    <div style="text-align: center; width: 100%; padding: 0 auto 0 auto; border: solid 1px #005eae;">
-        <div id="header">
-                <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;
-                    width: 100%; background-image: none;">
+        <div style="text-align: center; width: 100%; padding: 0 auto 0 auto; border: solid 1px #005eae;">
+            <div id="header">
+                <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; width: 100%; background-image: none;">
                     <tr>
-                        <td style="background-image: url(../../Images/header/title_bg.JPG); height: 105px; width: 163px;">
+                        <td style="background-image: url(../../Images/header/title_bg.JPG); height: 105px; width: 163px;"></td>
+                        <td style="background-image: url(../../Images/header/title.JPG); width: 669px;"></td>
+                        <td style="background-image: url(../../Images/header/center.JPG);">&nbsp;</td>
+                        <td style="background-image: url(../../Images/header/right.JPG); width: 183px; padding-bottom: 5px;" valign="bottom">
+                            <span style="width: 50px;"></span>
+                            <a title="主页" href="../Security/Default.aspx"><span style="cursor: hand; background-image: url(../../Images/header/home.gif); background-repeat: no-repeat; width: 32px; height: 32px;display:block;float:left"></span></a>
+                            <a title="登录" href="../../login.aspx" ><span style="cursor: hand; background-image: url(../../Images/header/help.gif); background-repeat: no-repeat; width: 32px; height: 32px;display:block;float:left;margin-left:5px;"></span></a>
                         </td>
-                        <td style="background-image: url(../../Images/header/title.JPG); width: 669px;">
-                        </td>
-                        <td style="background-image: url(../../Images/header/center.JPG);">
-                            &nbsp;</td>
-                        <td style="background-image: url(../../Images/header/right.JPG);width: 183px; padding-bottom:5px;" valign="bottom">
-                            <span style="width:50px;"></span>
-                            <a title="主页" href="../Security/Default.aspx"><span style="cursor: hand;background-image: url(../../Images/header/home.gif); background-repeat: no-repeat;width:32px;height:32px;"></span></a>
-                           <a title="帮助文档" href="" target="_blank"><span style="cursor: hand;background-image: url(../../Images/header/help.gif); background-repeat: no-repeat;width:32px;height:32px;"></span></a> 
-                         </td>  
-                          <!--  
+                        <!--  
                         <td style="background-image: url(../../Images/header/3.JPG); width: 46px;"></td>
                         <td style="background-image: url(../../Images/header/3-1.JPG); width: 32px;">1
                             
@@ -39,25 +35,22 @@
                 <div style="background-image: url(../../Images/header/second_center.JPG); height: 19px;">
                 </div>
                 <!--div style="background-image: url(../../Images/header/third_center.JPG);height:31px;"></div-->
-            </div> 
-        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
-        </asp:contentplaceholder>
-        <div id="footer">
-            <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;
-                width: 100%; background-image: none;">
-                <tr>
-                    <td style="background-image: url(../../Images/footer/center.JPG); height: 24px;text-align:left;">
-                        &nbsp;
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <div id="footer">
+                <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; width: 100%; background-image: none;">
+                    <tr>
+                        <td style="background-image: url(../../Images/footer/center.JPG); height: 24px; text-align: left;">&nbsp;
                         <asp:PlaceHolder ID="pnlOpInfo" runat="server">
-                        <asp:Label ID="lblOpInfo" runat="server" Text=""></asp:Label>&nbsp;&nbsp;
+                            <asp:Label ID="lblOpInfo" runat="server" Text=""></asp:Label>&nbsp;&nbsp;
                         </asp:PlaceHolder>
-                    </td>
-                    <td style="background-image: url(../../Images/footer/right.JPG); width: 197px;">
-                    </td>
-                </tr>
-            </table>
-        </div>        
-    </div>
+                        </td>
+                        <td style="background-image: url(../../Images/footer/right.JPG); width: 197px;"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </form>
 </body>
 </html>

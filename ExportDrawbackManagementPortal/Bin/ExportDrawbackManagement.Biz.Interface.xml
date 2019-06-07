@@ -4,6 +4,29 @@
         <name>ExportDrawbackManagement.Biz.Interface</name>
     </assembly>
     <members>
+        <member name="M:ExportDrawbackManagement.Biz.Interface.IUsersManager.login(System.String,System.String,System.Data.DataSet@)">
+            <summary>
+            登录方法
+            </summary>
+            <param name="name">用户名</param>
+            <param name="pswd">密码</param>
+            <param name="ds">返回该记录的结果集</param>
+            <returns>true表示登录成功，false表示登录失败</returns>
+        </member>
+        <member name="T:ExportDrawbackManagement.Biz.Interface.Q_Users">
+            <summary>
+            表
+            users
+            的查询参数类	
+            
+            参数如果是数组，那么一定是array[3]，其中array[0],array[2]分别可为空，表示最小最大值，array[1]表示等于查询。
+            范围查询参数必须是数值型或者日期型，枚举请手动修改参数类型或代码生成中设定。
+            例如，需要查询一个值=2的条件，para可以设定为array[0]=array[2]=null,array[1]=2。
+            需要查询大于0小于50，设定为array[0]=0,array[2]=50,array[1]=null
+            如果同时指定，那么表示or关系，等于array[1]，或介于array[0]-array[2]之间。
+            三个参数可以都不填写，或只填写1个，或2个。
+            </summary>
+        </member>
         <member name="T:ExportDrawbackManagement.Biz.Interface.BaseQueryPara">
             <summary>
             基本查询参数
@@ -20,6 +43,41 @@
             </summary>
             <param name="PropertyName"></param>
             <returns></returns>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Interface.Q_Users.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Interface.Q_Users.Rank">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Interface.Q_Users.Derpartment">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Interface.Q_Users.PersonId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Interface.Q_Users.Roles">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Interface.Q_Users.Password">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ExportDrawbackManagement.Biz.Interface.Q_Users.Username">
+            <summary>
+            
+            </summary>
         </member>
         <member name="T:ExportDrawbackManagement.Biz.Interface.IDeclareManager`1">
             <summary>

@@ -1,7 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ContentPage.master.cs" Inherits="UI_MasterPage_ContentPage" %>
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>车辆管理系统</title>
+    <title>出口退税管理系统</title>
     <!--script src="../../Scripts/js/IFrameAutoFit.js" type="text/javascript"></script-->
     <script src="../../Scripts/js/CommonFunction.js" type="text/javascript"></script>
    <script type="text/javascript">

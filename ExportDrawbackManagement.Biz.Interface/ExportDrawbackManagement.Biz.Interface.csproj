@@ -79,6 +79,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICommonManager.cs" />
+    <Compile Include="ICompanyManager.cs" />
+    <Compile Include="IContractManager.cs" />
+    <Compile Include="IEntryManager.cs" />
+    <Compile Include="ITaxListManager.cs" />
+    <Compile Include="IUsersManager.cs" />
+    <Compile Include="Query\AutoGeneratorCodes\Q_Users.cs" />
     <Compile Include="Query\BaseQueryPara.cs" />
     <Compile Include="Common\IDeclareManager.cs" />
     <Compile Include="Common\IDictionaryManager.cs" />
@@ -115,9 +122,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Query\AutoGeneratorCodes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\ExportDrawbackManagement.Biz.Entity\ExportDrawbackManagement.Biz.Entity.csproj">
       <Project>{9203f77c-10cb-4271-9dc5-ddf97d13ed4a}</Project>

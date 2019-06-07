@@ -37,7 +37,7 @@ public partial class UI_Security_Default : System.Web.UI.Page
    
     void AddToMenu(XmlNode node, MenuItemCollection menuItems, int level)
     {
-        string funcstr = GetAttrValue(node, "FunctionName");
+        string funcstr = GetAttrValue(node, "Roles");
         if (!string.IsNullOrEmpty(funcstr))
         {
             string[] funcs = funcstr.Split(',');//菜单栏的权限，用逗号分隔
@@ -68,10 +68,10 @@ public partial class UI_Security_Default : System.Web.UI.Page
             if (level == 0)
             {
                 menuItem.ImageUrl = "";
-                menuItem.Text = "--" + menuItem.Text.ToString();
+                menuItem.Text = "------" + menuItem.Text.ToString();
             }
         }else
-            menuItem.Text = "--" + menuItem.Text.ToString();
+            menuItem.Text = "------" + menuItem.Text.ToString();
 
 
         menuItems.Add(menuItem);
@@ -128,15 +128,28 @@ public partial class UI_Security_Default : System.Web.UI.Page
     {
 
         //string tt = UserAuthAdapter.CurrentUser.Roles;
-        string[] _Roles = UserInfoAdapter.CurrentUser.UserRight.ToArray();
-        if (_Roles != null && !string.IsNullOrEmpty(role))
+        try
         {
-            foreach (string r in _Roles)
+            string[] _Roles = UserInfoAdapter.CurrentUser.Roles.Split(',');
+            if (_Roles != null && !string.IsNullOrEmpty(role))
             {
-                if (r.Equals(role, StringComparison.OrdinalIgnoreCase) || r.Equals("ALL", StringComparison.OrdinalIgnoreCase))
-                    return true;
+                foreach (string r in _Roles)
+                {
+                    if (r.Equals(role, StringComparison.OrdinalIgnoreCase) || r.Equals("ALL", StringComparison.OrdinalIgnoreCase))
+                        return true;
+                }
             }
+            
         }
+        catch (Exception ex)
+        {
+            if (ex.Message == "未登录访问出错，将跳转")
+            {
+                Response.Redirect("../../login.aspx");
+            }
+
+        }
+
         return false;
     }
 

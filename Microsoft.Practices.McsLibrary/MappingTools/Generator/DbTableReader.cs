@@ -155,8 +155,8 @@ namespace MappingTools.Generator
             DbType dbType = TranslateSqlType(dataType);
             if (dbType == DbType.Decimal)
             {
-                precision = (int)row["precision"];
-                scale = (int)row["scale"];
+                precision = int.Parse(row["numeric_precision"].ToString());
+                scale = int.Parse(row["numeric_scale"].ToString());
             }
             return dbType;
         }

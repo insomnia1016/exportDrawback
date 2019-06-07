@@ -2,10 +2,10 @@
 <%@ Assembly Name="System.Web.Extensions" %>
 <%@ Register Src="../CommonControls/DatePicker.ascx" TagName="DatePicker" TagPrefix="uc1" %>
 
-
+<script src="../../Scripts/js/jquery-3.4.1.min.js"></script>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>车辆管理系统</title>
+    <title>出口退税管理系统</title>
     <link href="../../App_Themes/Default/style.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
     .modalBackground{

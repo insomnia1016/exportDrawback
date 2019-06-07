@@ -25,17 +25,25 @@ public partial class UI_MasterPage_ContentPage : System.Web.UI.MasterPage
     //    set { isHasOperateLog = value; }
     //}
 
-    //protected override void OnPreRender(EventArgs e)
-    //{
-    //    string signNo = Request["SignNo"];
-    //    if (!IsHasOperateLog || string.IsNullOrEmpty(signNo))
-    //    {
-    //        hlOperateLog.Visible = false;
-    //    }
-    //    else
-    //    {
-    //        hlOperateLog.NavigateUrl = string.Format("javascript:ShowOperateLog('{0}');", signNo);
-    //    }
-    //    base.OnPreRender(e);
-    //}
+    protected override void OnPreRender(EventArgs e)
+    {
+        try
+        {
+            if (HttpContext.Current.Session["CurrentUser"] == null)
+                if (!Common.LoginCheck())
+                {
+                    throw new Exception("未登录访问出错，将跳转");
+                }
+
+            base.OnPreRender(e);
+        }
+        catch (Exception ex)
+        {
+            if (ex.Message == "未登录访问出错，将跳转")
+            {
+                Response.Redirect("../../login.aspx");
+            }
+
+        }
+    }
 }

@@ -79,7 +79,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ExportDrawbackManagement.Framework.Common\ExportDrawbackManagement.Framework.Common.csproj">
       <Project>{2123E32B-9EAB-4758-8E21-70C0591636AB}</Project>
-      <Name>TrainingManagement.Framework.Common</Name>
+      <Name>ExportDrawbackManagement.Framework.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

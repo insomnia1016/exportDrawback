@@ -26,8 +26,10 @@ public class UserInfoAdapter
 			try
 			{
 				if (HttpContext.Current.Session["CurrentUser"] == null)
-					if (!Common.LoginCheck())
-						throw new ZHNException("用户无法认证，登录失败！");
+                    if (!Common.LoginCheck())
+                    {
+                        throw new ZHNException("未登录访问出错，将跳转");
+                    }
 				return (UserInfo)((ExportDrawbackManagementPrincipal)HttpContext.Current.Session["CurrentUser"]).ExportDrawbackManagementIdentity.CurrUserAuth;
 			}
 			catch (Exception ex)
@@ -38,7 +40,7 @@ public class UserInfoAdapter
 		set
 		{
 			ExportDrawbackManagementIdentity identity = new ExportDrawbackManagementIdentity(value);
-			HttpContext.Current.Session["CurrentUser"] = new ExportDrawbackManagementPrincipal(identity, value.UserRight.ToArray());
+			HttpContext.Current.Session["CurrentUser"] = new ExportDrawbackManagementPrincipal(identity, value.Roles.Split(',').ToArray());
 		}
 	}
 }

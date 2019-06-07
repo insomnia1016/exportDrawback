@@ -24,6 +24,10 @@ public partial class _Default : System.Web.UI.Page
         {
             if (Common.LoginCheck())
                 Response.Redirect("UI/security/default.aspx");
+            else
+            {
+                Response.Redirect("login.aspx");
+            }
         }
         else
         {

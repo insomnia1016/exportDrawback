@@ -22,6 +22,23 @@ public partial class UI_MasterPage_DetailPage : System.Web.UI.MasterPage
 
     protected override void OnPreRender(EventArgs e)
     {
-       
+        try
+        {
+            if (HttpContext.Current.Session["CurrentUser"] == null)
+                if (!Common.LoginCheck())
+                {
+                    throw new Exception("未登录访问出错，将跳转");
+                }
+           
+            base.OnPreRender(e);
+        }
+        catch (Exception ex)
+        {
+            if (ex.Message == "未登录访问出错，将跳转")
+            {
+                Response.Redirect("../../login.aspx");
+            }
+
+        }
     }
 }

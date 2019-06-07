@@ -22,14 +22,13 @@ public partial class UI_Common_WelcomePage : System.Web.UI.Page
     {
        
     }
-    protected override void OnPreRender(EventArgs e)
+    protected override void OnPreRenderComplete(EventArgs e)
     {
-
         if (UserInfoAdapter.CurrentUser != null)
         {
 
             Label1.Text = string.Format("{0}<b>,您好!</b>　　",
-                 UserInfoAdapter.CurrentUser.displayName);
+                 UserInfoAdapter.CurrentUser.Name);
         }
         else
         {
@@ -37,5 +36,6 @@ public partial class UI_Common_WelcomePage : System.Web.UI.Page
             Label1.Text = "";
         }
         base.OnPreRender(e);
+        
     }
 }

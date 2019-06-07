@@ -13,7 +13,7 @@ function popUpWindow(winName)
 <div style="text-align:center;background-image:url(../../Images/bg/content_small.JPG);">
 <!--
 <embed src="../../Images/content/sk3.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" style="width:734px; height:520px"></embed>
---><div style="background-image:url(../../Images/content/bg_welcome.jpg);width:658;height:507; background-position:center center; background-repeat:no-repeat">
-  <div style="margin-top:210px;"><asp:Label ID="Label1" runat="server" ></asp:Label></div></div>  <!--img src="../../Images/content/bg.jpg" alt="" /--></div>
+--><div style="background-image:url(../../Images/content/bg_welcome.jpg);width:658;height:500px; background-position:center center;margin:0 auto;background-repeat:no-repeat">
+  <div style="padding-top:200px;"><asp:Label ID="Label1" runat="server" ></asp:Label></div></div>  <!--img src="../../Images/content/bg.jpg" alt="" /--></div>
 </asp:Content>
 

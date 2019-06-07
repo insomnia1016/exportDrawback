@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WebControls.CalendarBox" Collapsed="true">
+    <Position X="2.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAEAAIAAABCAAACAAAAACAIQAABIEAAAAAAA=</HashCode>
+      <FileName>CalendarBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebControls.CheckBoxList" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IQAAEAAECAAgAAQQAAAAAAAAAAAAABAAABAkAAgAAAA=</HashCode>
+      <FileName>CheckBoxList.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WebControls.Designer" Collapsed="true">
+    <Position X="2.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Designer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebControls.DropDownList" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IQAAEAAECAAgAAQQAAAAAAAAAAAAAAAAABAkAAgAAAA=</HashCode>
+      <FileName>DropDownList.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WebControls.Hint" Collapsed="true">
+    <Position X="2.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAABAAAAAAAAAAAAAIAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Hint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebControls.OpenDialog" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAABAEAAAAAAI=</HashCode>
+      <FileName>OpenDialog.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WebControls.DicRepeater" Collapsed="true">
+    <Position X="4.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAABAAAAEAQEAAAIAAACAEACBAQEAQAAAA=</HashCode>
+      <FileName>PageReapter\DicRepeater.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebControls.PageStyleCSS" Collapsed="true">
+    <Position X="0.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PageReapter\PageStyle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebControls.RadioButtonList" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IQAAEAAECAAgAAQQAAAAAAAAAAAAAAAAABAkAAgAAAA=</HashCode>
+      <FileName>RadioButtonList.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WebControls.SuggestBox" Collapsed="true">
+    <Position X="4.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAABoQAgAAAAAAQAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>SuggestBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebControls.TextBox" Collapsed="true">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IQAAEACACABgABQQAAAAAAAACAAAAAAAAJAkAghAAAA=</HashCode>
+      <FileName>TextBox.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="WebControls.IWebControl" Collapsed="true">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IQAAEAAACAAgAAQQAAAAAAAAAAAAAAAAAAAgAAgAAAA=</HashCode>
+      <FileName>IWebControl.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="WebControls.Align" Collapsed="true">
+    <Position X="2.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAACACAAAAAAAA=</HashCode>
+      <FileName>IWebControl.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="WebControls.DataType" Collapsed="true">
+    <Position X="0.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAIACAAgAAAAAIAAAAAQAAAAACBCQEAAQAAMAg=</HashCode>
+      <FileName>IWebControl.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="WebControls.ContentType" Collapsed="true">
+    <Position X="4.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAABAAAAAAACAAAAAA=</HashCode>
+      <FileName>OpenDialog.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="WebControls.PageStype" Collapsed="true">
+    <Position X="2.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAQIAAAAAAEAAAAAQAgAA=</HashCode>
+      <FileName>PageReapter\PageStyle.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="WebControls.PageTextAlign" Collapsed="true">
+    <Position X="4.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>PageReapter\PageStyle.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="宋体" Size="9.75" />
+</ClassDiagram>

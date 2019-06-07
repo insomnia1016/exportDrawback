@@ -409,9 +409,9 @@ span.inothercondition.control
 }
 
 
-.title
-{   
-  width:150px;  
-	 text-align:left;
-	
-	}
+.title {
+    float: left;
+    width: 80px;
+    text-align:justify;
+    text-align-last:justify;
+}

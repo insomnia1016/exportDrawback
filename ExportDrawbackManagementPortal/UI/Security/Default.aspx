@@ -7,12 +7,15 @@
           left.style.display = 'none';
           divHideLeft.style.display = 'none';
           divShowLeft.style.display = '';
+          right.style.marginLeft = 8;
+
       }
       function ShowLeft() {
           left.style.display = '';
           divHideLeft.style.display = '';
           divShowLeft.style.display = 'none';
           left.style.width = leftWidth;
+          right.style.marginLeft = 180;
       }
     </script>
   
@@ -25,7 +28,7 @@
       <table width="100%" style="height: 5px" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <td style="background: url(../../Images/menu/pnl_left.jpg); width: 6px;"></td>
-          <td style="background-color: #E0DFE4;"><div id="divMenu" style="height:120px;text-align: left; background-color: Transparent;" runat="server">
+          <td style="background-color: #E0DFE4;"><div id="divMenu" style="text-align: left; background-color: Transparent;" runat="server">
               <asp:Menu ID="menuFuns" CssClass="left_menu" Width="100%" Font-Names="Verdana" Font-Size="0.8em"
                                 ForeColor="black" StaticSubMenuIndent="10px" runat="server" DynamicHorizontalOffset="-20"
                                 DynamicVerticalOffset="10" DisappearAfter="2000" 
@@ -78,8 +81,8 @@
                 width: 8px; height: 500px; display: none; float: left; background-repeat: no-repeat;
                 background-position: center"> </div>
     </div>
-    <div id="right" style="float: left; text-align: center; background-image: url(../../Images/bg/content_small.JPG);
-            margin: 0;">
+    <div id="right" style=" text-align: center; background-image: url(../../Images/bg/content_small.JPG);
+            margin: 0;margin-left:180px">
       <iframe id="contentFrame" name="contentFrame" frameborder="0" scrolling="auto" src="../Common/WelcomePage.aspx"
                 runat="server" width="100%" style="overflow: hidden; width: 100%; margin: 0 2px;
                 border: solid 0px; height: 700px;"></iframe>
