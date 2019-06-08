@@ -33,4 +33,16 @@ public class EntryAdapter:BaseAdapter<IEntryManager>,IEntryManager
 	{
 		Manager.invoice(lists);
 	}
+
+
+	public DataSet getListsAll()
+	{
+		return Manager.getListsAll();
+	}
+
+
+	public DataSet queryEntryList(T_EntryList item)
+	{
+		return Manager.queryEntryList(item);
+	}
 }

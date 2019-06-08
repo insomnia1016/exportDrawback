@@ -14,5 +14,9 @@ namespace ExportDrawbackManagement.Biz.Interface
        DataSet getEntryList();
 
        void invoice(List<T_ContractList> lists);
+
+       DataSet getListsAll();
+
+       DataSet queryEntryList(T_EntryList item);
     }
 }

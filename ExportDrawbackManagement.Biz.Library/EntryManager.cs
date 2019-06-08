@@ -100,6 +100,108 @@ namespace ExportDrawbackManagement.Biz.Library
             }
         }
 
+        public DataSet getListsAll()
+        {
+            Database db = Dao.GetDatabase();
+            string sql = @"select  * from entry_list   order by invoice_flag asc, operate_time desc";
+            using (DbConnection cn = db.CreateConnection())
+            {
+                try
+                {
+                    DbCommand cmd = db.GetSqlStringCommand(sql);
+                    DataSet ds = db.ExecuteDataSet(cmd);
+                    return ds;
+
+                }
+                catch
+                {
+                    throw new Exception("获取全部报关单明细表失败");
+                }
+            }
+        }
+
+        public DataSet queryEntryList(T_EntryList item)
+        {
+            Database db = Dao.GetDatabase();
+            string sql = @"SELECT *  FROM [dbo].[entry_list] where 1 = 1 ";
+            if (!string.IsNullOrEmpty(item.OwnerName))
+            {
+                sql += " and owner_name like @owner_name ";
+            }
+            if (!string.IsNullOrEmpty(item.EntryId))
+            {
+                sql += " and entry_id = @entry_id ";
+            }
+            if (!string.IsNullOrEmpty(item.GName))
+            {
+                sql += " and g_name like @g_name ";
+            }
+            if (!string.IsNullOrEmpty(item.CodeTs))
+            {
+                sql += " and code_ts = @code_ts ";
+            }
+            if (!string.IsNullOrEmpty(item.AgentName))
+            {
+                sql += " and agent_name like @agent_name ";
+            }
+            if (!string.IsNullOrEmpty(item.Operator))
+            {
+                sql += " and operator like @operator ";
+            }
+            if (!string.IsNullOrEmpty(item.startTime.ToString()))
+            {
+                sql += " and d_date >= @startTime ";
+            }
+            if (!string.IsNullOrEmpty(item.endTime.ToString()))
+            {
+                sql += " and d_date <= @endTime ";
+            }
+            sql += " order by invoice_flag asc, operate_time desc ";
+            using (DbConnection cn = db.CreateConnection())
+            {
+                try
+                {
+                    DbCommand cmd = db.GetSqlStringCommand(sql);
+                    if (!string.IsNullOrEmpty(item.OwnerName))
+                    {
+                        db.AddInParameter(cmd, "@owner_name", DbType.String, "%" + item.OwnerName + "%");
+                    }
+                    if (!string.IsNullOrEmpty(item.EntryId))
+                    {
+                        db.AddInParameter(cmd, "@entry_id", DbType.String, item.EntryId);
+                    }
+                    if (!string.IsNullOrEmpty(item.GName))
+                    {
+                        db.AddInParameter(cmd, "@g_name", DbType.String, "%" + item.GName + "%");
+                    }
+                    if (!string.IsNullOrEmpty(item.CodeTs))
+                    {
+                        db.AddInParameter(cmd, "@code_ts", DbType.String, item.CodeTs);
+                    }
+                    if (!string.IsNullOrEmpty(item.AgentName))
+                    {
+                        db.AddInParameter(cmd, "@agent_name", DbType.String, "%" + item.AgentName + "%");
+                    }
+                    if (!string.IsNullOrEmpty(item.Operator))
+                    {
+                        db.AddInParameter(cmd, "@operator", DbType.String, "%" + item.Operator + "%");
+                    }
+                    if (!string.IsNullOrEmpty(item.startTime.ToString()))
+                    {
+                        db.AddInParameter(cmd, "@startTime", DbType.DateTime, item.startTime);
+                    }
+                    if (!string.IsNullOrEmpty(item.endTime.ToString()))
+                    {
+                        db.AddInParameter(cmd, "@endTime", DbType.DateTime, DateTime.Parse(item.endTime.ToString().Split(' ').First() + " 23:59:59"));
+                    }
+                    return db.ExecuteDataSet(cmd);
+                }
+                catch
+                {
+                    throw new Exception("查询报关明细表失败");
+                }
+            }
+        }
 
         public void invoice(List<T_ContractList> lists)
         {

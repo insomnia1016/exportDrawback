@@ -13,5 +13,6 @@ namespace ExportDrawbackManagement.Biz.Interface
        void addContractHead(T_ContractHead head);
        DataSet getContractSummary();
        DataSet queryContractSummary(T_ContractHead head);
+       T_ContractHead getContractDetail(string id);
     }
 }

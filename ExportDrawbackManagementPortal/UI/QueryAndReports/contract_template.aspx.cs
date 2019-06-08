@@ -346,6 +346,7 @@ public partial class UI_QueryAndReports_contract_template : System.Web.UI.Page
 
         }
     }
+    #endregion
 
     public bool DataTableToExcel(T_ContractHead head, List<T_ContractList> lists, out string filename, out string server_file_path)
     {
@@ -500,5 +501,5 @@ public partial class UI_QueryAndReports_contract_template : System.Web.UI.Page
         }
     }
 
-    #endregion
+   
 }

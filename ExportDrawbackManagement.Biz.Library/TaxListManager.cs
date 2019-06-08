@@ -41,7 +41,7 @@ namespace ExportDrawbackManagement.Biz.Library
        public DataSet getTaxList()
        {
            Database db = Dao.GetDatabase();
-           string sql = @"SELECT *  FROM [exportDrawback].[dbo].[tax_list] ";
+           string sql = @"SELECT *  FROM [dbo].[tax_list] ";
            using (DbConnection cn = db.CreateConnection())
            {
                try
@@ -52,6 +52,81 @@ namespace ExportDrawbackManagement.Biz.Library
                catch
                {
                    throw new Exception("获取退税明细表失败");
+               }
+           }
+       }
+
+       public DataSet queryTaxList(T_TaxList item)
+       {
+           Database db = Dao.GetDatabase();
+           string sql = @"SELECT *  FROM [dbo].[tax_list] where 1 = 1 ";
+           if (!string.IsNullOrEmpty(item.OwnerName))
+           {
+               sql += " and owner_name like @owner_name ";
+           }
+           if (!string.IsNullOrEmpty(item.EntryId))
+           {
+               sql += " and entry_id = @entry_id ";
+           }
+           if (!string.IsNullOrEmpty(item.GName))
+           {
+               sql += " and g_name like @g_name ";
+           }
+           if (!string.IsNullOrEmpty(item.CodeTs))
+           {
+               sql += " and code_ts = @code_ts ";
+           }
+           if (!string.IsNullOrEmpty(item.StateCode))
+           {
+               sql += " and state_code = @state_code ";
+           }
+           if (!string.IsNullOrEmpty(item.startTime.ToString()))
+           {
+               sql += " and d_date >= @startTime ";
+           }
+           if (!string.IsNullOrEmpty(item.endTime.ToString()))
+           {
+               sql += " and d_date <= @endTime ";
+           }
+           sql += " order by d_date desc ";
+           using (DbConnection cn = db.CreateConnection())
+           {
+               try
+               {
+                   DbCommand cmd = db.GetSqlStringCommand(sql);
+                   if (!string.IsNullOrEmpty(item.OwnerName))
+                   {
+                       db.AddInParameter(cmd, "@owner_name", DbType.String, "%" + item.OwnerName + "%");
+                   }
+                   if (!string.IsNullOrEmpty(item.EntryId))
+                   {
+                       db.AddInParameter(cmd, "@entry_id", DbType.String, item.EntryId);
+                   }
+                   if (!string.IsNullOrEmpty(item.GName))
+                   {
+                       db.AddInParameter(cmd, "@g_name", DbType.String, "%" + item.GName + "%");
+                   }
+                   if (!string.IsNullOrEmpty(item.CodeTs))
+                   {
+                       db.AddInParameter(cmd, "@code_ts", DbType.String, item.CodeTs);
+                   }
+                   if (!string.IsNullOrEmpty(item.StateCode))
+                   {
+                       db.AddInParameter(cmd, "@state_code", DbType.String, item.StateCode);
+                   }
+                   if (!string.IsNullOrEmpty(item.startTime.ToString()))
+                   {
+                       db.AddInParameter(cmd, "@startTime", DbType.DateTime, item.startTime);
+                   }
+                   if (!string.IsNullOrEmpty(item.endTime.ToString()))
+                   {
+                       db.AddInParameter(cmd, "@endTime", DbType.DateTime, DateTime.Parse(item.endTime.ToString().Split(' ').First() + " 23:59:59"));
+                   }
+                   return db.ExecuteDataSet(cmd);
+               }
+               catch
+               {
+                   throw new Exception("查询退税明细表失败");
                }
            }
        }

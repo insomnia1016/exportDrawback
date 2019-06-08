@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Root>
   <MenuItems>
+    <MenuItem MenuCode ="" Visible="True" DisplayName ="业务------" Title ="" FunctionName="" Url="" ImageUrl="" Roles=""/>
+
     <MenuItem Visible="True" ImageUrl="~/Images/16/edit.gif" Target="contentFrame" Url="../QueryAndReports/AddEntryList.aspx" FunctionName="" MenuCode="" Roles="A" DisplayName="填制报关明细" Title="填制报关明细" />
     <MenuItem Visible="True" ImageUrl="~/Images/16/righta.ico" Target="contentFrame" Url="../QueryAndReports/contract.aspx" FunctionName="" MenuCode="" Roles="C" DisplayName="待开票合同" Title="待开票合同"/>
     <MenuItem Visible="True" ImageUrl="~/Images/16/weekCalendar.gif" Target="contentFrame" Url="../QueryAndReports/taxlist.aspx" FunctionName="" MenuCode="" Roles="F" DisplayName="退税明细" Title="退税明细"/>
     <MenuItem MenuCode ="" Visible="True" DisplayName ="查询------" Title ="" FunctionName="" Url="" ImageUrl="" Roles=""/>
     <MenuItem Visible="True" ImageUrl="~/Images/16/search.gif" Target="contentFrame" Url="../QueryAndReports/contractList.aspx" FunctionName="" MenuCode="" Roles="" DisplayName="合同查询" Title="合同查询"/>
+    <MenuItem Visible="True" ImageUrl="~/Images/16/full_search1.gif" Target="contentFrame" Url="../QueryAndReports/taxRetrunList.aspx" FunctionName="" MenuCode="" Roles="" DisplayName="退税单查询" Title="退税单查询"/>
+    <MenuItem Visible="True" ImageUrl="~/Images/16/sentBox.gif" Target="contentFrame" Url="../QueryAndReports/entryList.aspx" FunctionName="" MenuCode="" Roles="" DisplayName="报关明细" Title="报关明细"/>
 
 
 

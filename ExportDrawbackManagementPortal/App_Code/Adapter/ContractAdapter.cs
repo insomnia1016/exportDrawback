@@ -38,4 +38,10 @@ public class ContractAdapter:BaseAdapter<IContractManager>,IContractManager
 	{
 		return Manager.queryContractSummary(head);
 	}
+
+
+	public T_ContractHead getContractDetail(string id)
+	{
+		return Manager.getContractDetail(id);
+	}
 }

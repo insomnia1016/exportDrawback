@@ -44,46 +44,45 @@
                 <ul>
                     <li>
                         <span>需方：</span>
-                        <asp:Label ID="lbl_xufang" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="lbl_xufang" Width="200px" runat="server" Text="Label"></asp:Label>
                         <span style="margin-left: 180px;">合同编号：</span>
-                        <asp:Label ID="lbl_contract_id" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="lbl_contract_id" Width="80px" runat="server" Text="Label"></asp:Label>
                     </li>
                     <li><span>地址：</span>
-                        <asp:Label ID="lbl_xufang_address" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="lbl_xufang_address" Width="300px" runat="server" Text="Label"></asp:Label>
                     </li>
                     <li style="margin-top: 5px;">
                         <span>经办：</span>
-                        <asp:Label ID="lbl_xufang_jingbanren" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="lbl_xufang_jingbanren" Width="80px" runat="server" Text="Label"></asp:Label>
                         <span style="margin-left: 320px;">TEL：</span>
-                        <asp:Label ID="lbl_xufang_tel" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="lbl_xufang_tel" Width="100px" runat="server" Text="Label"></asp:Label>
                     </li>
 
                     <li>
                         <span>供方：</span>
-                        <asp:Label ID="lbl_gongfang" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="lbl_gongfang" Width="300px" runat="server" Text="Label"></asp:Label>
                     </li>
 
 
                     <li style="margin-top: 5px;">
                         <span>经办：</span>
-                        <asp:Label ID="lbl_gongfang_jingban" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="lbl_gongfang_jingban" Width="80px" runat="server" Text="Label"></asp:Label>
                         <span style="margin-left: 320px;">TEL：</span>
-                        <asp:Label ID="lbl_gongfang_tel" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="lbl_gongfang_tel" Width="100px" runat="server" Text="Label"></asp:Label>
                     </li>
                 </ul>
 
                 <ul>
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnDataBound="GridView1_DataBound">
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  OnDataBound="GridView1_DataBound" >
 
                         <Columns>
-                            <asp:BoundField DataField="delivery_date" HeaderText="供货日期" />
-
-
+                             
+                            <asp:BoundField DataField="delivery_date" DataFormatString="{0:d}" HeaderText="供货日期" />
                             <asp:BoundField DataField="g_name" HeaderText="产品名称" />
                             <asp:BoundField DataField="g_qty" DataFormatString="{0:N}" HeaderText="数量" HtmlEncode="False" />
-                            <asp:BoundField DataField="g_unit" HeaderText="单位" />
-                            <asp:BoundField DataField="invoice_price" HeaderText="单价" />
-                            <asp:BoundField DataField="invoice_total" HeaderText="含税金额（元）" />
+                            <asp:BoundField DataField="g_unit"  HeaderText="单位" />
+                            <asp:BoundField DataField="invoice_price" DataFormatString="{0:N}" HeaderText="单价" />
+                            <asp:BoundField DataField="invoice_total" DataFormatString="{0:N}" HeaderText="含税金额（元）" />
 
 
                         </Columns>
@@ -121,27 +120,27 @@
                     </li>
                     <li>
                         <span>需方：</span>
-                        <asp:Label ID="lbl_xufang2" runat="server" Text="Label"></asp:Label>
-                        <span style="margin-left: 220px;">供方：</span>
-                        <asp:Label ID="lbl_gongfang2" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="lbl_xufang2" runat="server" Width="180px" Text="Label"></asp:Label>
+                        <span style="margin-left: 120px;">供方：</span>
+                        <asp:Label ID="lbl_gongfang2" Width="240px" runat="server" Text="Label"></asp:Label>
                     </li>
                     <li>
                         <span>法定代表人： </span>
-                        <asp:Label ID="lbl_xufang_fadingdaibiaoren" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="lbl_xufang_fadingdaibiaoren" runat="server" Width="80px" Text="Label"></asp:Label>
                         <span style="margin-left: 180px;">法定代表人： </span>
-                        <asp:Label ID="lbl_gongfang_fadingdaibiaoren" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="lbl_gongfang_fadingdaibiaoren" Width="80px"  runat="server" Text="Label"></asp:Label>
                     </li>
                     <li style="margin-top: 1px;">
                         <span>或代理人： </span>
-                        <asp:Label ID="lbl_xufang_dailiren" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="lbl_xufang_dailiren" Width="80px" runat="server" Text="Label"></asp:Label>
                         <span style="margin-left: 193px;">或代理人： </span>
-                        <asp:Label ID="lbl_gongfang_dailiren" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="lbl_gongfang_dailiren" runat="server" Width="80px" ></asp:Label>
                     </li>
                     <li style="margin-bottom: 60px; margin-top: 1px;">
                         <span>
                             <asp:Label ID="lbl_xufang_qianding_date" runat="server" Width="120px" Text="Label"></asp:Label>
                         </span>
-                        <span style="margin-left: 180px;">
+                        <span style="margin-left: 220px;">
                             <asp:Label ID="lbl_gongfang_qianding_date" runat="server" Width="120px" Text="Label"></asp:Label>
                         </span>
                     </li>
@@ -149,7 +148,7 @@
                 <ul>
                     <li>
                         <p>
-                            <asp:Button ID="Button1" Style="font-weight: bold; font-size: 23px;" runat="server" Text="下载excel" />
+                            <asp:Button ID="Button1" Style="font-weight: bold; font-size: 23px;" runat="server" Text="下载excel" OnClick="Button1_Click" />
 
                         </p>
                     </li>

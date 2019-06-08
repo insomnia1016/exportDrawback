@@ -35,4 +35,10 @@ public class TaxListAdapter:BaseAdapter<ITaxListManager>,ITaxListManager
     {
         Manager.UpdateState(item);
     }
+
+
+    public DataSet queryTaxList(T_TaxList item)
+    {
+        return Manager.queryTaxList(item);
+    }
 }

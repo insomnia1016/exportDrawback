@@ -235,22 +235,79 @@ namespace ExportDrawbackManagement.Biz.Library
         {
             T_ContractHead item = new T_ContractHead();
             Database db = Dao.GetDatabase();
-            string sql = @"select * from contract_head where contract_id = @contract_id";
+            string sql1 = @"select * from contract_head where contract_id = @contract_id order by delivery_date desc";
+            string sql2 = @"select * from contract_list where contract_id = @contract_id  order by g_no";
             try
             {
                 using (DbConnection cn = db.CreateConnection())
                 {
-                    DbCommand cmd = db.GetSqlStringCommand(sql);
+                    DbCommand cmd = db.GetSqlStringCommand(sql1);
                     db.AddInParameter(cmd, "@contract_id", DbType.String, id);
                     DataSet ds = db.ExecuteDataSet(cmd);
                     DataRow dr = ds.Tables[0].Rows[0];
                     item.Xufang = dr["xufang"].ToString();
-                    //item
+                    item.XufangAddress = dr["xufang_address"].ToString();
+                    item.XufangJingbanren = dr["xufang_jingbanren"].ToString();
+                    item.XufangTel = dr["xufang_tel"].ToString();
+                    item.XufangFadingdaibiaoren = dr["xufang_fadingdaibiaoren"].ToString();
+                    item.XufangDailiren = dr["xufang_dailiren"].ToString();
+                    if (!string.IsNullOrEmpty(dr["xufang_qianzi_date"].ToString()))
+                    {
+                        item.XufangQianziDate = DateTime.Parse(dr["xufang_qianzi_date"].ToString());
+
+                    }
+                    item.Gongfang = dr["gongfang"].ToString();
+                    item.GongfangAddress = dr["gongfang_address"].ToString();
+                    item.GongfangTel = dr["gongfang_tel"].ToString();
+                    item.GongfangJingbanren = dr["gongfang_jingbanren"].ToString();
+                    item.GongfangFadingdaibiaoren = dr["gongfang_fadingdaibiaoren"].ToString();
+                    item.GongfangDailiren = dr["gongfang_dailiren"].ToString();
+                    if (!string.IsNullOrEmpty(dr["gongfang_qianzi_date"].ToString()))
+                    {
+                        item.GongfangQianziDate = DateTime.Parse(dr["gongfang_qianzi_date"].ToString());
+                    }
+                    if (!string.IsNullOrEmpty(dr["delivery_date"].ToString()))
+                    {
+                        item.DeliveryDate = DateTime.Parse(dr["delivery_date"].ToString());
+                    }
+                    if (!string.IsNullOrEmpty(dr["invoice_all"].ToString()))
+                    {
+                        item.InvoiceAll = decimal.Parse(dr["invoice_all"].ToString());
+                    }
+                    CommonManager cm = new CommonManager();
+                    item.DeliveryMode = cm.getDeliveryModeNameByCode(dr["delivery_mode"].ToString());
+                    if (!string.IsNullOrEmpty(dr["payment_days"].ToString()))
+                    {
+                        item.PaymentDays = Int32.Parse(dr["payment_days"].ToString());
+                    }
+
+                    DbCommand cmd1 = db.GetSqlStringCommand(sql2);
+                    db.AddInParameter(cmd1, "@contract_id", DbType.String, id);
+                    DataSet ds1 = db.ExecuteDataSet(cmd1);
+                    ds1.Tables[0].Columns.Add("delivery_date", typeof(System.DateTime));
+                    foreach (DataRow row in ds1.Tables[0].Rows)
+                    {
+                        row["delivery_date"] = item.DeliveryDate;
+                    }
+
+                    DataRow dr1 = ds1.Tables[0].NewRow();
+
+                    dr1["g_name"] = "合计：";
+                    dr1["g_qty"] = DBNull.Value;
+                    dr1["g_unit"] = "";
+                    dr1["delivery_date"] = DBNull.Value;
+                    dr1["invoice_price"] = DBNull.Value;
+                    dr1["invoice_total"] = item.InvoiceAll;
+                    ds1.Tables[0].Rows.Add(dr1);
+                    
+
+                    item.lists = ds1;
                 }
+                return item;
             }
             catch
             {
-                throw new Exception("获取合同概要出错,请检查人品");
+                throw new Exception("获取合同详细出错,人品太差了");
             }
         }
     }

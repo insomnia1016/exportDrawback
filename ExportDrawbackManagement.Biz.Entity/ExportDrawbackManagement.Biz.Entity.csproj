@@ -79,6 +79,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AutoGeneratorCodes\T_Customers.cs" />
     <Compile Include="T_ContractHead.cs" />
+    <Compile Include="T_EntryList.cs" />
+    <Compile Include="T_TaxList.cs" />
     <Compile Include="UserInfo.cs" />
   </ItemGroup>
   <ItemGroup>
