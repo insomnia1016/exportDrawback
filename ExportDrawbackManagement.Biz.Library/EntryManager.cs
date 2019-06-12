@@ -64,13 +64,88 @@ namespace ExportDrawbackManagement.Biz.Library
                     db.AddInParameter(cmd, "@code_ts", DbType.String, entity.CodeTs);
                     db.AddInParameter(cmd, "@drawback_rate", DbType.Decimal, entity.DrawbackRate);
                     db.AddInParameter(cmd, "@operator", DbType.String, entity.Operator);
-                    db.AddInParameter(cmd, "@operate_time", DbType.DateTime, entity.OperateTime);
+                    db.AddInParameter(cmd, "@operate_time", DbType.DateTime, DateTime.Now);
                     db.AddInParameter(cmd, "@id", DbType.Int32, entity.Id);
                     db.ExecuteNonQuery(cmd);
                 }
                 catch
                 {
                     throw new Exception("录入出口报关明细失败");
+                }
+            }
+        }
+
+
+        public void insertEntryList(DataTable dt)
+        {
+            Database db = Dao.GetDatabase();
+            string sql = @"INSERT INTO [dbo].[entry_list]
+                               ([owner_name]
+                               ,[d_date]
+                               ,[agent_name]
+                               ,[entry_id]
+                               ,[g_no]
+                               ,[g_name]
+                               ,[g_qty]
+                               ,[g_unit]
+                               ,[decl_price]
+                               ,[decl_total]
+                               ,[code_ts]
+                               ,[drawback_rate]
+                               ,[operator]
+                               ,[operate_time]
+                               ,[id]
+                               ,[trade_curr])
+                         VALUES
+                               (@owner_name
+                               ,@d_date
+                               ,@agent_name
+                               ,@entry_id
+                               ,@g_no
+                               ,@g_name
+                               ,@g_qty
+                               ,@g_unit
+                               ,@decl_price
+                               ,@decl_total
+                               ,@code_ts
+                               ,@drawback_rate
+                               ,@operator
+                               ,@operate_time
+                               ,@id
+                               ,@trade_curr)";
+            using (DbConnection cn = db.CreateConnection())
+            {
+                try
+                {
+
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        DbCommand cmd = db.GetSqlStringCommand(sql);
+                        db.AddInParameter(cmd, "@owner_name", DbType.String, dr["owner_name"].ToString());
+                        db.AddInParameter(cmd, "@d_date", DbType.DateTime, DateTime.Parse(dr["d_date"].ToString()));
+                        db.AddInParameter(cmd, "@agent_name", DbType.String, dr["agent_name"].ToString());
+                        db.AddInParameter(cmd, "@entry_id", DbType.String, dr["entry_id"].ToString());
+                        db.AddInParameter(cmd, "@g_no", DbType.Decimal, Decimal.Parse(dr["g_no"].ToString()));
+                        db.AddInParameter(cmd, "@g_name", DbType.String, dr["g_name"].ToString());
+                        db.AddInParameter(cmd, "@g_qty", DbType.Decimal, Decimal.Parse(dr["g_qty"].ToString()));
+                        db.AddInParameter(cmd, "@g_unit", DbType.String, dr["g_unit"].ToString());
+                        db.AddInParameter(cmd, "@trade_curr", DbType.String, dr["trade_curr"].ToString());
+                        db.AddInParameter(cmd, "@decl_price", DbType.Decimal, Decimal.Parse(dr["decl_price"].ToString()));
+                        db.AddInParameter(cmd, "@decl_total", DbType.Decimal, Decimal.Parse(dr["decl_total"].ToString()));
+                        db.AddInParameter(cmd, "@code_ts", DbType.String, dr["code_ts"].ToString());
+                        db.AddInParameter(cmd, "@drawback_rate", DbType.Decimal, Decimal.Parse(dr["drawback_rate"].ToString()));
+                        db.AddInParameter(cmd, "@operator", DbType.String, dr["operator"].ToString());
+                        db.AddInParameter(cmd, "@operate_time", DbType.DateTime, DateTime.Now);
+                        db.AddInParameter(cmd, "@id", DbType.Int32, Int32.Parse(dr["id"].ToString()));
+
+                        db.ExecuteNonQuery(cmd); 
+                    }
+
+                    
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
                 }
             }
         }
@@ -229,6 +304,75 @@ namespace ExportDrawbackManagement.Biz.Library
             catch
             {
                 throw new Exception("更新报关单明细标志位出错,请检查人品");
+            }
+        }
+
+        public void delete(string entry_id, int g_no)
+        {
+            Database db = Dao.GetDatabase();
+            string sql = @"DELETE FROM [dbo].[entry_list] WHERE entry_id = @entry_id and g_no = @g_no ";
+            using (DbConnection cn = db.CreateConnection())
+            {
+                try
+                {
+                    DbCommand cmd = db.GetSqlStringCommand(sql);
+                    db.AddInParameter(cmd, "@entry_id", DbType.String, entry_id);
+                    db.AddInParameter(cmd, "@g_no", DbType.Int32, g_no);
+                    db.ExecuteNonQuery(cmd);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        }
+
+        public void update(T_EntryList item)
+        {
+            Database db = Dao.GetDatabase();
+            string sql = @"UPDATE [dbo].[entry_list]
+                           SET [agent_name] = @agent_name
+                              ,[d_date] = @d_date
+                              ,[owner_name] = @owner_name
+                              ,[g_name] = @g_name
+                              ,[g_qty] = @g_qty
+                              ,[g_unit] = @g_unit
+                              ,[decl_price] = @decl_price
+                              ,[decl_total] = @decl_total
+                              ,[code_ts] = @code_ts
+                              ,[drawback_rate] = @drawback_rate
+                              ,[operator] = @operator
+                              ,[operate_time] = @operate_time
+                              ,[id] = @id
+                              ,[trade_curr] = @trade_curr
+                         WHERE entry_id = @entry_id and g_no = @g_no ";
+            using (DbConnection cn = db.CreateConnection())
+            {
+                try
+                {
+                    DbCommand cmd = db.GetSqlStringCommand(sql);
+                    db.AddInParameter(cmd, "@agent_name", DbType.String, item.AgentName);
+                    db.AddInParameter(cmd, "@d_date", DbType.DateTime, item.DDate);
+                    db.AddInParameter(cmd, "@owner_name", DbType.String, item.OwnerName);
+                    db.AddInParameter(cmd, "@g_name", DbType.String, item.GName);
+                    db.AddInParameter(cmd, "@g_qty", DbType.Decimal, item.GQty);
+                    db.AddInParameter(cmd, "@g_unit", DbType.String, item.GUnit);
+                    db.AddInParameter(cmd, "@decl_price", DbType.Decimal, item.DeclPrice);
+                    db.AddInParameter(cmd, "@decl_total", DbType.Decimal, item.DeclTotal);
+                    db.AddInParameter(cmd, "@code_ts", DbType.String, item.CodeTs);
+                    db.AddInParameter(cmd, "@drawback_rate", DbType.Decimal, item.DrawbackRate);
+                    db.AddInParameter(cmd, "@operator", DbType.String, item.Operator);
+                    db.AddInParameter(cmd, "@operate_time", DbType.DateTime, DateTime.Now);
+                    db.AddInParameter(cmd, "@id", DbType.Int32, item.Id);
+                    db.AddInParameter(cmd, "@trade_curr", DbType.String, item.TradeCurr);
+                    db.AddInParameter(cmd, "@entry_id", DbType.String, item.EntryId);
+                    db.AddInParameter(cmd, "@g_no", DbType.Int32, item.GNo);
+                    db.ExecuteNonQuery(cmd);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
             }
         }
 

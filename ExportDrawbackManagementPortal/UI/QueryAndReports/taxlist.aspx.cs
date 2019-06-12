@@ -37,13 +37,13 @@ public partial class UI_QueryAndReports_taxlist : System.Web.UI.Page
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
     {
         int selectIndex = GridView1.SelectedIndex;
-        string stateName = GridView1.SelectedRow.Cells[17].Text;
+        string stateName = GridView1.SelectedRow.Cells[18].Text;
         string stateCode = getStateCode(stateName);
         DropDownList1.SelectedValue = stateCode;
 
-        CalendarBox1.Text = translate(GridView1.SelectedRow.Cells[19].Text.Trim());
-        CalendarBox2.Text = translate(GridView1.SelectedRow.Cells[18].Text.Trim());
-        txt_tax_return_no.Text = translate(GridView1.SelectedRow.Cells[20].Text);
+        CalendarBox1.Text = translate(GridView1.SelectedRow.Cells[20].Text.Trim());
+        CalendarBox2.Text = translate(GridView1.SelectedRow.Cells[19].Text.Trim());
+        txt_tax_return_no.Text = translate(GridView1.SelectedRow.Cells[21].Text);
         showStyle(stateCode);
 
     }
@@ -160,8 +160,8 @@ public partial class UI_QueryAndReports_taxlist : System.Web.UI.Page
     {
         if (e.Row.RowType == DataControlRowType.DataRow)
         {
-            string code = e.Row.Cells[17].Text.Trim();
-            e.Row.Cells[17].Text = getStateName(code);
+            string code = e.Row.Cells[18].Text.Trim();
+            e.Row.Cells[18].Text = getStateName(code);
         }
     }
 }

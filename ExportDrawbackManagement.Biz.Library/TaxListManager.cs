@@ -15,9 +15,9 @@ namespace ExportDrawbackManagement.Biz.Library
        public void generateTaxList(decimal bl)
        {
            Database db = Dao.GetDatabase();
-           string sql = @"insert into tax_list (agent_name,d_date,agent_code,owner_name,entry_id,g_no,g_name,g_qty,g_unit,decl_price,decl_total,code_ts,drawback_rate,invoice_price,invoice_total,tax_return_price,tax_return_total,state_code)
-                            select b.agent_name,b.d_date,b.agent_code,b.owner_name,b.entry_id,b.g_no,b.g_name,b.g_qty,b.g_unit, b.decl_price,b.decl_total,b.code_ts,b.drawback_rate,
-                            a.invoice_price,a.invoice_total,(a.invoice_price*1.13/b.drawback_rate) as tax_return_price,(a.invoice_total*1.13/b.drawback_rate) as tax_return_total,'N'
+           string sql = @"insert into tax_list (agent_name,d_date,agent_code,owner_name,entry_id,g_no,g_name,g_qty,g_unit,trade_curr,decl_price,decl_total,code_ts,drawback_rate,invoice_price,invoice_total,tax_return_price,tax_return_total,state_code)
+                            select b.agent_name,b.d_date,b.agent_code,b.owner_name,b.entry_id,b.g_no,b.g_name,b.g_qty,b.g_unit,b.trade_curr, b.decl_price,b.decl_total,b.code_ts,b.drawback_rate,
+                            a.invoice_price,a.invoice_total,(a.invoice_price*@bl/b.drawback_rate) as tax_return_price,(a.invoice_total*@bl/b.drawback_rate) as tax_return_total,'N'
                             from [dbo].[contract_list] a
                             inner join [dbo].[entry_list] b
                             on  a.entry_id = b.entry_id and a.g_no = b.g_no

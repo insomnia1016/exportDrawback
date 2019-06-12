@@ -45,4 +45,21 @@ public class EntryAdapter:BaseAdapter<IEntryManager>,IEntryManager
 	{
 		return Manager.queryEntryList(item);
 	}
+
+
+    public void insertEntryList(DataTable dt)
+    {
+        Manager.insertEntryList(dt);
+    }
+
+
+    public void update(T_EntryList item)
+    {
+        Manager.update(item);
+    }
+
+    public void delete(string entry_id, int g_no)
+    {
+        Manager.delete(entry_id, g_no);
+    }
 }

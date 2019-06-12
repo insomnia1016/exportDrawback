@@ -86,8 +86,8 @@ public partial class UI_QueryAndReports_taxRetrunList : System.Web.UI.Page
     {
         if (e.Row.RowType == DataControlRowType.DataRow)
         {
-            string code = e.Row.Cells[16].Text.Trim();
-            e.Row.Cells[16].Text = getStateName(code);
+            string code = e.Row.Cells[17].Text.Trim();
+            e.Row.Cells[17].Text = getStateName(code);
         }
     }
 }

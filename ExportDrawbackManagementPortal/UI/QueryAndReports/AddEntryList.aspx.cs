@@ -13,7 +13,7 @@ public partial class UI_QueryAndReports_AddEntryList : System.Web.UI.Page
         if (!IsPostBack)
         {
             Label1.Text = "";
-            decl_total.Attributes.Add("readonly", "true");  
+            //decl_total.Attributes.Add("readonly", "true");  
         }
         
     }
@@ -37,7 +37,7 @@ public partial class UI_QueryAndReports_AddEntryList : System.Web.UI.Page
         T_EntryList entity = new T_EntryList();
         entity.OwnerName = owner_name.Text.Trim();
         entity.DDate = DateTime.Parse(d_date.Text.Trim());
-        entity.AgentName = owner_name.Text.Trim();
+        entity.AgentName = agent_name.Text.Trim();
         entity.EntryId = entry_id.Text.Trim();
         entity.GNo = long.Parse(g_no.Text.Trim());
         entity.GName = g_name.Text.Trim();

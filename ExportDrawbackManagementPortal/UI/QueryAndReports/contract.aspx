@@ -82,6 +82,7 @@
             <asp:BoundField DataField="g_name" HeaderText="商品名称" />
             <asp:BoundField DataField="g_qty" DataFormatString="{0:N}" HeaderText="法定数量" />
             <asp:BoundField DataField="g_unit" HeaderText="法定单位" />
+            <asp:BoundField DataField="trade_curr" HeaderText="成交币制" />
             <asp:BoundField DataField="decl_price" DataFormatString="{0:N}" HeaderText="申报单价" />
             <asp:BoundField DataField="decl_total" DataFormatString="{0:N}" HeaderText="申报总价" />
             <asp:BoundField DataField="code_ts" HeaderText="商品编码" />

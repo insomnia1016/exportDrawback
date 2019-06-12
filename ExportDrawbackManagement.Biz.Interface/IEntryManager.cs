@@ -18,5 +18,8 @@ namespace ExportDrawbackManagement.Biz.Interface
        DataSet getListsAll();
 
        DataSet queryEntryList(T_EntryList item);
+       void insertEntryList(DataTable dt);
+       void update(T_EntryList item);
+       void delete(string entry_id, int g_no);
     }
 }

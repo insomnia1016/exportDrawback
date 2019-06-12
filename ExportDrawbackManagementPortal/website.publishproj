@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+***********************************************************************************************
+website.publishproj
+
+警告: 请勿修改此文件，它将用于 Web 发布过程。
+
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+***********************************************************************************************
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.30319</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{99b52087-7184-47bd-9e9d-eb7aa4ad9dd5}</ProjectGuid>
+    <SourceWebPhysicalPath>$(MSBuildThisFileDirectory)</SourceWebPhysicalPath>
+    <SourceWebVirtualPath>/ExportDrawbackManagementPortal</SourceWebVirtualPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SourceWebProject>
+    </SourceWebProject>
+    <SourceWebMetabasePath>
+    </SourceWebMetabasePath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- for VS2010 we need to use 10.5 but for VS2012+ we should use VisualStudioVersion -->
+    <WebPublishTargetsVersion Condition=" '$(WebPublishTargetsVersion)' =='' and '$(VisualStudioVersion)' == 10.0 ">10.5</WebPublishTargetsVersion>
+    <WebPublishTargetsVersion Condition=" '$(WebPublishTargetsVersion)'=='' ">$(VisualStudioVersion)</WebPublishTargetsVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(WebPublishTargetsVersion)</VSToolsPath>
+    <_WebPublishTargetsPath Condition=" '$(_WebPublishTargetsPath)'=='' ">$(VSToolsPath)</_WebPublishTargetsPath>
+    <AssemblyFileVersion Condition="'$(AssemblyFileVersion)' == ''">1.0.0.0</AssemblyFileVersion>
+    <AssemblyVersion Condition="'$(AssemblyVersion)' == ''">1.0.0.0</AssemblyVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AssemblyAttributes Include="AssemblyFileVersion">
+      <Value>$(AssemblyFileVersion)</Value>
+    </AssemblyAttributes>
+    <AssemblyAttributes Include="AssemblyVersion">
+      <Value>$(AssemblyVersion)</Value>
+    </AssemblyAttributes>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExportDrawbackManagement.Biz.Entity\ExportDrawbackManagement.Biz.Entity.csproj">
+      <Project>{9203F77C-10CB-4271-9DC5-DDF97D13ED4A}</Project>
+      <Name>ExportDrawbackManagement.Biz.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExportDrawbackManagement.Biz.Factory\ExportDrawbackManagement.Biz.Factory.csproj">
+      <Project>{B6475F9B-A8CC-4923-AD11-19263FF95AE5}</Project>
+      <Name>ExportDrawbackManagement.Biz.Factory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExportDrawbackManagement.Biz.Interface\ExportDrawbackManagement.Biz.Interface.csproj">
+      <Project>{8E107316-9DA0-4A4F-84BF-093BF1B8D285}</Project>
+      <Name>ExportDrawbackManagement.Biz.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExportDrawbackManagement.Biz.Library\ExportDrawbackManagement.Biz.Library.csproj">
+      <Project>{44B16329-C21F-4D00-ADD4-56004163AA95}</Project>
+      <Name>ExportDrawbackManagement.Biz.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExportDrawbackManagement.Framework.Common\ExportDrawbackManagement.Framework.Common.csproj">
+      <Project>{2123E32B-9EAB-4758-8E21-70C0591636AB}</Project>
+      <Name>ExportDrawbackManagement.Framework.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExportDrawbackManagement.Framework.Data\ExportDrawbackManagement.Framework.Data.csproj">
+      <Project>{C65C1413-878F-44E0-873B-5EC1BE8D6775}</Project>
+      <Name>ExportDrawbackManagement.Framework.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExportDrawbackManagement.Framework.Web\ExportDrawbackManagement.Framework.Web.csproj">
+      <Project>{53E375FC-BC68-4BC8-9D46-532C2033FED2}</Project>
+      <Name>ExportDrawbackManagement.Framework.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExportDrawbackManagement.Service.Common\ExportDrawbackManagement.Service.Common.csproj">
+      <Project>{B32C5877-4BB0-4034-B7AD-CDF50BE66403}</Project>
+      <Name>ExportDrawbackManagement.Service.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(_WebPublishTargetsPath)\Web\Microsoft.WebSite.Publishing.targets" />
+</Project>

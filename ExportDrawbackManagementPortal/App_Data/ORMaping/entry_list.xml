@@ -340,4 +340,24 @@
       <IsLogModify>True</IsLogModify>
     </Transfer>
   </MemberItem>
+  <MemberItem>
+    <Property>
+      <Name>TradeCurr</Name>
+      <DisplayName>
+      </DisplayName>
+      <Comment>
+      </Comment>
+    </Property>
+    <Column>
+      <Name>trade_curr</Name>
+      <Type>AnsiString</Type>
+      <MaxLength>10</MaxLength>
+      <CanBeNull>True</CanBeNull>
+    </Column>
+    <Transfer>
+      <PropertyToColumn>True</PropertyToColumn>
+      <ColumnToProperty>True</ColumnToProperty>
+      <IsLogModify>True</IsLogModify>
+    </Transfer>
+  </MemberItem>
 </ORMapping>

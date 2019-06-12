@@ -22,14 +22,14 @@
   </KeyItem>
   <MemberItem>
     <Property>
-      <Name>Customer</Name>
+      <Name>AgentName</Name>
       <DisplayName>
       </DisplayName>
       <Comment>
       </Comment>
     </Property>
     <Column>
-      <Name>customer</Name>
+      <Name>agent_name</Name>
       <Type>String</Type>
       <MaxLength>50</MaxLength>
       <CanBeNull>True</CanBeNull>
@@ -62,14 +62,14 @@
   </MemberItem>
   <MemberItem>
     <Property>
-      <Name>OwnerCode</Name>
+      <Name>AgentCode</Name>
       <DisplayName>
       </DisplayName>
       <Comment>
       </Comment>
     </Property>
     <Column>
-      <Name>owner_code</Name>
+      <Name>agent_code</Name>
       <Type>AnsiString</Type>
       <MaxLength>10</MaxLength>
       <CanBeNull>True</CanBeNull>
@@ -112,6 +112,26 @@
       <Name>entry_id</Name>
       <Type>AnsiString</Type>
       <MaxLength>18</MaxLength>
+      <CanBeNull>True</CanBeNull>
+    </Column>
+    <Transfer>
+      <PropertyToColumn>True</PropertyToColumn>
+      <ColumnToProperty>True</ColumnToProperty>
+      <IsLogModify>True</IsLogModify>
+    </Transfer>
+  </MemberItem>
+  <MemberItem>
+    <Property>
+      <Name>GNo</Name>
+      <DisplayName>
+      </DisplayName>
+      <Comment>
+      </Comment>
+    </Property>
+    <Column>
+      <Name>g_no</Name>
+      <Type>Int64</Type>
+      <MaxLength>-1</MaxLength>
       <CanBeNull>True</CanBeNull>
     </Column>
     <Transfer>
@@ -170,6 +190,26 @@
     </Property>
     <Column>
       <Name>g_unit</Name>
+      <Type>AnsiString</Type>
+      <MaxLength>10</MaxLength>
+      <CanBeNull>True</CanBeNull>
+    </Column>
+    <Transfer>
+      <PropertyToColumn>True</PropertyToColumn>
+      <ColumnToProperty>True</ColumnToProperty>
+      <IsLogModify>True</IsLogModify>
+    </Transfer>
+  </MemberItem>
+  <MemberItem>
+    <Property>
+      <Name>TradeCurr</Name>
+      <DisplayName>
+      </DisplayName>
+      <Comment>
+      </Comment>
+    </Property>
+    <Column>
+      <Name>trade_curr</Name>
       <Type>AnsiString</Type>
       <MaxLength>10</MaxLength>
       <CanBeNull>True</CanBeNull>
@@ -262,26 +302,6 @@
   </MemberItem>
   <MemberItem>
     <Property>
-      <Name>Supplier</Name>
-      <DisplayName>
-      </DisplayName>
-      <Comment>
-      </Comment>
-    </Property>
-    <Column>
-      <Name>supplier</Name>
-      <Type>AnsiString</Type>
-      <MaxLength>2147483647</MaxLength>
-      <CanBeNull>True</CanBeNull>
-    </Column>
-    <Transfer>
-      <PropertyToColumn>True</PropertyToColumn>
-      <ColumnToProperty>True</ColumnToProperty>
-      <IsLogModify>True</IsLogModify>
-    </Transfer>
-  </MemberItem>
-  <MemberItem>
-    <Property>
       <Name>InvoicePrice</Name>
       <DisplayName>
       </DisplayName>
@@ -311,46 +331,6 @@
     <Column>
       <Name>invoice_total</Name>
       <Type>Decimal</Type>
-      <MaxLength>-1</MaxLength>
-      <CanBeNull>True</CanBeNull>
-    </Column>
-    <Transfer>
-      <PropertyToColumn>True</PropertyToColumn>
-      <ColumnToProperty>True</ColumnToProperty>
-      <IsLogModify>True</IsLogModify>
-    </Transfer>
-  </MemberItem>
-  <MemberItem>
-    <Property>
-      <Name>DeliveryDate</Name>
-      <DisplayName>
-      </DisplayName>
-      <Comment>
-      </Comment>
-    </Property>
-    <Column>
-      <Name>delivery_date</Name>
-      <Type>DateTime</Type>
-      <MaxLength>-1</MaxLength>
-      <CanBeNull>True</CanBeNull>
-    </Column>
-    <Transfer>
-      <PropertyToColumn>True</PropertyToColumn>
-      <ColumnToProperty>True</ColumnToProperty>
-      <IsLogModify>True</IsLogModify>
-    </Transfer>
-  </MemberItem>
-  <MemberItem>
-    <Property>
-      <Name>ContractDate</Name>
-      <DisplayName>
-      </DisplayName>
-      <Comment>
-      </Comment>
-    </Property>
-    <Column>
-      <Name>contract_date</Name>
-      <Type>DateTime</Type>
       <MaxLength>-1</MaxLength>
       <CanBeNull>True</CanBeNull>
     </Column>
