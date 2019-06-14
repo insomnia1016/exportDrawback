@@ -33,6 +33,27 @@ namespace ExportDrawbackManagement.Biz.Library
                return customer;
            }
        }
+       public T_Customers getXuFangInfoById(int id)
+       {
+           T_Customers customer = new T_Customers();
+           Database db = Dao.GetDatabase();
+           DataSet ds;
+           string sql = "select  *  from xufang where id = @id";
+           using (DbConnection cn = db.CreateConnection())
+           {
+               DbCommand cmd = db.GetSqlStringCommand(sql);
+               db.AddInParameter(cmd, "@id", DbType.Int32, id);
+               ds = db.ExecuteDataSet(cmd);
+               customer.Address = ds.Tables[0].Rows[0]["address"].ToString();
+               customer.CompanyName = ds.Tables[0].Rows[0]["company_name"].ToString();
+               customer.Dailiren = ds.Tables[0].Rows[0]["dailiren"].ToString();
+               customer.Id = Int32.Parse(ds.Tables[0].Rows[0]["id"].ToString());
+               customer.Jingban = ds.Tables[0].Rows[0]["jingban"].ToString();
+               customer.Tel = ds.Tables[0].Rows[0]["tel"].ToString();
+               customer.Fadingdaibiaoren = ds.Tables[0].Rows[0]["fadingdaibiaoren"].ToString();
+               return customer;
+           }
+       }
 
        public DataSet getCompanyInfo()
        {

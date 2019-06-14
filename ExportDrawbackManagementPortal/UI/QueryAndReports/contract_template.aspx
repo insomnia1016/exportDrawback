@@ -72,7 +72,7 @@
                 <ul>
                     <li>
                         <span>需方：</span>
-                        <asp:TextBox ID="TextBox12" onkeyup="cc()" Width="200px" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBox12" onkeyup="cc()" Width="220px" runat="server"></asp:TextBox>
 
                         <span style="margin-left: 180px;">合同编号：</span>
                         <asp:TextBox ID="TextBox1" Width="80px" runat="server"></asp:TextBox>
@@ -86,21 +86,21 @@
                         <asp:TextBox ID="TextBox3" Width="80px" runat="server"></asp:TextBox>
 
                         <span style="margin-left: 320px;">TEL：</span>
-                        <asp:TextBox ID="TextBox2" Width="100px" onKeyPress="if (event.keyCode!=45 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" runat="server">0592-6531569</asp:TextBox>
+                        <asp:TextBox ID="TextBox2" Width="100px" onKeyPress="if (event.keyCode!=45 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" runat="server"></asp:TextBox>
                     </li>
 
                     <li>
                         <span>供方：</span>
-                        <asp:TextBox ID="TextBox16" Width="300px" onkeyup="dd(this)" runat="server">福建省政和县华艺竹木业制品有限公司</asp:TextBox>
+                        <asp:DropDownList ID="ddlGongFang" AutoPostBack="true" Width="300px" runat="server" OnSelectedIndexChanged="ddlGongFang_SelectedIndexChanged"></asp:DropDownList>
                     </li>
 
 
                     <li style="margin-top: 5px;">
                         <span>经办：</span>
-                        <asp:TextBox ID="TextBox5" Width="80px" runat="server">魏建坤</asp:TextBox>
+                        <asp:TextBox ID="TextBox5" Width="80px" runat="server"></asp:TextBox>
 
                         <span style="margin-left: 320px;">TEL：</span>
-                        <asp:TextBox ID="TextBox6" Width="100px" onKeyPress="if (event.keyCode!=45 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" runat="server">0599-3328866</asp:TextBox>
+                        <asp:TextBox ID="TextBox6" Width="100px" onKeyPress="if (event.keyCode!=45 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" runat="server"></asp:TextBox>
                     </li>
                 </ul>
 
@@ -166,9 +166,9 @@
                     </li>
                     <li>
                         <span>需方：</span>
-                        <asp:TextBox ID="TextBox15" Width="180px" runat="server"></asp:TextBox>
-                        <span style="margin-left: 120px;">供方：</span>
-                        <asp:TextBox ID="TextBox14" Width="240px" runat="server">福建省政和县华艺竹木业制品有限公司</asp:TextBox>
+                        <asp:TextBox ID="TextBox15" Width="220px" runat="server"></asp:TextBox>
+                        <span style="margin-left: 80px;">供方：</span>
+                        <asp:TextBox ID="TextBox14" Width="240px" runat="server"></asp:TextBox>
                     </li>
                     <li>
                         <span>法定代表人： </span>

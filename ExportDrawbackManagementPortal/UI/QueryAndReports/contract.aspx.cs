@@ -78,5 +78,10 @@ public partial class UI_QueryAndReports_contract : System.Web.UI.Page
        
         
     }
-    
+
+    protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        GridView1.PageIndex = e.NewPageIndex;
+        show();
+    }
 }

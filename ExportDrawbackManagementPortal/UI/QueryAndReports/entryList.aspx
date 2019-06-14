@@ -54,7 +54,7 @@
         </li>
     </ul>
 
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" >
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" OnPageIndexChanging="GridView1_PageIndexChanging" PageSize="20" >
         <Columns>
             
             <asp:BoundField DataField="entry_id" HeaderText="报关单号" />

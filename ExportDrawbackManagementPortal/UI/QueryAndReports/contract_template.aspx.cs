@@ -26,6 +26,7 @@ public partial class UI_QueryAndReports_contract_template : System.Web.UI.Page
             ds = contract.ds;
             show();
             DropDownListBind();
+            ddlGongFangBind();
             delivery_mode_Bind();
             CalendarBox2.Value = CalendarBox1.Value = DateTime.Now.ToString("yyyy 年 MM 月dd 日");
             
@@ -49,10 +50,25 @@ public partial class UI_QueryAndReports_contract_template : System.Web.UI.Page
         DropDownList1.SelectedIndex = 0;
     }
 
+    public void ddlGongFangBind()
+    {
+        CommonAdapter ca = new CommonAdapter();
+        DataSet ds = ca.getCustomers();
+        DataRow dr = ds.Tables[0].NewRow();
+        dr["company_name"] = "请选择";
+        dr["id"] = 0;
+        ds.Tables[0].Rows.InsertAt(dr, 0);
+        ddlGongFang.DataSource = ds;
+        ddlGongFang.DataTextField = "company_name";
+        ddlGongFang.DataValueField = "id";
+
+        ddlGongFang.DataBind();
+    }
+
     public void DropDownListBind()
     {
         CommonAdapter ca = new CommonAdapter();
-        DataSet ds= ca.getCustomers();
+        DataSet ds = ca.getXuFang();
         DataRow dr = ds.Tables[0].NewRow();
         dr["company_name"] = "请选择";
         dr["id"] = 0;
@@ -140,6 +156,26 @@ public partial class UI_QueryAndReports_contract_template : System.Web.UI.Page
             }
         }
     }
+    protected void ddlGongFang_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        DropDownList ddl = sender as DropDownList;
+        string companyName = ddl.SelectedItem.Text.Trim();
+        if (companyName == "请选择" || string.IsNullOrEmpty(companyName))
+        {
+            return;
+        }
+        TextBox14.Text  = companyName;
+
+        int id = Int32.Parse(ddl.SelectedValue);
+        CompanyAdapter ca = new CompanyAdapter();
+        T_Customers gongfang = ca.getCompanyInfoById(id);
+        TextBox5.Text = gongfang.Jingban;
+        TextBox6.Text = gongfang.Tel;
+
+        TextBox9.Text = gongfang.Fadingdaibiaoren;
+        TextBox11.Text = gongfang.Dailiren;
+    }
+
     protected void ddlModel_SelectedIndexChanged(object sender, EventArgs e)
     {
         DropDownList ddl = sender as DropDownList;
@@ -152,13 +188,13 @@ public partial class UI_QueryAndReports_contract_template : System.Web.UI.Page
 
         int id = Int32.Parse(ddl.SelectedValue);
         CompanyAdapter ca = new CompanyAdapter();
-        T_Customers customer = ca.getCompanyInfoById(id);
-        TextBox4.Text = customer.Address;
-        TextBox3.Text = customer.Jingban;
-        TextBox2.Text = customer.Tel;
+        T_Customers xufang = ca.getXuFangInfoById(id);
+        TextBox4.Text = xufang.Address;
+        TextBox3.Text = xufang.Jingban;
+        TextBox2.Text = xufang.Tel;
 
-        TextBox8.Text = customer.Fadingdaibiaoren;
-        TextBox10.Text = customer.Dailiren;
+        TextBox8.Text = xufang.Fadingdaibiaoren;
+        TextBox10.Text = xufang.Dailiren;
     }
     /// <summary>
     /// 保存并导出excel
@@ -185,7 +221,7 @@ public partial class UI_QueryAndReports_contract_template : System.Web.UI.Page
         }
 
         //供方信息
-        contractHead.Gongfang = TextBox16.Text.Trim();
+        contractHead.Gongfang = ddlGongFang.SelectedItem.Text;
         contractHead.GongfangTel = TextBox6.Text.Trim();
         contractHead.GongfangJingbanren = TextBox5.Text.Trim();
         contractHead.GongfangDailiren = TextBox11.Text.Trim();
@@ -375,7 +411,7 @@ public partial class UI_QueryAndReports_contract_template : System.Web.UI.Page
                 workbook = new XSSFWorkbook(file);
 
                 sheet = workbook.GetSheetAt(0);//获取Excel 中 的sheet 
-
+                sheet.DisplayGridlines = false;
 
                 cell = sheet.GetRow(0).GetCell(0);
                 cell.SetCellValue(head.Xufang);
@@ -501,5 +537,6 @@ public partial class UI_QueryAndReports_contract_template : System.Web.UI.Page
         }
     }
 
-   
+
+    
 }

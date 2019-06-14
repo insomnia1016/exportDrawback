@@ -94,7 +94,7 @@
             <asp:Label ID="Label1" runat="server" Text="" ForeColor="Red"></asp:Label>
         </li>
     </ul>
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowCommand="GridView1_RowCommand" OnRowDeleting="GridView1_RowDeleting">
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" PageSize="15" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowCommand="GridView1_RowCommand" OnRowDeleting="GridView1_RowDeleting" OnPageIndexChanging="GridView1_PageIndexChanging">
         <Columns>
             <asp:TemplateField HeaderText="操作">
                 <ItemTemplate>

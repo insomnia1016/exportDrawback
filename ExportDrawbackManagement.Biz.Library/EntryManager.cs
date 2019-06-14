@@ -158,7 +158,7 @@ namespace ExportDrawbackManagement.Biz.Library
         public DataSet getEntryList()
         {
             Database db = Dao.GetDatabase();
-            string sql = @"select  * from entry_list where invoice_flag is NUll or invoice_flag = 0  order by operate_time desc";
+            string sql = @"select  * from entry_list where invoice_flag is NUll or invoice_flag = 0  order by entry_id,g_no";
             using (DbConnection cn = db.CreateConnection())
             {
                 try
@@ -178,7 +178,7 @@ namespace ExportDrawbackManagement.Biz.Library
         public DataSet getListsAll()
         {
             Database db = Dao.GetDatabase();
-            string sql = @"select  * from entry_list   order by invoice_flag asc, operate_time desc";
+            string sql = @"select  * from entry_list   order by entry_id , g_no ";
             using (DbConnection cn = db.CreateConnection())
             {
                 try
@@ -231,7 +231,7 @@ namespace ExportDrawbackManagement.Biz.Library
             {
                 sql += " and d_date <= @endTime ";
             }
-            sql += " order by invoice_flag asc, operate_time desc ";
+            sql += " order by entry_id,g_no ";
             using (DbConnection cn = db.CreateConnection())
             {
                 try

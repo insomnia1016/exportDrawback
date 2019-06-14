@@ -164,4 +164,9 @@ public partial class UI_QueryAndReports_taxlist : System.Web.UI.Page
             e.Row.Cells[18].Text = getStateName(code);
         }
     }
+    protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        GridView1.PageIndex = e.NewPageIndex;
+        show();
+    }
 }

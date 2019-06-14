@@ -68,4 +68,10 @@ public partial class UI_QueryAndReports_contractList : System.Web.UI.Page
             e.Row.Cells[4].Text = ca.getDeliveryModeNameByCode(code);
         }
     }
+    protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        GridView1.PageIndex = e.NewPageIndex;
+        ContractAdapter ca = new ContractAdapter();
+        show(ca.getContractSummary());
+    }
 }

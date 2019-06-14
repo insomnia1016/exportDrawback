@@ -11,6 +11,7 @@ namespace ExportDrawbackManagement.Biz.Interface
        DataSet getUserInfoById(int person_id);
 
        DataSet getCustomers();
+       DataSet getXuFang();
        DataSet getDeliveryMode();
        DataSet getTaxReturnState();
        string getTaxReturnStateNameByState(string code);

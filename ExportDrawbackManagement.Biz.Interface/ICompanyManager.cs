@@ -10,6 +10,7 @@ namespace ExportDrawbackManagement.Biz.Interface
     public interface ICompanyManager
     {
         T_Customers getCompanyInfoById(int id);
+        T_Customers getXuFangInfoById(int id);
         DataSet getCompanyInfo();
         void Save(T_Customers item);
         void insert(T_Customers item);

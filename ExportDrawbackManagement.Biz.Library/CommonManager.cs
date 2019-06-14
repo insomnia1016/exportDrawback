@@ -39,6 +39,18 @@ namespace ExportDrawbackManagement.Biz.Library
                 return ds;
             }
         }
+        public DataSet getXuFang()
+        {
+            Database db = Dao.GetDatabase();
+            DataSet ds;
+            string sql = "select  *  from xufang";
+            using (DbConnection cn = db.CreateConnection())
+            {
+                DbCommand cmd = db.GetSqlStringCommand(sql);
+                ds = db.ExecuteDataSet(cmd);
+                return ds;
+            }
+        }
 
         public DataSet getDeliveryMode()
         {

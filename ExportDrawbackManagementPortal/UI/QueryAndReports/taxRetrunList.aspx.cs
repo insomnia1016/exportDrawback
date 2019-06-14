@@ -34,6 +34,11 @@ public partial class UI_QueryAndReports_taxRetrunList : System.Web.UI.Page
 
     protected void query_Click(object sender, EventArgs e)
     {
+        getQueryData();
+    }
+
+    private void getQueryData()
+    {
         T_TaxList item = new T_TaxList();
         if (!string.IsNullOrEmpty(txt_owner_name.Text.Trim()))
         {
@@ -89,5 +94,10 @@ public partial class UI_QueryAndReports_taxRetrunList : System.Web.UI.Page
             string code = e.Row.Cells[17].Text.Trim();
             e.Row.Cells[17].Text = getStateName(code);
         }
+    }
+    protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        GridView1.PageIndex = e.NewPageIndex;
+        getQueryData();
     }
 }

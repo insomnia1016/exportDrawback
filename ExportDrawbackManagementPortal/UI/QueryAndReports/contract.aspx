@@ -63,7 +63,7 @@
         </li>
     </ul>
 
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" >
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" PageSize="20" AutoGenerateColumns="False" OnPageIndexChanging="GridView1_PageIndexChanging" >
         <Columns>
             <asp:TemplateField HeaderText="操作">
                 <HeaderTemplate>

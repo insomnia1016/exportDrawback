@@ -58,4 +58,13 @@ public class CommonAdapter : BaseAdapter<ICommonManager>, ICommonManager
 	{
 		return Manager.getDeliveryModeNameByCode(code);
 	}
+
+
+
+
+
+	public DataSet getXuFang()
+	{
+		return Manager.getXuFang();
+	}
 }

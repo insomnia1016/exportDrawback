@@ -47,7 +47,7 @@
             <asp:Label ID="Label1" runat="server" Text="" ForeColor="Red"></asp:Label>
         </li>
     </ul>
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowDataBound="GridView1_RowDataBound">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowDataBound="GridView1_RowDataBound" AllowPaging="True" OnPageIndexChanging="GridView1_PageIndexChanging" PageSize="20">
         <Columns>
             <asp:HyperLinkField DataTextField="contract_id" HeaderText="合同号" Target="_blank" DataNavigateUrlFields="contract_id" DataNavigateUrlFormatString="contract_detail.aspx?id={0}" />
             <asp:BoundField DataField="xufang" HeaderText="需方" />

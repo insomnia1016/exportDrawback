@@ -1,4 +1,4 @@
-﻿<%@ Page Title="客户资料管理" Language="C#" MasterPageFile="~/UI/MasterPage/DetailPage.master" AutoEventWireup="true" CodeFile="company.aspx.cs" Inherits="UI_QueryAndReports_company" %>
+﻿<%@ Page Title="供应商资料管理" Language="C#" MasterPageFile="~/UI/MasterPage/DetailPage.master" AutoEventWireup="true" CodeFile="company.aspx.cs" Inherits="UI_QueryAndReports_company" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <ul class="queryarea">

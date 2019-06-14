@@ -45,4 +45,10 @@ public class CompanyAdapter:BaseAdapter<ICompanyManager>,ICompanyManager
 	{
 		Manager.delete(id);
 	}
+
+
+	public T_Customers getXuFangInfoById(int id)
+	{
+		return Manager.getXuFangInfoById(id);
+	}
 }

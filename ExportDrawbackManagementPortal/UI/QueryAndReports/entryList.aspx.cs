@@ -27,6 +27,12 @@ public partial class UI_QueryAndReports_entryList : System.Web.UI.Page
     }
     protected void query_Click(object sender, EventArgs e)
     {
+        getQueryData();
+       
+    }
+
+    private void getQueryData()
+    {
         T_EntryList item = new T_EntryList();
         if (!string.IsNullOrEmpty(txt_owner_name.Text.Trim()))
         {
@@ -68,6 +74,10 @@ public partial class UI_QueryAndReports_entryList : System.Web.UI.Page
         {
             Label1.Text = ex.Message;
         }
-       
+    }
+    protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        GridView1.PageIndex = e.NewPageIndex;
+        getQueryData();
     }
 }

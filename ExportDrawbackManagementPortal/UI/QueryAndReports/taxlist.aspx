@@ -47,7 +47,7 @@
             <asp:Label ID="Label1" runat="server" Text="" ForeColor="Red"></asp:Label>
         </li>
     </ul>
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowDataBound="GridView1_RowDataBound"  >
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowDataBound="GridView1_RowDataBound" AllowPaging="True" AllowSorting="True" PageSize="20" OnPageIndexChanging="GridView1_PageIndexChanging"  >
         <Columns>
             <asp:TemplateField HeaderText="操作">
                 <ItemTemplate>
