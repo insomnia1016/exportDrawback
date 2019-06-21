@@ -17,7 +17,7 @@ namespace ExportDrawbackManagement.Biz.Library
            Database db = Dao.GetDatabase();
            string sql = @"insert into tax_list (agent_name,d_date,agent_code,owner_name,entry_id,g_no,g_name,g_qty,g_unit,trade_curr,decl_price,decl_total,code_ts,drawback_rate,invoice_price,invoice_total,tax_return_price,tax_return_total,state_code)
                             select b.agent_name,b.d_date,b.agent_code,b.owner_name,b.entry_id,b.g_no,b.g_name,b.g_qty,b.g_unit,b.trade_curr, b.decl_price,b.decl_total,b.code_ts,b.drawback_rate,
-                            a.invoice_price,a.invoice_total,(a.invoice_price*@bl/b.drawback_rate) as tax_return_price,(a.invoice_total*@bl/b.drawback_rate) as tax_return_total,'N'
+                            a.invoice_price,a.invoice_total,(a.invoice_price/@bl*b.drawback_rate) as tax_return_price,(a.invoice_total/@bl*b.drawback_rate) as tax_return_total,'N'
                             from [dbo].[contract_list] a
                             inner join [dbo].[entry_list] b
                             on  a.entry_id = b.entry_id and a.g_no = b.g_no
@@ -131,10 +131,11 @@ namespace ExportDrawbackManagement.Biz.Library
            }
        }
 
-       public void UpdateState(T_TaxList item)
+       public void UpdateState(T_TaxList item,string[] ids)
        {
            Database db = Dao.GetDatabase();
            string state = item.StateCode;
+           string str_ids = String.Join(",", ids.ToArray());
            string sql = string.Empty;
            if (state == "P")
            {
@@ -142,14 +143,14 @@ namespace ExportDrawbackManagement.Biz.Library
                            SET [state_code] = @state_code
                               ,[tax_retutn_d_date] = @tax_retutn_d_date
                               ,[tax_return_no] = @tax_return_no
-                         WHERE id=@id";
+                         WHERE id in ("+str_ids+")";
            }
            else if (state == "D")
            {
                sql = @"UPDATE [dbo].[tax_list]
                            SET [state_code] = @state_code
                               ,[tax_return_date] = @tax_return_date
-                         WHERE id=@id";
+                         WHERE id in (" + str_ids + ")";
            }
            else
            {
@@ -158,7 +159,7 @@ namespace ExportDrawbackManagement.Biz.Library
                               ,[tax_return_date] = @tax_return_date
                               ,[tax_retutn_d_date] = @tax_retutn_d_date
                               ,[tax_return_no] = @tax_return_no
-                         WHERE id=@id";
+                         WHERE id in (" + str_ids + ")";
            }
            
            using (DbConnection cn = db.CreateConnection())
@@ -173,14 +174,12 @@ namespace ExportDrawbackManagement.Biz.Library
                            db.AddInParameter(cmd, "@state_code", DbType.String, item.StateCode);
                            db.AddInParameter(cmd, "@tax_retutn_d_date", DbType.DateTime, item.TaxRetutnDDate);
                            db.AddInParameter(cmd, "@tax_return_no", DbType.String, item.TaxReturnNo);
-                           db.AddInParameter(cmd, "@id", DbType.Int32, item.Id);
                            db.ExecuteNonQuery(cmd);
                            break;
                        case "D":
                              cmd = db.GetSqlStringCommand(sql);
                            db.AddInParameter(cmd, "@state_code", DbType.String, item.StateCode);
                            db.AddInParameter(cmd, "@tax_return_date", DbType.DateTime, item.TaxReturnDate);
-                           db.AddInParameter(cmd, "@id", DbType.Int32, item.Id);
                            db.ExecuteNonQuery(cmd);
                            break;
                        default:
@@ -189,7 +188,6 @@ namespace ExportDrawbackManagement.Biz.Library
                            db.AddInParameter(cmd, "@tax_return_date", DbType.DateTime, item.TaxReturnDate);
                            db.AddInParameter(cmd, "@tax_retutn_d_date", DbType.DateTime, item.TaxRetutnDDate);
                            db.AddInParameter(cmd, "@tax_return_no", DbType.String, item.TaxReturnNo);
-                           db.AddInParameter(cmd, "@id", DbType.Int32, item.Id);
                            db.ExecuteNonQuery(cmd);
                            break;
                    }

@@ -56,14 +56,14 @@
 
     <ul class="queryarea">
         <li style="width: 100%">
-            <asp:Button ID="updateUser" runat="server" Text="下推采购合同" OnClick="updateUser_Click" Style="margin-left: 40%;" Width="100px" />
+            <asp:Button ID="updateUser" runat="server" Text="下推采购合同" OnClick="updateUser_Click"  Style="margin-left: 40%;" Width="100px" />
         </li>
         <li style="width: 100%">
             <asp:Label ID="Label1" runat="server" Text="" ForeColor="Red"></asp:Label>
         </li>
     </ul>
 
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" PageSize="20" AutoGenerateColumns="False" OnPageIndexChanging="GridView1_PageIndexChanging" >
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True"  AllowSorting="True" PageSize="20" AutoGenerateColumns="False" OnPageIndexChanging="GridView1_PageIndexChanging" OnDataBinding="GridView1_DataBinding" OnRowDataBound="GridView1_RowDataBound" DataKeyNames="entry_id,g_no,g_name,g_qty,g_unit" >
         <Columns>
             <asp:TemplateField HeaderText="操作">
                 <HeaderTemplate>
@@ -71,7 +71,7 @@
                 </HeaderTemplate>
                 <ItemTemplate>
                     <asp:CheckBox runat="server" ID="cbItem"></asp:CheckBox>
-                    <asp:HiddenField ID="hdfId" runat="server" Value='<%#Eval("id") %>' />
+                    <asp:HiddenField ID="hdfId"  runat="server" Value='<%#Eval("id") %>' />
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:BoundField DataField="entry_id" HeaderText="报关单号" />

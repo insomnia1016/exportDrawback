@@ -31,9 +31,9 @@ public class TaxListAdapter:BaseAdapter<ITaxListManager>,ITaxListManager
 	}
 
 
-    public void UpdateState(T_TaxList item)
+    public void UpdateState(T_TaxList item, string[] ids)
     {
-        Manager.UpdateState(item);
+        Manager.UpdateState(item,ids);
     }
 
 

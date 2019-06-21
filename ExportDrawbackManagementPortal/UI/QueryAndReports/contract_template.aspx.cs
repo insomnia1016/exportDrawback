@@ -88,6 +88,8 @@ public partial class UI_QueryAndReports_contract_template : System.Web.UI.Page
             if (GridView1.Rows[0].Cells[0].RowSpan == 0) GridView1.Rows[0].Cells[0].RowSpan++;
             GridView1.Rows[0].Cells[0].RowSpan++;
             GridView1.Rows[i].Cells[0].Visible = false;
+            GridView1.Rows[0].Cells[2].Text = GridView1.Rows[i].Cells[2].Text.Substring(0, GridView1.Rows[i].Cells[2].Text.Length - 2);
+            GridView1.Rows[i].Cells[2].Text = GridView1.Rows[i].Cells[2].Text.Substring(0, GridView1.Rows[i].Cells[2].Text.Length - 2);
         }
         if (GridView1.Rows.Count > 1)
         {
@@ -120,7 +122,7 @@ public partial class UI_QueryAndReports_contract_template : System.Web.UI.Page
         decimal g_qty = Decimal.Parse(row.Cells[2].Text.Trim());
         decimal decl_total = decl_price * g_qty;
         Label lb = row.Cells[5].FindControl("txt_invoice_total") as Label;
-        lb.Text = decl_total.ToString();
+        lb.Text = decl_total.ToString("f2");
 
         decimal decl_total_all = 0;
         //计算合计：
@@ -137,7 +139,7 @@ public partial class UI_QueryAndReports_contract_template : System.Web.UI.Page
                 decl_total_all += inner_decl_total;
             }else{
                 Label inner_lb_all = GridView1.Rows[i].Cells[5].FindControl("txt_invoice_total") as Label;
-                inner_lb_all.Text=decl_total_all.ToString();
+                inner_lb_all.Text = decl_total_all.ToString("f2");
             }
             
         }

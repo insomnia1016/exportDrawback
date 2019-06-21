@@ -3,14 +3,27 @@
 <%@ Register Assembly="ExportDrawbackManagement.WebControls" Namespace="WebControls" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+     <script type="text/javascript">
+         {
+             function selectAll(bool) {
+                 var ctl = document.getElementById('<%=GridView1.ClientID %>');
+                var checkbox = ctl.getElementsByTagName('input');
+                for (var i = 0; i < checkbox.length; i++) {
+                    if (checkbox[i].type == 'checkbox') {
+                        checkbox[i].checked = bool;
+                    }
+                }
+            }
+            }
+    </script>
     <ul class="queryarea">
         <li><span class="title">申报状态</span>
             <span class="control">
-                <asp:DropDownList ID="DropDownList1" AutoPostBack="true" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"></asp:DropDownList>
+                <asp:DropDownList ID="DropDownList1"  runat="server" ></asp:DropDownList>
             </span>
         </li>
     </ul>
-    <div id="shenbao" runat="server"  style="display:none" >
+    <div id="shenbao" runat="server"  >
         <ul class="queryarea">
             <li><span class="title">退税申报日期</span>
             <span class="control">
@@ -28,7 +41,7 @@
         </li>
         </ul>
     </div>
-     <div id="tuishui" runat="server" style="display:none">
+     <div id="tuishui" runat="server" >
         <ul class="queryarea">
             <li><span class="title">退税日期</span>
             <span class="control">
@@ -47,12 +60,15 @@
             <asp:Label ID="Label1" runat="server" Text="" ForeColor="Red"></asp:Label>
         </li>
     </ul>
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowDataBound="GridView1_RowDataBound" AllowPaging="True" AllowSorting="True" PageSize="20" OnPageIndexChanging="GridView1_PageIndexChanging"  >
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id" OnRowDataBound="GridView1_RowDataBound" AllowPaging="True" AllowSorting="True" PageSize="20" OnPageIndexChanging="GridView1_PageIndexChanging" OnDataBinding="GridView1_DataBinding"  >
         <Columns>
-            <asp:TemplateField HeaderText="操作">
+             <asp:TemplateField HeaderText="操作">
+                <HeaderTemplate>
+                    <asp:CheckBox runat="server" ID="cbHead" onclick="javascript:selectAll(this.checked);"></asp:CheckBox>
+                </HeaderTemplate>
                 <ItemTemplate>
-                    <asp:Button ID="btnEdit" runat="server" Text="编辑" CommandName="Select" />
-                    <asp:HiddenField ID="hdfId" runat="server" Value='<%#Eval("id") %>' />
+                    <asp:CheckBox runat="server" ID="cbItem"></asp:CheckBox>
+                    <asp:HiddenField ID="hdfId"  runat="server" Value='<%#Eval("id") %>' />
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:BoundField DataField="agent_name" HeaderText="申报公司" />

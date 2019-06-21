@@ -116,9 +116,9 @@
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:BoundField DataField="g_name"  HeaderText="产品名称" />
-                            <asp:BoundField DataField="g_qty"  DataFormatString="{0:N}" HeaderText="数量" HtmlEncode="False" />
+                            <asp:BoundField DataField="g_qty"    HeaderText="数量"  />
                             <asp:BoundField DataField="g_unit" HeaderText="单位" />
-                            <asp:TemplateField HeaderText="单价" >
+                            <asp:TemplateField HeaderText="单价"  >
                                 <ItemTemplate >
                                     <asp:TextBox ID="txt_invoice_price" AutoPostBack="true" Width="80px" OnTextChanged="txt_invoice_price_TextChanged" onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" Style="text-align: center" runat="server"></asp:TextBox>
                                 </ItemTemplate>
@@ -196,7 +196,7 @@
                 <ul>
                      <li >
                          <p>
-                         <asp:Button ID="Button1" style="font-weight: bold;font-size: 23px;" runat="server" Text="保存并导出excel" OnClick="Button1_Click" />
+                         <asp:Button ID="Button1" style="font-weight: bold;font-size: 23px;" runat="server" OnClientClick="if(!confirm('确定保存吗?保存后不可修改！')) return false;"  Text="保存并导出excel" OnClick="Button1_Click" />
                              <asp:Label ID="Label1" ForeColor="Red" Visible="false" runat="server"></asp:Label>
 
                          </p>

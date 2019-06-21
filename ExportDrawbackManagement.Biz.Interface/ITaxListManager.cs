@@ -11,7 +11,7 @@ namespace ExportDrawbackManagement.Biz.Interface
     {
         void generateTaxList(decimal bl);
         DataSet getTaxList();
-        void UpdateState(T_TaxList item);
+        void UpdateState(T_TaxList item, string[] ids);
         DataSet queryTaxList(T_TaxList item);
     }
 }
