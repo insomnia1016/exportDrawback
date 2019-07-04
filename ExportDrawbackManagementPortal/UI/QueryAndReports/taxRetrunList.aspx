@@ -49,7 +49,7 @@
             <asp:Label ID="Label1" runat="server" Text="" ForeColor="Red"></asp:Label>
         </li>
     </ul>
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  OnRowDataBound="GridView1_RowDataBound" AllowPaging="True" OnPageIndexChanging="GridView1_PageIndexChanging" PageSize="20"  >
+    <asp:GridView ID="GridView1"  runat="server" AutoGenerateColumns="False"  OnRowDataBound="GridView1_RowDataBound" AllowPaging="True" OnPageIndexChanging="GridView1_PageIndexChanging" PageSize="20"  ShowFooter="True">
         <Columns>
             <asp:BoundField DataField="agent_name" HeaderText="申报公司" />
             <asp:BoundField DataField="d_date" DataFormatString="{0:yyyy-MM-dd}" HeaderText="申报日期" />

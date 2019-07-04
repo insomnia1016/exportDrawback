@@ -88,9 +88,10 @@ public partial class UI_QueryAndReports_contract_template : System.Web.UI.Page
             if (GridView1.Rows[0].Cells[0].RowSpan == 0) GridView1.Rows[0].Cells[0].RowSpan++;
             GridView1.Rows[0].Cells[0].RowSpan++;
             GridView1.Rows[i].Cells[0].Visible = false;
-            GridView1.Rows[0].Cells[2].Text = GridView1.Rows[i].Cells[2].Text.Substring(0, GridView1.Rows[i].Cells[2].Text.Length - 2);
-            GridView1.Rows[i].Cells[2].Text = GridView1.Rows[i].Cells[2].Text.Substring(0, GridView1.Rows[i].Cells[2].Text.Length - 2);
+            GridView1.Rows[i].Cells[2].Text = GridView1.Rows[i].Cells[2].Text.Substring(0, GridView1.Rows[i].Cells[2].Text.Length - 3);
         }
+        GridView1.Rows[0].Cells[2].Text = GridView1.Rows[0].Cells[2].Text.Substring(0, GridView1.Rows[0].Cells[2].Text.Length - 3);
+
         if (GridView1.Rows.Count > 1)
         {
             TextBox tb = (TextBox)GridView1.Rows[i].Cells[0].FindControl("txt_delivery_date");

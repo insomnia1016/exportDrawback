@@ -9,6 +9,10 @@ using System.Data;
 
 public partial class UI_QueryAndReports_taxRetrunList : System.Web.UI.Page
 {
+    decimal qty_all = 0;
+    decimal decl_total_all = 0;
+    decimal invoice_total_all = 0;
+    decimal tax_return_total_all = 0;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -89,10 +93,24 @@ public partial class UI_QueryAndReports_taxRetrunList : System.Web.UI.Page
 
     protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
     {
+       
         if (e.Row.RowType == DataControlRowType.DataRow)
         {
             string code = e.Row.Cells[17].Text.Trim();
             e.Row.Cells[17].Text = getStateName(code);
+            qty_all += decimal.Parse(e.Row.Cells[6].Text.Trim());
+            decl_total_all += decimal.Parse(e.Row.Cells[10].Text);
+            invoice_total_all += decimal.Parse(e.Row.Cells[14].Text);
+            tax_return_total_all += decimal.Parse(e.Row.Cells[16].Text);
+        }
+        else if (e.Row.RowType == DataControlRowType.Footer)
+        {
+            e.Row.Cells[5].Text = "汇总";
+            e.Row.Cells[6].Text = qty_all.ToString();//数量
+            e.Row.Cells[10].Text = decl_total_all.ToString();//报关金额
+            e.Row.Cells[14].Text = invoice_total_all.ToString();//开票金额
+            e.Row.Cells[16].Text = tax_return_total_all.ToString();//退税总金额	
+
         }
     }
     protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
