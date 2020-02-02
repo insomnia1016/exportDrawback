@@ -56,6 +56,25 @@ namespace ExportDrawbackManagement.Biz.Library
            }
        }
 
+       public DataSet getTaxListByEntryId(string id)
+       {
+           Database db = Dao.GetDatabase();
+           string sql = @"SELECT *  FROM [dbo].[tax_list] where entry_id = @entry_id";
+           using (DbConnection cn = db.CreateConnection())
+           {
+               try
+               {
+                   DbCommand cmd = db.GetSqlStringCommand(sql);
+                   db.AddInParameter(cmd, "@entry_id", DbType.String, id);
+                   return db.ExecuteDataSet(cmd);
+               }
+               catch
+               {
+                   throw new Exception("根据报关单号获取退税明细表失败");
+               }
+           }
+       }
+
        public DataSet queryTaxList(T_TaxList item)
        {
            Database db = Dao.GetDatabase();

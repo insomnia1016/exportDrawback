@@ -68,6 +68,16 @@ public partial class UI_QueryAndReports_editEntryDetail : System.Web.UI.Page
             Label1.Text = ex.Message;
         }
     }
+
+     protected void btnQuery_Click(object sender, EventArgs e)
+    {
+         EntryAdapter ea = new EntryAdapter();
+         T_EntryList item = new T_EntryList();
+         item.EntryId = txtEntryId.Text.Trim();
+         DataSet ds = ea.queryEntryList(item);
+         show(ds);
+         clean();
+    }
     private void clean()
     {
         owner_name.Text = "";
@@ -84,6 +94,8 @@ public partial class UI_QueryAndReports_editEntryDetail : System.Web.UI.Page
         txt_decl_price.Text = "";
         txt_decl_total.Text = "";
         txt_drawback_rate.Text = "";
+
+        GridView1.SelectedIndex = -1;
        
     }
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)

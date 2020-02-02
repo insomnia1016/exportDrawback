@@ -3,6 +3,7 @@
 <%@ Register Assembly="ExportDrawbackManagement.WebControls" Namespace="WebControls" TagPrefix="ExportDrawbackManagement" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+
     <h2>录入报关单表头数据</h2>
     <ul class="queryarea">
         <li><span class="title">客户</span>
@@ -73,13 +74,13 @@
                                 <td>
                                     <asp:TextBox ID="txt_g_no" runat="server" Text='<%# Container.ItemIndex+1 %>' onKeyPress="if (event.keyCode<48 || event.keyCode>57) event.returnValue=false"></asp:TextBox></td>
                                 <td>
-                                    <asp:TextBox ID="txt_g_qty" runat="server" Text='<%#Eval("g_qty") %>' onKeyPress="if (event.keyCode<48 || event.keyCode>57) event.returnValue=false"></asp:TextBox></td>
+                                    <asp:TextBox ID="txt_g_qty" AutoPostBack="true" OnTextChanged="txt_g_qty_Click" runat="server"  Text='<%#Eval("g_qty") %>' onKeyPress="if (event.keyCode<48 || event.keyCode>57) event.returnValue=false"></asp:TextBox></td>
                                 <td>
                                     <asp:TextBox ID="txt_g_unit" runat="server" Text='<%#Eval("g_unit") %>'></asp:TextBox></td>
                                 <td>
                                     <asp:TextBox ID="txt_trade_curr" runat="server" Text='<%#Eval("trade_curr") %>'></asp:TextBox></td>
                                 <td>
-                                    <asp:TextBox ID="txt_decl_price" runat="server" Text='<%#Eval("decl_price") %>' onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" ></asp:TextBox></td>
+                                    <asp:TextBox ID="txt_decl_price" AutoPostBack="true" OnTextChanged="txt_g_qty_Click" runat="server" Text='<%#Eval("decl_price") %>' onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" ></asp:TextBox></td>
                                 <td>
                                     <asp:TextBox ID="txt_decl_total" runat="server" Text='<%#Eval("decl_total") %>' onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false"></asp:TextBox></td>
                                 <td>

@@ -41,4 +41,10 @@ public class TaxListAdapter:BaseAdapter<ITaxListManager>,ITaxListManager
     {
         return Manager.queryTaxList(item);
     }
+
+
+    public DataSet getTaxListByEntryId(string id)
+    {
+        return Manager.getTaxListByEntryId(id);
+    }
 }

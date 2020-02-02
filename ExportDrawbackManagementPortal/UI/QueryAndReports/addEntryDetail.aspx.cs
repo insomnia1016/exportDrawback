@@ -13,6 +13,7 @@ public partial class UI_QueryAndReports_addEntryDetail : System.Web.UI.Page
         if (!IsPostBack)
         {
             BindData();
+            
            
         }
     }
@@ -33,6 +34,7 @@ public partial class UI_QueryAndReports_addEntryDetail : System.Web.UI.Page
     {
         DataTable dt = DefineDataTableSchema(hfRptColumns.Value);
         LoadEmptyData(dt);
+        
         rptTest.DataSource = dt;
         rptTest.DataBind();
     }
@@ -150,6 +152,23 @@ public partial class UI_QueryAndReports_addEntryDetail : System.Web.UI.Page
         dt.Rows.Add(row);
         rptTest.DataSource = dt;
         rptTest.DataBind();
+    }
+    protected void txt_g_qty_Click(object sender, EventArgs e)
+    {
+        RepeaterItem rm = (sender as TextBox).Parent as RepeaterItem;
+        string g_qty = ((TextBox)rm.FindControl("txt_g_qty")).Text.Trim();
+        string decl_price = ((TextBox)rm.FindControl("txt_decl_price")).Text.Trim();
+        if (string.IsNullOrEmpty(g_qty) || string.IsNullOrEmpty(decl_price))
+        {
+            return;
+        }
+        else
+        {
+            decimal qty = Decimal.Parse(g_qty);
+            decimal price = Decimal.Parse(decl_price);
+            decimal total = Math.Round(qty * price, 2);
+            ((TextBox)rm.FindControl("txt_decl_total")).Text = total.ToString();
+        }
     }
     #endregion
 }

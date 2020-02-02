@@ -192,4 +192,18 @@ public partial class UI_QueryAndReports_taxlist : System.Web.UI.Page
         GetSelectedItem();
         changed = true;
     }
+    protected void btn_Query_Click(object sender, EventArgs e)
+    {
+        if (string.IsNullOrEmpty(txt_entryId.Text.Trim()))
+        {
+            show();
+        }
+        else
+        {
+            string entryId = txt_entryId.Text.Trim();
+            TaxListAdapter tla = new TaxListAdapter();
+            GridView1.DataSource = tla.getTaxListByEntryId(entryId);
+            GridView1.DataBind();
+        }
+    }
 }

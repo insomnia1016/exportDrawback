@@ -87,8 +87,13 @@
     </div>
 
     <ul class="queryarea">
-        <li style="width: 100%">
+        <li style="width: 50%">
             <asp:Button ID="btnSave" runat="server" Text="保  存" OnClick="btnSave_Click" Style="margin-left: 40%;" Width="100px" />
+        </li>
+        <li style="width: 50%">
+            <asp:TextBox ID="txtEntryId" Width="180px" runat="server"></asp:TextBox>
+        
+            <asp:Button ID="Button2" runat="server" Text="查  询" Style="margin-left: 5%;" OnClick="btnQuery_Click"  Width="100px" />
         </li>
         <li style="width: 100%">
             <asp:Label ID="Label1" runat="server" Text="" ForeColor="Red"></asp:Label>
