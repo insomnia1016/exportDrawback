@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Root>
   <MenuItems>
+    <MenuItem Visible="True" ImageUrl="~/Images/16/edit.gif" Target="contentFrame" Url="../QueryAndReports/ProfitBudget.aspx" FunctionName="" MenuCode="" Roles="A" DisplayName="订单利润预算" Title="订单利润预算" />
+    <MenuItem Visible="True" ImageUrl="~/Images/16/edit.gif" Target="contentFrame" Url="../QueryAndReports/ProfitBudgetList.aspx" FunctionName="" MenuCode="" Roles="A" DisplayName="利润预算列表" Title="利润预算列表" />
+
     <MenuItem MenuCode ="" Visible="True" DisplayName ="业务------" Title ="" FunctionName="" Url="" ImageUrl="" Roles=""/>
 
     <!--<MenuItem Visible="True" ImageUrl="~/Images/16/edit.gif" Target="contentFrame" Url="../QueryAndReports/AddEntryList.aspx" FunctionName="" MenuCode="" Roles="A" DisplayName="填制报关明细" Title="填制报关明细" />-->

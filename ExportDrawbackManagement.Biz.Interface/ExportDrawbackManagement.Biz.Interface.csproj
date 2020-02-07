@@ -83,6 +83,7 @@
     <Compile Include="ICompanyManager.cs" />
     <Compile Include="IContractManager.cs" />
     <Compile Include="IEntryManager.cs" />
+    <Compile Include="IProfitBudgetManager.cs" />
     <Compile Include="ITaxListManager.cs" />
     <Compile Include="IUsersManager.cs" />
     <Compile Include="Query\AutoGeneratorCodes\Q_Users.cs" />

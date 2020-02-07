@@ -73,6 +73,8 @@
     <Compile Include="AutoGeneratorCodes\T_ContractHead.cs" />
     <Compile Include="AutoGeneratorCodes\T_ContractList.cs" />
     <Compile Include="AutoGeneratorCodes\T_EntryList.cs" />
+    <Compile Include="AutoGeneratorCodes\T_ProfitBudget.cs" />
+    <Compile Include="AutoGeneratorCodes\T_ProfitBudgetList.cs" />
     <Compile Include="AutoGeneratorCodes\T_TaxList.cs" />
     <Compile Include="AutoGeneratorCodes\T_Users.cs" />
     <Compile Include="Funcs.cs" />
