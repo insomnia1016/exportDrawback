@@ -1,7 +1,6 @@
-﻿<%@ Page Title="利润预算列表" Language="C#" MasterPageFile="~/UI/MasterPage/DetailPage.master" AutoEventWireup="true" CodeFile="ProfitBudgetList.aspx.cs" Inherits="UI_QueryAndReports_ProfitBudgetList" %>
+﻿<%@ Page Title="利润预算审核" Language="C#" MasterPageFile="~/UI/MasterPage/DetailPage.master" AutoEventWireup="true" CodeFile="ProfitBudgetAudit.aspx.cs" Inherits="UI_QueryAndReports_ProfitBudgetAudit" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-
     <div id="grid" runat="server">
         <ul class="queryarea">
             <li><span class="title">销售订单号: </span>
@@ -36,13 +35,13 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="配件价格">
                     <ItemTemplate>
-                        <asp:TextBox ID="txt_accessory_price" Text='<%#Eval("accessory_price","{0:f2}") %>'  runat="server" AutoPostBack="true" OnTextChanged="txt_accessory_price_TextChanged" onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" Style="text-align: center"></asp:TextBox>
+                        <asp:TextBox ID="txt_accessory_price" Text='<%#Eval("accessory_price","{0:f2}") %>' runat="server" AutoPostBack="true" OnTextChanged="txt_accessory_price_TextChanged" onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" Style="text-align: center"></asp:TextBox>
                     </ItemTemplate>
                 </asp:TemplateField>
 
                 <asp:TemplateField HeaderText="利润（元）">
                     <ItemTemplate>
-                        <asp:Label ID="lbl_profit" Text='<%#Eval("profit","{0:f2}") %>'  runat="server" ></asp:Label>
+                        <asp:Label ID="lbl_profit" Text='<%#Eval("profit","{0:f2}") %>' runat="server"></asp:Label>
                         <asp:HiddenField ID="hdf_finter_id" Value='<%#Eval("FInterID") %>' runat="server" />
                         <asp:HiddenField ID="hdf_sale_fentry_id" Value='<%#Eval("Sale_FEntryID") %>' runat="server" />
                         <asp:HiddenField ID="hdf_buy_fentry_id" Value='<%#Eval("Buy_FEntryID") %>' runat="server" />
@@ -55,15 +54,15 @@
             </Columns>
         </asp:GridView>
         <ul class="queryarea">
-            <li style="width: 100%; margin-top: 20px; margin-bottom: 10px;">
-                <asp:Button ID="submit" runat="server" Enabled="false"  Text="提交审核" OnClick="submit_Click" Style="margin-left: 40%;" Width="100px" />
+            <li style="width: 100%; margin-top: 20px;">
+                <asp:Button ID="submit" runat="server" Enabled="false" Text="提交审核" OnClick="submit_Click" Style="margin-left: 40%;" Width="100px" />
                 <asp:Label ID="Label2" ForeColor="Red" Visible="false" runat="server"></asp:Label>
 
             </li>
         </ul>
     </div>
     <div>
-         <ul class="queryarea">
+        <ul class="queryarea">
             <li><span class="title">销售订单号: </span>
                 <span class="control">
                     <asp:TextBox ID="txt_sale_bill_no" runat="server" Style="text-align: center"></asp:TextBox>
@@ -85,6 +84,12 @@
                 <asp:BoundField DataField="extra_charges" DataFormatString="{0:N2}" HeaderText="额外费用" />
                 <asp:BoundField DataField="update_time" HeaderText="更新时间" />
                 <asp:BoundField DataField="profit_all" DataFormatString="{0:N2}" HeaderText="总利润" />
+                <asp:TemplateField HeaderText="审核操作">
+                    <ItemTemplate>
+                        <asp:Button ID="btn_approve" runat="server" OnClick="btn_approve_Click" Text="通过" CommandArgument="Y" />
+                        <asp:Button ID="btn_no_approve" runat="server" OnClick="btn_approve_Click" Text="不通过" CommandArgument="N" />
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:BoundField DataField="audit_state" HeaderText="审核状态" />
             </Columns>
         </asp:GridView>

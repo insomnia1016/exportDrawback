@@ -73,4 +73,16 @@ public class ProfitBudgetAdapter : BaseAdapter<IProfitBudgetManager>, IProfitBud
 	{
 		Manager.deleteBySaleBillNo(sale_bill_no);
 	}
+
+
+	public void audit(string sale_bill_no, bool flag)
+	{
+		Manager.audit(sale_bill_no, flag);
+	}
+
+
+	public DataSet getProfitBudgetSummaryByID(string sale_bill_no)
+	{
+		return Manager.getProfitBudgetSummaryByID(sale_bill_no);
+	}
 }

@@ -100,7 +100,7 @@ namespace ExportDrawbackManagement.Biz.Library
         public DataSet getProfitBudgetSummary()
         {
             Database db = Dao.GetDatabase();
-            string sql = @" SELECT *  FROM [exportDrawback].[dbo].[ProfitBudget]";
+            string sql = @" SELECT *  FROM [exportDrawback].[dbo].[ProfitBudget] order by update_time desc";
             try
             {
                 using (DbConnection cn = db.CreateConnection())
@@ -112,6 +112,26 @@ namespace ExportDrawbackManagement.Biz.Library
             catch
             {
                 throw new Exception("获取利润预算表头失败");
+            }
+
+        }
+        public DataSet getProfitBudgetSummaryByID(string sale_bill_no)
+        {
+            Database db = Dao.GetDatabase();
+            string sql = @"  SELECT *  FROM [exportDrawback].[dbo].[ProfitBudget] WHERE sale_bill_no = @sale_bill_no ";
+            try
+            {
+                using (DbConnection cn = db.CreateConnection())
+                {
+                    DbCommand cmd = db.GetSqlStringCommand(sql);
+                    db.AddInParameter(cmd, "@sale_bill_no", DbType.String, sale_bill_no);
+
+                    return db.ExecuteDataSet(cmd);
+                }
+            }
+            catch
+            {
+                throw new Exception("根据销售订单号获取利润预算表头失败");
             }
 
         }
@@ -355,6 +375,32 @@ namespace ExportDrawbackManagement.Biz.Library
             catch
             {
                 throw new Exception("删除利润预算表数据失败。");
+            }
+        }
+
+        public void audit(string sale_bill_no, bool flag)
+        {
+            Database db = Dao.GetDatabase();
+            string sql = @"UPDATE  [dbo].[ProfitBudget]
+                            SET     [update_time] = @update_time ,
+                                    [audit_state] = @audit_state
+                            WHERE   sale_bill_no = @sale_bill_no;";
+            try
+            {
+                using (DbConnection cn = db.CreateConnection())
+                {
+                    DbCommand cmd = db.GetSqlStringCommand(sql);
+                    db.AddInParameter(cmd, "@sale_bill_no", DbType.String, sale_bill_no);
+                    db.AddInParameter(cmd, "@update_time", DbType.DateTime, DateTime.Now);
+                    db.AddInParameter(cmd, "@audit_state", DbType.Boolean, flag);
+                    db.ExecuteNonQuery(cmd);
+
+                }
+
+            }
+            catch
+            {
+                throw new Exception("审批利润预算表数据失败。");
             }
         }
     }

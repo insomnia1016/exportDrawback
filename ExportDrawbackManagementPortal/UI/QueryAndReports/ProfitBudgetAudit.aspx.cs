@@ -7,14 +7,15 @@ using System.Web.UI.WebControls;
 using ExportDrawbackManagement.Biz.Entity;
 using System.Data;
 
-public partial class UI_QueryAndReports_ProfitBudgetList : System.Web.UI.Page
+public partial class UI_QueryAndReports_ProfitBudgetAudit : System.Web.UI.Page
 {
     public static decimal profit_all { get; set; }
     public static string sale_bill_no { get; set; }
     public static int finterid { get; set; }
     protected void Page_Load(object sender, EventArgs e)
     {
-        if(!IsPostBack){
+        if (!IsPostBack)
+        {
             GridViewBind();
         }
     }
@@ -70,7 +71,7 @@ public partial class UI_QueryAndReports_ProfitBudgetList : System.Web.UI.Page
             ProfitBudgetAdapter pba = new ProfitBudgetAdapter();
             pba.updateProfitBudgetHead(item);
             pba.updateProfitBudgetList(lists);
-            
+
             Label2.Text = "保存成功！";
             Label2.Visible = true;
             GridViewBind();
@@ -163,7 +164,7 @@ public partial class UI_QueryAndReports_ProfitBudgetList : System.Web.UI.Page
     }
     protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
     {
-       
+
         if (e.Row.RowType == DataControlRowType.Footer)
         {
             e.Row.Cells[10].Text = "总计：" + profit_all;
@@ -174,18 +175,17 @@ public partial class UI_QueryAndReports_ProfitBudgetList : System.Web.UI.Page
     {
         if (e.Row.RowType == DataControlRowType.DataRow)
         {
-
-            string state = e.Row.Cells[5].Text.ToLower();
+            string state = e.Row.Cells[6].Text.ToLower();
             if (state == "true")
             {
-                e.Row.Cells[5].Text = "通过";
+                e.Row.Cells[6].Text = "通过";
                 Button btnEdit = e.Row.Cells[0].FindControl("btnEdit") as Button;
                 Button btnDelete = e.Row.Cells[0].FindControl("btnDelete") as Button;
                 btnEdit.Enabled = btnDelete.Enabled = false;
             }
             else
             {
-                e.Row.Cells[5].Text = "不通过";
+                e.Row.Cells[6].Text = "不通过";
             }
         }
 
@@ -193,7 +193,7 @@ public partial class UI_QueryAndReports_ProfitBudgetList : System.Web.UI.Page
     }
     protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
-       
+
     }
 
     protected void GridView2_PageIndexChanging(object sender, GridViewPageEventArgs e)

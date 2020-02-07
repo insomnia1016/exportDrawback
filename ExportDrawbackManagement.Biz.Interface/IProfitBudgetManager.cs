@@ -19,5 +19,7 @@ namespace ExportDrawbackManagement.Biz.Interface
        void deleteBySaleBillNo(string sale_bill_no);
        DataSet getProfitBudgetSummary();
        DataSet getProfitBudgetByID(int FInterIID, string sale_bill_no);
+       void audit(string sale_bill_no, bool flag);
+       DataSet getProfitBudgetSummaryByID(string sale_bill_no);
     }
 }
