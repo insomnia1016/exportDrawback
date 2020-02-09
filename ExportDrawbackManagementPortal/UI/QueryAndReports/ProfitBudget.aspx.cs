@@ -9,7 +9,6 @@ using ExportDrawbackManagement.Biz.Entity;
 
 public partial class UI_QueryAndReports_ProfitBudget : System.Web.UI.Page
 {
-    public static decimal profit_all { get; set; }
     public static string sale_bill_no { get; set; }
     public static int finterid { get; set; }
 
@@ -18,37 +17,24 @@ public partial class UI_QueryAndReports_ProfitBudget : System.Web.UI.Page
         if (!IsPostBack)
         {
 
+            sale_bill_no = "";
+            finterid = 0;
         }
     }
     protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
     {
-
-        //计算每个采购订单项号的利润
         if (e.Row.RowType == DataControlRowType.DataRow)
         {
-            TextBox tb = e.Row.Cells[4].FindControl("txt_exchange_rate") as TextBox;
-            decimal exchange_rate = 0;
-            if (!string.IsNullOrEmpty(tb.Text.Trim()))
-                exchange_rate = Decimal.Parse(tb.Text.Trim());
-            decimal sale_qty = Decimal.Parse(e.Row.Cells[6].Text.Trim());
-            decimal buy_qty = Decimal.Parse(e.Row.Cells[7].Text.Trim());
-            decimal buy_price = Decimal.Parse(e.Row.Cells[5].Text.Trim());
-            decimal sale_price = Decimal.Parse(e.Row.Cells[3].Text.Trim());
-            decimal profit = sale_qty * sale_price * exchange_rate - buy_qty * buy_price;
-            profit_all += profit;
-            Label lbl_profit = e.Row.Cells[10].FindControl("lbl_profit") as Label;
-            lbl_profit.Text = profit.ToString("f2");
-        }
-        else if (e.Row.RowType == DataControlRowType.Footer)
-        {
-            Label lbl_profit_all = e.Row.Cells[10].FindControl("lbl_profit_all") as Label;
-            lbl_profit_all.Text += profit_all.ToString("f2");
-        }
+            //翻译是否含税
+            bool sale_rate = e.Row.Cells[6].Text.Trim() == "1" ? true : false;
+            if (sale_rate) e.Row.Cells[6].Text = "是";
+            else e.Row.Cells[6].Text = "否";
+            bool buy_rate = e.Row.Cells[8].Text.Trim() == "1" ? true : false;
+            if (buy_rate) e.Row.Cells[8].Text = "是";
+            else e.Row.Cells[8].Text = "否";
 
-        //翻译业务部门和业务员
-        ProfitBudgetAdapter pba = new ProfitBudgetAdapter();
-        if (e.Row.RowType == DataControlRowType.DataRow)
-        {
+            //翻译业务部门和业务员
+            ProfitBudgetAdapter pba = new ProfitBudgetAdapter();
             string dept_id = e.Row.Cells[1].Text.Trim();
             string emp_id = e.Row.Cells[2].Text.Trim();
             if (!string.IsNullOrEmpty(dept_id))
@@ -58,7 +44,7 @@ public partial class UI_QueryAndReports_ProfitBudget : System.Web.UI.Page
                 {
                     e.Row.Cells[1].Text = dept_name;
                 }
-               
+
             }
             if (!string.IsNullOrEmpty(emp_id))
             {
@@ -91,8 +77,65 @@ public partial class UI_QueryAndReports_ProfitBudget : System.Web.UI.Page
         item.SaleBillNo = sale_bill_no;
         DataSet ds = pba.getSEOrderInfo(item);
         finterid = Int32.Parse(ds.Tables[0].Rows[0][0].ToString());
-
         show(ds);
+    }
+
+    protected void txt_volume_TextChanged(object sender, EventArgs e)
+    {
+        TextBox tb = sender as TextBox;
+        GridViewRow row = tb.Parent.Parent as GridViewRow;
+        decimal length = 0;
+        if (!string.IsNullOrEmpty(((TextBox)row.Cells[13].FindControl("txt_length")).Text.Trim()))
+            length = Decimal.Parse(((TextBox)row.Cells[13].FindControl("txt_length")).Text.Trim());
+        decimal width = 0;
+        if (!string.IsNullOrEmpty(((TextBox)row.Cells[13].FindControl("txt_width")).Text.Trim()))
+            width = Decimal.Parse(((TextBox)row.Cells[13].FindControl("txt_width")).Text.Trim());
+        decimal height = 0;
+        if (!string.IsNullOrEmpty(((TextBox)row.Cells[13].FindControl("txt_height")).Text.Trim()))
+            height = Decimal.Parse(((TextBox)row.Cells[13].FindControl("txt_height")).Text.Trim());
+        decimal volume = length * height * height / 1000000;
+
+        Label lbl_volume = row.Cells[14].FindControl("lbl_volume") as Label;
+        lbl_volume.Text = volume.ToString("f3");
+        if (volume > 0)
+        {
+            try
+            {
+                check(row);
+            }
+            catch (Exception ex)
+            {
+                Label2.Text = ex.Message;
+                Label2.Visible = true;
+                return;
+            }
+            decimal exchange_rate = Decimal.Parse((row.Cells[5].FindControl("txt_exchange_rate") as TextBox).Text);
+            decimal sale_qty = Decimal.Parse(row.Cells[9].Text.Trim());
+            decimal buy_qty = Decimal.Parse(row.Cells[10].Text.Trim());
+            decimal buy_price = Decimal.Parse(row.Cells[7].Text.Trim());
+            decimal sale_price = Decimal.Parse(row.Cells[3].Text.Trim());
+            decimal extra_charges = 0;
+            if (!string.IsNullOrEmpty(txt_extra_charges.Text.Trim()))
+                extra_charges = Decimal.Parse(txt_extra_charges.Text.Trim());
+            decimal accessory_price = 0;
+            if (!string.IsNullOrEmpty(((TextBox)row.Cells[12].FindControl("txt_accessory_price")).Text.Trim()))
+                accessory_price = Decimal.Parse(((TextBox)row.Cells[12].FindControl("txt_accessory_price")).Text.Trim());
+            bool sale_rate = row.Cells[6].Text == "是" ? true : false;
+            bool buy_rate = row.Cells[8].Text == "是" ? true : false;
+            decimal tax_rate = Decimal.Parse((row.Cells[17].FindControl("txt_tax_rate") as TextBox).Text);
+            decimal estimate_freight_charge = 0;
+            if (!string.IsNullOrEmpty((row.Cells[15].FindControl("txt_estimate_freight_charge") as TextBox).Text))
+                estimate_freight_charge = Decimal.Parse((row.Cells[15].FindControl("txt_estimate_freight_charge") as TextBox).Text);
+            decimal capacity = Decimal.Parse((row.Cells[16].FindControl("txt_capacity") as TextBox).Text);
+            string currency = row.Cells[4].Text;
+            decimal return_rate = 0;
+            if (!string.IsNullOrEmpty((row.Cells[18].FindControl("txt_return_rate") as TextBox).Text))
+                return_rate = Decimal.Parse((row.Cells[18].FindControl("txt_return_rate") as TextBox).Text);
+
+            calculateProfit(row, exchange_rate, buy_price, sale_price, accessory_price, estimate_freight_charge, tax_rate, sale_rate, buy_rate, currency, volume, capacity, return_rate);
+
+        }
+
     }
     /// <summary>
     /// 绑定GridView1
@@ -110,68 +153,127 @@ public partial class UI_QueryAndReports_ProfitBudget : System.Web.UI.Page
         GridView1.DataSource = ds;
         GridView1.DataBind();
     }
-    protected void txt_exchange_rate_TextChanged(object sender, EventArgs e)
+
+    private void check(GridViewRow row)
     {
-        //计算每一行的含税金额
-        TextBox tb = sender as TextBox;
-        decimal exchange_rate = 0;
-        if (!string.IsNullOrEmpty(tb.Text.Trim()))
-            exchange_rate = Decimal.Parse(tb.Text.Trim());
-
-        GridViewRow row = tb.Parent.Parent as GridViewRow;
-        decimal sale_qty = Decimal.Parse(row.Cells[6].Text.Trim());
-        decimal buy_qty = Decimal.Parse(row.Cells[7].Text.Trim());
-        decimal buy_price = Decimal.Parse(row.Cells[5].Text.Trim());
-        decimal sale_price = Decimal.Parse(row.Cells[3].Text.Trim());
-        decimal extra_charges = 0;
-        if (!string.IsNullOrEmpty(txt_extra_charges.Text.Trim()))
-            extra_charges = Decimal.Parse(txt_extra_charges.Text.Trim());
-        decimal accessory_price = 0;
-        if (!string.IsNullOrEmpty(((TextBox)row.Cells[9].FindControl("txt_accessory_price")).Text.Trim()))
-            accessory_price = Decimal.Parse(((TextBox)row.Cells[9].FindControl("txt_accessory_price")).Text.Trim());
-        calculateProfit(row, exchange_rate, sale_qty, buy_qty, buy_price, sale_price, accessory_price);
-    }
-
-    private void calculateProfit(GridViewRow row, decimal exchange_rate, decimal sale_qty, decimal buy_qty, decimal buy_price, decimal sale_price, decimal accessory_price)
-    {
-        decimal profit = sale_qty * sale_price * exchange_rate - buy_qty * (buy_price + accessory_price);
-        Label lb = row.Cells[10].FindControl("lbl_profit") as Label;
-        lb.Text = profit.ToString("f2");
-
-        profit_all = 0;
-        //计算合计：
-        for (int i = 0; i <= GridView1.Rows.Count - 1; i++)
+        if (string.IsNullOrEmpty((row.Cells[5].FindControl("txt_exchange_rate") as TextBox).Text))
         {
-            Label inner_profit = GridView1.Rows[i].Cells[10].FindControl("lbl_profit") as Label;
-            profit = Decimal.Parse(inner_profit.Text.ToString());
-            profit_all += profit;
+            throw new Exception("汇率不能为空！");
         }
-        Label lbl_profit_all = GridView1.FooterRow.Cells[10].FindControl("lbl_profit_all") as Label;
-        lbl_profit_all.Text = "总计：" + profit_all.ToString("f2");
+        if (string.IsNullOrEmpty((row.Cells[17].FindControl("txt_tax_rate") as TextBox).Text))
+        {
+            throw new Exception("税点不能为空！");
+        }
+        if (string.IsNullOrEmpty((row.Cells[16].FindControl("txt_capacity") as TextBox).Text))
+        {
+            throw new Exception("入数不能为空！");
+        }
+        if (string.IsNullOrEmpty((row.Cells[14].FindControl("lbl_volume") as Label).Text))
+        {
+            throw new Exception("体积不能为空或0！");
+        }
     }
-    protected void txt_accessory_price_TextChanged(object sender, EventArgs e)
+    protected void txt_Value_TextChanged(object sender, EventArgs e)
     {
+        Label2.Text = "";
+        Label2.Visible = false;
+
+
         //计算每一行的含税金额
         TextBox tb = sender as TextBox;
-        decimal accessory_price = 0;
-        if (!string.IsNullOrEmpty(tb.Text.Trim()))
-            accessory_price = Decimal.Parse(tb.Text.Trim());
-
         GridViewRow row = tb.Parent.Parent as GridViewRow;
-        decimal sale_qty = Decimal.Parse(row.Cells[6].Text.Trim());
-        decimal buy_qty = Decimal.Parse(row.Cells[7].Text.Trim());
-        decimal buy_price = Decimal.Parse(row.Cells[5].Text.Trim());
+        try
+        {
+            check(row);
+        }
+        catch (Exception ex)
+        {
+            Label2.Text = ex.Message;
+            Label2.Visible = true;
+            return;
+        }
+
+        decimal exchange_rate = Decimal.Parse((row.Cells[5].FindControl("txt_exchange_rate") as TextBox).Text);
+        decimal sale_qty = Decimal.Parse(row.Cells[9].Text.Trim());
+        decimal buy_qty = Decimal.Parse(row.Cells[10].Text.Trim());
+        decimal buy_price = Decimal.Parse(row.Cells[7].Text.Trim());
         decimal sale_price = Decimal.Parse(row.Cells[3].Text.Trim());
-        decimal exchange_rate = 0;
-        if (!string.IsNullOrEmpty(((TextBox)row.Cells[4].FindControl("txt_exchange_rate")).Text.Trim()))
-            exchange_rate = Decimal.Parse(((TextBox)row.Cells[4].FindControl("txt_exchange_rate")).Text.Trim());
         decimal extra_charges = 0;
         if (!string.IsNullOrEmpty(txt_extra_charges.Text.Trim()))
             extra_charges = Decimal.Parse(txt_extra_charges.Text.Trim());
-        calculateProfit(row, exchange_rate, sale_qty, buy_qty, buy_price, sale_price, accessory_price);
+        decimal accessory_price = 0;
+        if (!string.IsNullOrEmpty(((TextBox)row.Cells[12].FindControl("txt_accessory_price")).Text.Trim()))
+            accessory_price = Decimal.Parse(((TextBox)row.Cells[12].FindControl("txt_accessory_price")).Text.Trim());
+        bool sale_rate = row.Cells[6].Text == "是" ? true : false;
+        bool buy_rate = row.Cells[8].Text == "是" ? true : false;
+        decimal tax_rate = Decimal.Parse((row.Cells[17].FindControl("txt_tax_rate") as TextBox).Text);
+        decimal estimate_freight_charge = 0;
+        if (!string.IsNullOrEmpty((row.Cells[15].FindControl("txt_estimate_freight_charge") as TextBox).Text))
+            estimate_freight_charge = Decimal.Parse((row.Cells[15].FindControl("txt_estimate_freight_charge") as TextBox).Text);
+        decimal capacity = Decimal.Parse((row.Cells[16].FindControl("txt_capacity") as TextBox).Text);
+        string currency = row.Cells[4].Text;
+        decimal volume = Decimal.Parse((row.Cells[14].FindControl("lbl_volume") as Label).Text);
+        decimal return_rate = 0;
+        if (!string.IsNullOrEmpty((row.Cells[18].FindControl("txt_return_rate") as TextBox).Text))
+            return_rate = Decimal.Parse((row.Cells[18].FindControl("txt_return_rate") as TextBox).Text);
+
+        calculateProfit(row, exchange_rate, buy_price, sale_price, accessory_price, estimate_freight_charge, tax_rate, sale_rate, buy_rate, currency, volume, capacity, return_rate);
     }
 
-  
+    private void calculateProfit(GridViewRow row,
+        decimal exchange_rate,
+        decimal buy_price,
+        decimal sale_price,
+        decimal accessory_price,
+        decimal estimate_freight_charge,
+        decimal tax_rate,
+        bool sale_rate,
+        bool buy_rate,
+        string currency,
+        decimal volume,
+        decimal capacity,
+        decimal return_tax = (decimal)0.13)
+    {
+        //计算利润率
+        decimal profit = 0;
+
+        //销售价格是美金
+        if (currency == "USD")
+        {
+            if (buy_rate)//采购价格人民币含税
+            {
+                profit = 1 - (((buy_price + (accessory_price + estimate_freight_charge) / (1 - tax_rate)) * (1 - return_tax / (decimal)1.13) + 2500 / (28 / volume * capacity)) / (sale_price * exchange_rate));
+            }
+            else
+            {
+                profit = 1 - ((((buy_price + accessory_price + estimate_freight_charge) / (1 - tax_rate)) * (1 - return_tax / (decimal)1.13) + 2500 / (28 / volume * capacity)) / (sale_price * exchange_rate));
+            }
+        }
+        else//销售价格是人民币
+        {
+            //销售价格人民币含税
+            if (sale_rate)
+            {
+                //采购价格人民币含税
+                if (buy_rate)
+                {
+                    profit = (sale_price * exchange_rate - buy_price - accessory_price - estimate_freight_charge) / (sale_price * exchange_rate);
+                }
+                else//采购价格人民币不含税
+                {
+                    profit = (sale_price * exchange_rate - buy_price / (1 - tax_rate) - accessory_price - estimate_freight_charge) / (sale_price * exchange_rate);
+                }
+            }
+            else//销售价格人民币不含税
+            {
+                profit = (sale_price * exchange_rate - buy_price - accessory_price - estimate_freight_charge) / (sale_price * exchange_rate);
+            }
+        }
+
+        Label lb = row.Cells[18].FindControl("lbl_profit") as Label;
+        lb.Text = profit.ToString("f3");
+    }
+
     protected void submit_Click(object sender, EventArgs e)
     {
         //收集利润预算表头信息
@@ -183,38 +285,84 @@ public partial class UI_QueryAndReports_ProfitBudget : System.Web.UI.Page
         item.ExtraCharges = extra_charges;
         item.FInterID = finterid;
         item.SaleBillNo = sale_bill_no;
-        item.ProfitAll = profit_all;
         item.AuditState = false;
 
         //收集利润预算表体信息
         List<T_ProfitBudgetList> lists = new List<T_ProfitBudgetList>();
-        for (int i = 0; i <= GridView1.Rows.Count-1; i++)
+        for (int i = 0; i <= GridView1.Rows.Count - 1; i++)
         {
             T_ProfitBudgetList list = new T_ProfitBudgetList();
-            list.FInterID = Int32.Parse(((HiddenField)GridView1.Rows[i].Cells[10].FindControl("hdf_finter_id")).Value);
-            list.SaleFentryid = Int32.Parse(((HiddenField)GridView1.Rows[i].Cells[10].FindControl("hdf_sale_fentry_id")).Value);
-            list.BuyFentryid = Int32.Parse(((HiddenField)GridView1.Rows[i].Cells[10].FindControl("hdf_buy_fentry_id")).Value);
-            list.FItemID = Int32.Parse(((HiddenField)GridView1.Rows[i].Cells[10].FindControl("hdf_fitem_id")).Value);
+            list.FInterID = Int32.Parse(((HiddenField)GridView1.Rows[i].Cells[18].FindControl("hdf_finter_id")).Value);
+            list.SaleFentryid = Int32.Parse(((HiddenField)GridView1.Rows[i].Cells[18].FindControl("hdf_sale_fentry_id")).Value);
+            list.BuyFentryid = Int32.Parse(((HiddenField)GridView1.Rows[i].Cells[18].FindControl("hdf_buy_fentry_id")).Value);
+            list.FItemID = Int32.Parse(((HiddenField)GridView1.Rows[i].Cells[18].FindControl("hdf_fitem_id")).Value);
             list.SaleBillNo = sale_bill_no;
             list.BuyBillNo = GridView1.Rows[i].Cells[0].Text;
             list.DeptId = Int32.Parse(GridView1.Rows[i].Cells[1].Text);
             list.EmpId = Int32.Parse(GridView1.Rows[i].Cells[2].Text);
             list.SalePrice = Decimal.Parse(GridView1.Rows[i].Cells[3].Text);
-            list.ExchangeRate = Decimal.Parse(((TextBox)GridView1.Rows[i].Cells[4].FindControl("txt_exchange_rate")).Text);
-            list.BuyPrice = Decimal.Parse(GridView1.Rows[i].Cells[5].Text);
-            list.SaleQty = Decimal.Parse(GridView1.Rows[i].Cells[6].Text);
-            list.BuyQty = Decimal.Parse(GridView1.Rows[i].Cells[7].Text);
-            list.Accessory = (GridView1.Rows[i].Cells[8].FindControl("txt_accessory") as TextBox).Text;
-            string accessory_price = (GridView1.Rows[i].Cells[9].FindControl("txt_accessory_price") as TextBox).Text;
-            if (!String.IsNullOrEmpty(accessory_price))
-            {
-                list.AccessoryPrice = Decimal.Parse(accessory_price);
-            }
+            list.Currency = GridView1.Rows[i].Cells[4].Text;
+            TextBox txt_exchange_rate = (TextBox)GridView1.Rows[i].Cells[5].FindControl("txt_exchange_rate");
+            if (string.IsNullOrEmpty(txt_exchange_rate.Text))
+                list.ExchangeRate = 0;
             else
-            {
+                list.ExchangeRate = Decimal.Parse(txt_exchange_rate.Text);
+            list.BuyPrice = Decimal.Parse(GridView1.Rows[i].Cells[7].Text);
+            list.SaleQty = Decimal.Parse(GridView1.Rows[i].Cells[9].Text);
+            list.BuyQty = Decimal.Parse(GridView1.Rows[i].Cells[10].Text);
+            list.Accessory = (GridView1.Rows[i].Cells[11].FindControl("txt_accessory") as TextBox).Text;
+            TextBox txt_accessory_price = GridView1.Rows[i].Cells[12].FindControl("txt_accessory_price") as TextBox;
+            if (!String.IsNullOrEmpty(txt_accessory_price.Text))
+                list.AccessoryPrice = Decimal.Parse(txt_accessory_price.Text);
+            else
                 list.AccessoryPrice = 0;
-            }
-            list.Profit = Decimal.Parse((GridView1.Rows[i].Cells[10].FindControl("lbl_profit") as Label).Text);
+            string length = (GridView1.Rows[i].Cells[13].FindControl("txt_length") as TextBox).Text;
+            if (string.IsNullOrEmpty(length))
+                list.Length = 0;
+            else
+                list.Length = Decimal.Parse(length);
+            string width = (GridView1.Rows[i].Cells[13].FindControl("txt_width") as TextBox).Text;
+            if (string.IsNullOrEmpty(width))
+                list.Width = 0;
+            else
+                list.Width = Decimal.Parse(width);
+            string height = (GridView1.Rows[i].Cells[13].FindControl("txt_height") as TextBox).Text;
+            if (string.IsNullOrEmpty(height))
+                list.Height = 0;
+            else
+                list.Height = Decimal.Parse(height);
+            string capacity = (GridView1.Rows[i].Cells[16].FindControl("txt_capacity") as TextBox).Text;
+            if (string.IsNullOrEmpty(capacity))
+                list.Capacity = 0;
+            else
+                list.Capacity = Decimal.Parse(capacity);
+            string estimate_freight_charge = (GridView1.Rows[i].Cells[15].FindControl("txt_estimate_freight_charge") as TextBox).Text;
+            if (string.IsNullOrEmpty(estimate_freight_charge))
+                list.EstimateFreightCharge = 0;
+            else
+                list.EstimateFreightCharge = Decimal.Parse(estimate_freight_charge);
+            string tax_rate = (GridView1.Rows[i].Cells[17].FindControl("txt_tax_rate") as TextBox).Text;
+            if (string.IsNullOrEmpty(tax_rate))
+                list.TaxRate = 0;
+            else
+                list.TaxRate = Decimal.Parse(tax_rate);
+            list.SaleRate = GridView1.Rows[i].Cells[6].Text == "是" ? true : false;
+            list.BuyRate = GridView1.Rows[i].Cells[8].Text == "是" ? true : false;
+            string profit = (GridView1.Rows[i].Cells[19].FindControl("lbl_profit") as Label).Text;
+            if (string.IsNullOrEmpty(profit))
+                list.Profit = 0;
+            else
+                list.Profit = Decimal.Parse(profit);
+            string volume = (GridView1.Rows[i].Cells[14].FindControl("lbl_volume") as Label).Text;
+            if (string.IsNullOrEmpty(volume))
+                list.Volume = 0;
+            else
+                list.Volume = Decimal.Parse(volume);
+            string return_rate = (GridView1.Rows[i].Cells[18].FindControl("txt_return_rate") as TextBox).Text;
+            if (string.IsNullOrEmpty(return_rate))
+                list.ReturnRate = 0;
+            else
+                list.ReturnRate = Decimal.Parse(return_rate);
             lists.Add(list);
 
         }
@@ -223,7 +371,7 @@ public partial class UI_QueryAndReports_ProfitBudget : System.Web.UI.Page
             ProfitBudgetAdapter pba = new ProfitBudgetAdapter();
             pba.addProfitBudgetHead(item);
             pba.addProfitBudgetList(lists);
-           
+
             Label2.Text = "保存成功！";
             Label2.Visible = true;
 
@@ -236,4 +384,5 @@ public partial class UI_QueryAndReports_ProfitBudget : System.Web.UI.Page
         }
 
     }
+
 }

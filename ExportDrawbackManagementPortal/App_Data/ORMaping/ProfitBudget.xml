@@ -98,24 +98,4 @@
       <IsLogModify>True</IsLogModify>
     </Transfer>
   </MemberItem>
-  <MemberItem>
-    <Property>
-      <Name>ProfitAll</Name>
-      <DisplayName>
-      </DisplayName>
-      <Comment>
-      </Comment>
-    </Property>
-    <Column>
-      <Name>profit_all</Name>
-      <Type>Decimal</Type>
-      <MaxLength>-1</MaxLength>
-      <CanBeNull>True</CanBeNull>
-    </Column>
-    <Transfer>
-      <PropertyToColumn>True</PropertyToColumn>
-      <ColumnToProperty>True</ColumnToProperty>
-      <IsLogModify>True</IsLogModify>
-    </Transfer>
-  </MemberItem>
 </ORMapping>

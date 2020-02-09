@@ -82,6 +82,7 @@
     <Compile Include="ICommonManager.cs" />
     <Compile Include="ICompanyManager.cs" />
     <Compile Include="IContractManager.cs" />
+    <Compile Include="IDepartmentManager.cs" />
     <Compile Include="IEntryManager.cs" />
     <Compile Include="IProfitBudgetManager.cs" />
     <Compile Include="ITaxListManager.cs" />

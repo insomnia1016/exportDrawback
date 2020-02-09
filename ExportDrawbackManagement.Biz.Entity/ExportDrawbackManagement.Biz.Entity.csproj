@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="AutoGeneratorCodes\T_ContractHead.cs" />
     <Compile Include="AutoGeneratorCodes\T_ContractList.cs" />
+    <Compile Include="AutoGeneratorCodes\T_Department.cs" />
     <Compile Include="AutoGeneratorCodes\T_EntryList.cs" />
     <Compile Include="AutoGeneratorCodes\T_ProfitBudget.cs" />
     <Compile Include="AutoGeneratorCodes\T_ProfitBudgetList.cs" />

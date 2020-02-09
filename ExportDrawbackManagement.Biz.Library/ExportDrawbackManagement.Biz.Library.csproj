@@ -104,6 +104,7 @@
     <Compile Include="Common\ZHNException.cs" />
     <Compile Include="CompanyManager.cs" />
     <Compile Include="ContractManager.cs" />
+    <Compile Include="DepartmentManager.cs" />
     <Compile Include="EntryManager.cs" />
     <Compile Include="Factory\LocalBizFactory.cs" />
     <Compile Include="ProfitBudgetManager.cs" />

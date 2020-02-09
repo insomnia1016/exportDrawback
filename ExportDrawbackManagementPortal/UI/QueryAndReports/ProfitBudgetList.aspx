@@ -2,61 +2,87 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-    <div id="grid" runat="server">
+    <div>
         <ul class="queryarea">
-            <li><span class="title">销售订单号: </span>
-                <span class="control">
-                    <asp:Label ID="lbl_sale_bill_no" runat="server" Text=""></asp:Label>
-                </span>
-            </li>
             <li><span class="title">额外费用</span>
                 <span class="control">
                     <asp:TextBox ID="txt_extra_charges" runat="server" onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" Style="text-align: center"></asp:TextBox>
                 </span>
             </li>
         </ul>
-        <asp:GridView ID="GridView1" runat="server" ShowFooter="true" AutoGenerateColumns="False" OnRowDataBound="GridView1_RowDataBound" AllowPaging="True" OnPageIndexChanging="GridView1_PageIndexChanging" PageSize="20">
+        <asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="False" OnRowDataBound="GridView1_RowDataBound" AllowPaging="True" OnPageIndexChanging="GridView1_PageIndexChanging" PageSize="20">
             <Columns>
                 <asp:BoundField DataField="buy_bill_no" HeaderText="采购订单号" />
-                <asp:BoundField DataField="dept_id" HeaderText="业务部门代码" />
+                <asp:BoundField DataField="dept_id" HeaderText="部门" />
                 <asp:BoundField DataField="emp_id" HeaderText="业务员" />
                 <asp:BoundField DataField="sale_price" DataFormatString="{0:N2}" HeaderText="销售价" />
+                <asp:BoundField DataField="currency"  HeaderText="币制" />
                 <asp:TemplateField HeaderText="汇率">
                     <ItemTemplate>
-                        <asp:TextBox ID="txt_exchange_rate" Text='<%#Eval("exchange_rate","{0:f2}") %>' AutoPostBack="true" OnTextChanged="txt_exchange_rate_TextChanged" onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" Style="text-align: center" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_exchange_rate" Width="50px" Text='<%#Eval("exchange_rate","{0:f2}") %>' AutoPostBack="true" OnTextChanged="txt_Value_TextChanged" onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" Style="text-align: center" runat="server"></asp:TextBox>
                     </ItemTemplate>
                 </asp:TemplateField>
+                <asp:BoundField DataField="sale_rate"  HeaderText="含税" />
                 <asp:BoundField DataField="buy_price" DataFormatString="{0:N2}" HeaderText="采购价" />
+                <asp:BoundField DataField="buy_rate"  HeaderText="含税" />
                 <asp:BoundField DataField="sale_qty" DataFormatString="{0:N2}" HeaderText="销售数量" />
                 <asp:BoundField DataField="buy_qty" DataFormatString="{0:N2}" HeaderText="采购数量" />
                 <asp:TemplateField HeaderText="配件名称">
                     <ItemTemplate>
-                        <asp:TextBox ID="txt_accessory" Text='<%#Eval("accessory") %>' runat="server" Style="text-align: center"></asp:TextBox>
+                        <asp:TextBox ID="txt_accessory" Value='<%#Eval("accessory") %>' Width="80px" runat="server" Style="text-align: center"></asp:TextBox>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="配件价格">
                     <ItemTemplate>
-                        <asp:TextBox ID="txt_accessory_price" Text='<%#Eval("accessory_price","{0:f2}") %>'  runat="server" AutoPostBack="true" OnTextChanged="txt_accessory_price_TextChanged" onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" Style="text-align: center"></asp:TextBox>
+                        <asp:TextBox ID="txt_accessory_price" Value='<%#Eval("accessory_price","{0:f2}") %>' runat="server" Width="50px" AutoPostBack="true" OnTextChanged="txt_Value_TextChanged" onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" Style="text-align: center"></asp:TextBox>
                     </ItemTemplate>
                 </asp:TemplateField>
-
-                <asp:TemplateField HeaderText="利润（元）">
+                 <asp:TemplateField HeaderText="箱规(cm)">
+                    <ItemTemplate>长：
+                        <asp:TextBox ID="txt_length" runat="server" AutoPostBack="true" Value='<%#Eval("length") %>' Width="30px" OnTextChanged="txt_volume_TextChanged" onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" Style="text-align: center"></asp:TextBox>
+                        宽：<asp:TextBox ID="txt_width" runat="server" AutoPostBack="true" Value='<%#Eval("width") %>' Width="30px" OnTextChanged="txt_volume_TextChanged" onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" Style="text-align: center"></asp:TextBox>
+                        高：<asp:TextBox ID="txt_height" runat="server" AutoPostBack="true" Value='<%#Eval("height") %>' Width="30px" OnTextChanged="txt_volume_TextChanged" onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" Style="text-align: center"></asp:TextBox>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="体积(m³)">
                     <ItemTemplate>
-                        <asp:Label ID="lbl_profit" Text='<%#Eval("profit","{0:f2}") %>'  runat="server" ></asp:Label>
+                        <asp:Label ID="lbl_volume" Text='<%#Eval("volume","{0:f3}") %>' runat="server" ></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="预估运费">
+                    <ItemTemplate>
+                        <asp:TextBox ID="txt_estimate_freight_charge" Value='<%#Eval("estimate_freight_charge","{0:f2}") %>' runat="server" Width="50px" AutoPostBack="true" OnTextChanged="txt_Value_TextChanged" onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" Style="text-align: center"></asp:TextBox>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="入数">
+                    <ItemTemplate>
+                        <asp:TextBox ID="txt_capacity" Value='<%#Eval("capacity","{0:f2}") %>' runat="server" Width="30px" AutoPostBack="true" OnTextChanged="txt_Value_TextChanged" onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" Style="text-align: center"></asp:TextBox>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                 <asp:TemplateField HeaderText="税点">
+                    <ItemTemplate>
+                        <asp:TextBox ID="txt_tax_rate" Value='<%#Eval("tax_rate","{0:f2}") %>' runat="server" Text="0.06" Width="30px" AutoPostBack="true" OnTextChanged="txt_Value_TextChanged" onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" Style="text-align: center"></asp:TextBox>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="退税率">
+                    <ItemTemplate>
+                        <asp:TextBox ID="txt_return_rate" Value='<%#Eval("return_rate","{0:f2}") %>' runat="server" Text="0.13" Width="30px" AutoPostBack="true" OnTextChanged="txt_Value_TextChanged" onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" Style="text-align: center"></asp:TextBox>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="利润率">
+                    <ItemTemplate>
+                        <asp:Label ID="lbl_profit" Text='<%#Eval("profit","{0:f3}") %>' runat="server" ></asp:Label>
                         <asp:HiddenField ID="hdf_finter_id" Value='<%#Eval("FInterID") %>' runat="server" />
                         <asp:HiddenField ID="hdf_sale_fentry_id" Value='<%#Eval("Sale_FEntryID") %>' runat="server" />
                         <asp:HiddenField ID="hdf_buy_fentry_id" Value='<%#Eval("Buy_FEntryID") %>' runat="server" />
                         <asp:HiddenField ID="hdf_fitem_id" Value='<%#Eval("FItemID") %>' runat="server" />
                     </ItemTemplate>
-                    <FooterTemplate>
-                        <asp:Label ID="lbl_profit_all" runat="server" Text='<%#Eval("profit","{0:f2}") %>'></asp:Label>
-                    </FooterTemplate>
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
         <ul class="queryarea">
             <li style="width: 100%; margin-top: 20px; margin-bottom: 10px;">
-                <asp:Button ID="submit" runat="server" Enabled="false"  Text="提交审核" OnClick="submit_Click" Style="margin-left: 40%;" Width="100px" />
+                <asp:Button ID="submit" runat="server" Enabled="false" OnClientClick="if(!confirm('确定提交审核吗?审核通过后不可修改！')) return false;" Text="提交审核" OnClick="submit_Click" Style="margin-left: 40%;" Width="100px" />
                 <asp:Label ID="Label2" ForeColor="Red" Visible="false" runat="server"></asp:Label>
 
             </li>
@@ -84,7 +110,6 @@
                 <asp:BoundField DataField="sale_bill_no" HeaderText="销售订单号" />
                 <asp:BoundField DataField="extra_charges" DataFormatString="{0:N2}" HeaderText="额外费用" />
                 <asp:BoundField DataField="update_time" HeaderText="更新时间" />
-                <asp:BoundField DataField="profit_all" DataFormatString="{0:N2}" HeaderText="总利润" />
                 <asp:BoundField DataField="audit_state" HeaderText="审核状态" />
             </Columns>
         </asp:GridView>
