@@ -76,6 +76,9 @@
     <Compile Include="AutoGeneratorCodes\T_EntryList.cs" />
     <Compile Include="AutoGeneratorCodes\T_ProfitBudget.cs" />
     <Compile Include="AutoGeneratorCodes\T_ProfitBudgetList.cs" />
+    <Compile Include="AutoGeneratorCodes\T_Receipt.cs" />
+    <Compile Include="AutoGeneratorCodes\T_ReceiptHead.cs" />
+    <Compile Include="AutoGeneratorCodes\T_ReceiptList.cs" />
     <Compile Include="AutoGeneratorCodes\T_TaxList.cs" />
     <Compile Include="AutoGeneratorCodes\T_Users.cs" />
     <Compile Include="Funcs.cs" />

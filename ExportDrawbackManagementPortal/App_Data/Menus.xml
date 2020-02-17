@@ -4,6 +4,7 @@
     <MenuItem Visible="True" ImageUrl="~/Images/16/edit.gif" Target="contentFrame" Url="../QueryAndReports/ProfitBudget.aspx" FunctionName="" MenuCode="" Roles="A" DisplayName="订单利润预算" Title="订单利润预算" />
     <MenuItem Visible="True" ImageUrl="~/Images/16/edit.gif" Target="contentFrame" Url="../QueryAndReports/ProfitBudgetList.aspx" FunctionName="" MenuCode="" Roles="A" DisplayName="利润预算列表" Title="利润预算列表" />
     <MenuItem Visible="True" ImageUrl="~/Images/16/edit.gif" Target="contentFrame" Url="../QueryAndReports/ProfitBudgetAudit.aspx" FunctionName="" MenuCode="" Roles="A" DisplayName="利润预算审核" Title="利润预算审核" />
+    <MenuItem Visible="True" ImageUrl="~/Images/16/edit.gif" Target="contentFrame" Url="../QueryAndReports/ReceiptAdd.aspx" FunctionName="" MenuCode="" Roles="A" DisplayName="收款登记" Title="收款登记" />
 
     <MenuItem MenuCode ="" Visible="True" DisplayName ="业务------" Title ="" FunctionName="" Url="" ImageUrl="" Roles=""/>
 
@@ -25,5 +26,6 @@
     <MenuItem Visible="True" ImageUrl="~/Images/16/messenger.gif" Target="contentFrame" Url="../Security/authorize.aspx" FunctionName="" MenuCode="" Roles="D" DisplayName="用户授权" Title="用户授权"/>
     <MenuItem Visible="True" ImageUrl="~/Images/16/notes.gif" Target="contentFrame" Url="../QueryAndReports/company.aspx" FunctionName="" MenuCode="" Roles="E" DisplayName="供应商资料管理" Title="供应商资料管理"/>
     <MenuItem Visible="True" ImageUrl="~/Images/16/notes.gif" Target="contentFrame" Url="../QueryAndReports/department.aspx" FunctionName="" MenuCode="" Roles="E" DisplayName="部门管理" Title="部门管理"/>
+    <MenuItem Visible="True" ImageUrl="~/Images/16/notes.gif" Target="contentFrame" Url="../QueryAndReports/receipt.aspx" FunctionName="" MenuCode="" Roles="E" DisplayName="收款类型维护" Title="收款类型维护"/>
   </MenuItems>
 </Root>

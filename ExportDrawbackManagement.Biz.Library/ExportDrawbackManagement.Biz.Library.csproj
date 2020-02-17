@@ -109,6 +109,7 @@
     <Compile Include="Factory\LocalBizFactory.cs" />
     <Compile Include="ProfitBudgetManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReceiptManager.cs" />
     <Compile Include="TaxListManager.cs" />
     <Compile Include="UsersManager.cs" />
   </ItemGroup>

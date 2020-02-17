@@ -1,15 +1,14 @@
-﻿using System;
+﻿using ExportDrawbackManagement.Biz.Entity;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
-using ExportDrawbackManagement.Biz.Entity;
 
-public partial class UI_QueryAndReports_department : System.Web.UI.Page
+public partial class UI_QueryAndReports_receipt : System.Web.UI.Page
 {
-    
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -20,8 +19,8 @@ public partial class UI_QueryAndReports_department : System.Web.UI.Page
 
     private void GridViewBand()
     {
-        DepartmentAdapter da = new DepartmentAdapter();
-        DataSet ds = da.getDepartments();
+        ReceiptAdapter da = new ReceiptAdapter();
+        DataSet ds = da.getReceipts();
         GridView1.DataSource = ds;
         GridView1.DataBind();
     }
@@ -33,7 +32,7 @@ public partial class UI_QueryAndReports_department : System.Web.UI.Page
         this.txt_code.Text = row.Cells[1].Text;
         this.txt_name.Text = row.Cells[2].Text;
     }
-   
+
 
     private void init()
     {
@@ -44,8 +43,8 @@ public partial class UI_QueryAndReports_department : System.Web.UI.Page
     }
     protected void updateUser_Click(object sender, EventArgs e)
     {
-        DepartmentAdapter da = new DepartmentAdapter();
-        T_Department item = new T_Department();
+        ReceiptAdapter da = new ReceiptAdapter();
+        T_Receipt item = new T_Receipt();
         item.Code = this.txt_code.Text.Trim();
         item.Name = this.txt_name.Text.Trim();
         if (string.IsNullOrEmpty(item.Code))
@@ -63,7 +62,7 @@ public partial class UI_QueryAndReports_department : System.Web.UI.Page
             //新增
             try
             {
-                da.addDepartment(item);
+                da.addReceipt(item);
                 Label1.Text = "新增成功";
                 init();
                 GridViewBand();
@@ -79,7 +78,7 @@ public partial class UI_QueryAndReports_department : System.Web.UI.Page
             item.Id = Int32.Parse(HiddenField1.Value);
             try
             {
-                da.updateDepartment(item);
+                da.updateReceipt(item);
                 Label1.Text = "保存成功";
                 init();
                 GridViewBand();
@@ -98,8 +97,8 @@ public partial class UI_QueryAndReports_department : System.Web.UI.Page
         int id = Int32.Parse((row.Cells[0].FindControl("hdfId") as HiddenField).Value);
         try
         {
-            DepartmentAdapter da = new DepartmentAdapter();
-            da.DeleteDepartmentById(id);
+            ReceiptAdapter da = new ReceiptAdapter();
+            da.DeleteReceiptById(id);
             Label1.Text = "保存成功";
             init();
             GridViewBand();
