@@ -39,6 +39,9 @@ namespace ExportDrawbackManagement.Biz.Library
                 return ds;
             }
         }
+
+      
+
         public DataSet getXuFang()
         {
             Database db = Dao.GetDatabase();
@@ -120,6 +123,45 @@ namespace ExportDrawbackManagement.Biz.Library
             }
         }
 
-       
+        public DataSet getCurrency()
+        {
+            Database db = Dao.GetDatabase("KingDeeConnection");
+            
+            string sql = "SELECT *  FROM [dbo].[t_Currency] WHERE FCurrencyID<>0";
+            using (DbConnection cn = db.CreateConnection())
+            {
+                DbCommand cmd = db.GetSqlStringCommand(sql);
+                return db.ExecuteDataSet(cmd);
+               
+            }
+        }
+        public string getCurrencyByID(int id)
+        {
+            Database db = Dao.GetDatabase("KingDeeConnection");
+
+            string sql = "SELECT  FName FROM [dbo].[t_Currency] WHERE FCurrencyID=@CurrencyID";
+            using (DbConnection cn = db.CreateConnection())
+            {
+                DbCommand cmd = db.GetSqlStringCommand(sql);
+                db.AddInParameter(cmd, "@CurrencyID", DbType.Int32, id);
+                DataSet ds = db.ExecuteDataSet(cmd);
+                return ds.Tables[0].Rows[0][0].ToString();
+
+            }
+        }
+
+        public DataSet getCustomersBySearchKeyName(string name)
+        {
+            Database db = Dao.GetDatabase("KingDeeConnection");
+            DataSet ds;
+            string sql = "SELECT FNumber,FName FROM T_Organization WHERE FName LIKE @name";
+            using (DbConnection cn = db.CreateConnection())
+            {
+                DbCommand cmd = db.GetSqlStringCommand(sql);
+                db.AddInParameter(cmd, "@name", DbType.String, "%" + name + "%");
+                ds = db.ExecuteDataSet(cmd);
+                return ds;
+            }
+        }
     }
 }

@@ -17,5 +17,8 @@ namespace ExportDrawbackManagement.Biz.Interface
        string getTaxReturnStateNameByState(string code);
        string getTaxReturnStateCodeByName(string name);
        string getDeliveryModeNameByCode(string code);
+       DataSet getCurrency();
+       String getCurrencyByID(int id);
+       DataSet getCustomersBySearchKeyName(string name);
     }
 }

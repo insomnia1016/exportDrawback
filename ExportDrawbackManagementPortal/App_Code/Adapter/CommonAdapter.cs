@@ -60,11 +60,29 @@ public class CommonAdapter : BaseAdapter<ICommonManager>, ICommonManager
 	}
 
 
-
+	
 
 
 	public DataSet getXuFang()
 	{
 		return Manager.getXuFang();
 	}
+
+
+	public DataSet getCurrency()
+	{
+		return Manager.getCurrency();
+	}
+
+
+	public DataSet getCustomersBySearchKeyName(string name)
+	{
+		return Manager.getCustomersBySearchKeyName(name);
+	}
+
+
+    public string getCurrencyByID(int id)
+    {
+        return Manager.getCurrencyByID(id);
+    }
 }

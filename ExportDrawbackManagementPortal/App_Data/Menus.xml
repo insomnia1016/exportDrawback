@@ -4,7 +4,7 @@
     <MenuItem Visible="True" ImageUrl="~/Images/16/edit.gif" Target="contentFrame" Url="../QueryAndReports/ProfitBudget.aspx" FunctionName="" MenuCode="" Roles="A" DisplayName="订单利润预算" Title="订单利润预算" />
     <MenuItem Visible="True" ImageUrl="~/Images/16/edit.gif" Target="contentFrame" Url="../QueryAndReports/ProfitBudgetList.aspx" FunctionName="" MenuCode="" Roles="A" DisplayName="利润预算列表" Title="利润预算列表" />
     <MenuItem Visible="True" ImageUrl="~/Images/16/edit.gif" Target="contentFrame" Url="../QueryAndReports/ProfitBudgetAudit.aspx" FunctionName="" MenuCode="" Roles="A" DisplayName="利润预算审核" Title="利润预算审核" />
-    <MenuItem Visible="True" ImageUrl="~/Images/16/edit.gif" Target="contentFrame" Url="../QueryAndReports/ReceiptAdd.aspx" FunctionName="" MenuCode="" Roles="A" DisplayName="收款登记" Title="收款登记" />
+    <MenuItem Visible="True" ImageUrl="~/Images/16/edit.gif" Target="contentFrame" Url="../QueryAndReports/ReceiptAdd.aspx" FunctionName="" MenuCode="" Roles="A" DisplayName="收款登记申请" Title="收款登记申请" />
 
     <MenuItem MenuCode ="" Visible="True" DisplayName ="业务------" Title ="" FunctionName="" Url="" ImageUrl="" Roles=""/>
 

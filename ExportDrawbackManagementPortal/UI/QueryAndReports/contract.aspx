@@ -18,42 +18,7 @@
             }
             }
     </script>
-    <%--<ul class="queryarea">
-        <li><span class="title">供应商</span>
-            <span class="control">
-                <asp:TextBox ID="txtSupplier" runat="server"></asp:TextBox>
-            </span>
-        </li>
-
-        <li><span class="title">开票单价</span>
-            <span class="control">
-                <asp:TextBox ID="txtInvoice_price" onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false"  runat="server"></asp:TextBox>
-                <asp:HiddenField ID="HiddenField1" runat="server" />
-            </span>
-        </li>
-        <li><span class="title">交货日期</span>
-            <span class="control">
-                <cc1:CalendarBox ID="txtDelivery_date" FormatString="yyyy-MM-dd HH:mm:ss" ResourcePath="../../Calendar" runat="server"></cc1:CalendarBox>
-            </span>
-        </li>
-
-        <li><span class="title">合同签订日期</span>
-            <span class="control">
-                <cc1:CalendarBox ID="txtContract_date" FormatString="yyyy-MM-dd HH:mm:ss" ResourcePath="../../Calendar" runat="server"></cc1:CalendarBox>
-            </span>
-        </li>
-        <li><span class="title">退税额</span>
-            <span class="control">
-                <asp:TextBox ID="txtTax_return_price" ReadOnly="true" runat="server"></asp:TextBox>
-            </span>
-        </li>
-        <li><span class="title">退税总金额</span>
-            <span class="control">
-                <asp:TextBox ID="txtTax_return_total" ReadOnly="true" runat="server"></asp:TextBox>
-            </span>
-        </li>
-    </ul>--%>
-
+    
     <ul class="queryarea">
         <li style="width: 100%">
             <asp:Button ID="updateUser" runat="server" Text="下推采购合同" OnClick="updateUser_Click"  Style="margin-left: 40%;" Width="100px" />
