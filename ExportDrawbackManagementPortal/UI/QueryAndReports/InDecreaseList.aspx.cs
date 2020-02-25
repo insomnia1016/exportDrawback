@@ -8,7 +8,7 @@ using System.Data;
 using ExportDrawbackManagement.Biz.Entity;
 
 
-public partial class UI_QueryAndReports_receiptList : System.Web.UI.Page
+public partial class UI_QueryAndReports_InDecreaseList : System.Web.UI.Page
 {
     private bool changed = false;
     protected List<string> SelectedItems
@@ -33,17 +33,14 @@ public partial class UI_QueryAndReports_receiptList : System.Web.UI.Page
     }
     protected void btn_import_Click(object sender, EventArgs e)
     {
-        //FInterID,FBillNo,FDate,FInvoiceAmountFor,FReceiveAmountFor,FUnReceiveAmountFor,FCurrencyID,FNote
+        //bill_no,customer,amount_all,agenter,agent_date
         ds = new DataSet();
         DataTable dt = new DataTable();
-        dt.Columns.Add("FInterID",typeof(Int32));
-        dt.Columns.Add("FBillNo");
-        dt.Columns.Add("FDate",typeof(DateTime));
-        dt.Columns.Add("FAmountFor",typeof(Decimal));
-        dt.Columns.Add("FReceiveAmountFor", typeof(Decimal));
-        dt.Columns.Add("FUnReceiveAmountFor", typeof(Decimal));
-        dt.Columns.Add("FCurrencyID", typeof(Int32));
-        dt.Columns.Add("FNote");
+        dt.Columns.Add("bill_no");
+        dt.Columns.Add("customer");
+        dt.Columns.Add("amount_all", typeof(Decimal));
+        dt.Columns.Add("agenter");
+        dt.Columns.Add("agent_date", typeof(DateTime));
 
         if (!changed)
             GetSelectedItem();
@@ -51,55 +48,36 @@ public partial class UI_QueryAndReports_receiptList : System.Web.UI.Page
         {
             string[] item = id.Split('$');
             DataRow dr = dt.NewRow();
-            dr["FInterID"] = Int32.Parse(item[0]);
-            dr["FBillNo"] = item[1];
-            dr["FDate"] = DateTime.Parse(item[2].Trim());
-            dr["FAmountFor"] = Decimal.Parse(item[3]);
-            dr["FReceiveAmountFor"] = Decimal.Parse(item[4]);
-            dr["FUnReceiveAmountFor"] = Decimal.Parse(item[5]);
-            dr["FCurrencyID"] = Int32.Parse(item[6]);
-            dr["FNote"] = item[7];
+            dr["bill_no"] = item[0];
+            dr["customer"] = item[1];
+            dr["amount_all"] = Decimal.Parse(item[2].Trim());
+            dr["agenter"] = item[3];
+            dr["agent_date"] = DateTime.Parse(item[4]);
             dt.Rows.Add(dr);
         }
-        //DataRow dr1 = dt.NewRow();
-
-        //dr1["FInterID"] = 0;
-        //dr1["FBillNo"] = "";
-        //dr1["FDate"] = DateTime.MinValue;
-        //dr1["FAmountFor"] = 0;
-        //dr1["FReceiveAmountFor"] = 0;
-        //dr1["FUnReceiveAmountFor"] = 0;
-        //dr1["FCurrencyID"] = 0;
-        //dr1["FNote"] = "";
-        //dt.Rows.Add(dr1);
+       
         ds.Tables.Add(dt);
         Session[UserInfoAdapter.CurrentUser.Name] = ds;
         Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "close", "<script language='javascript' type='text/javascript'>window.opener.__doPostBack('ctl00$ContentPlaceHolder1$Button1','');window.close();</script>");
         //Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "close", "<script language='javascript' type='text/javascript'>window.opener.location.reload(true);window.close();</script>");
     }
-    
+
     protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
     {
         CommonAdapter ca = new CommonAdapter();
         if (e.Row.RowType == DataControlRowType.DataRow)
         {
-            int currencyID = Int32.Parse(e.Row.Cells[6].Text);
-            e.Row.Cells[6].Text = ca.getCurrencyByID(currencyID);
-
+            
             if (e.Row.RowIndex > -1 && this.SelectedItems != null)
             {
                 CheckBox cbx = (CheckBox)e.Row.FindControl("cbItem");
                 int i = e.Row.RowIndex;
-                string id = string.Format("{0}${1}${2}${3}${4}${5}${6}${7}",
+                string id = string.Format("{0}${1}${2}${3}${4}",
                 this.GridView1.DataKeys[i].Values[0].ToString(),
                 this.GridView1.DataKeys[i].Values[1].ToString(),
                 this.GridView1.DataKeys[i].Values[2].ToString(),
                 this.GridView1.DataKeys[i].Values[3].ToString(),
-                this.GridView1.DataKeys[i].Values[4].ToString(),
-                this.GridView1.DataKeys[i].Values[5].ToString(),
-                this.GridView1.DataKeys[i].Values[6].ToString(),
-                this.GridView1.DataKeys[i].Values[7].ToString()
-
+                this.GridView1.DataKeys[i].Values[4].ToString()
                 );
                 if (SelectedItems.Contains(id))
                     cbx.Checked = true;
@@ -136,16 +114,12 @@ public partial class UI_QueryAndReports_receiptList : System.Web.UI.Page
         {
             CheckBox cbx = (CheckBox)this.GridView1.Rows[i].FindControl("cbItem");
 
-            string id = string.Format("{0}${1}${2}${3}${4}${5}${6}${7}",
+            string id = string.Format("{0}${1}${2}${3}${4}",
                this.GridView1.DataKeys[i].Values[0].ToString(),
                this.GridView1.DataKeys[i].Values[1].ToString(),
                this.GridView1.DataKeys[i].Values[2].ToString(),
                this.GridView1.DataKeys[i].Values[3].ToString(),
-               this.GridView1.DataKeys[i].Values[4].ToString(),
-               this.GridView1.DataKeys[i].Values[5].ToString(),
-               this.GridView1.DataKeys[i].Values[6].ToString(),
-               this.GridView1.DataKeys[i].Values[7].ToString()
-
+               this.GridView1.DataKeys[i].Values[4].ToString()
                );
 
             if (selecteditems.Contains(id) && !cbx.Checked)
@@ -157,5 +131,4 @@ public partial class UI_QueryAndReports_receiptList : System.Web.UI.Page
 
 
     }
-    
 }

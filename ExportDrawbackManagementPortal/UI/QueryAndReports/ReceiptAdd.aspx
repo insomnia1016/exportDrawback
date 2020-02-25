@@ -6,10 +6,15 @@
 <%@ Reference Page="~/UI/QueryAndReports/ReceiptList.aspx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <script type="text/javascript">
-        function PopupWindow() {
+        function PopupReceiptWindow() {
             window.open("receiptList.aspx", "", "status=no,resizable=no,toolbar=no,menubar=no,location=no,scroll=no");
         }
-        </script>
+    </script>
+    <script type="text/javascript">
+        function PopupIndecWindow() {
+            window.open("InDecreaseList.aspx", "", "width=680,height=520,status=no,resizable=no,toolbar=no,menubar=no,location=no,scroll=no");
+        }
+    </script>
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
     <h2 style="text-align: center;">收款单据</h2>
@@ -24,10 +29,10 @@
 
             </span>
         </li>
-        <li><span class="title">报关日期</span>
+        <li><span class="title">日期</span>
             <span class="control">
                 <ExportDrawbackManagement:CalendarBox ID="d_date" runat="server" FormatString="yyyy-MM-dd HH:mm:ss" ResourcePath="../../Calendar"></ExportDrawbackManagement:CalendarBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" SetFocusOnError="true" runat="server" ControlToValidate="d_date" ErrorMessage="报关日期不能为空"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" SetFocusOnError="true" runat="server" ControlToValidate="d_date" ErrorMessage="日期不能为空"></asp:RequiredFieldValidator>
             </span>
         </li>
         <li><span class="title">单据号</span>
@@ -67,12 +72,12 @@
             </asp:TemplateField>
             <asp:TemplateField HeaderText="源单编号">
                 <ItemTemplate>
-                    <asp:TextBox ID="txt_bill_no" Style="text-align: center;" onmousedown="PopupWindow();" AutoCompleteType="Disabled" Width="180px" Text='<%#Eval("FBillNo","{0:f2}") %>' runat="server" ></asp:TextBox>
+                    <asp:TextBox ID="txt_bill_no" Style="text-align: center;" onmousedown="PopupReceiptWindow();" AutoCompleteType="Disabled" Width="180px" Text='<%#Eval("FBillNo") %>' runat="server"></asp:TextBox>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="单据日期">
                 <ItemTemplate>
-                    <asp:Label ID="lbl_fdate"  Text='<%#Eval("FDate","{0:yyyy-MM-dd}") %>' runat="server"></asp:Label>
+                    <asp:Label ID="lbl_fdate" Text='<%#Eval("FDate","{0:yyyy-MM-dd}") %>' runat="server"></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="单据金额">
@@ -92,7 +97,7 @@
             </asp:TemplateField>
             <asp:TemplateField HeaderText="本次核销（*）">
                 <ItemTemplate>
-                    <asp:TextBox ID="txt_fcheckamountfor"  Style="text-align: center;" Width="180px" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txt_fcheckamountfor" Style="text-align: center;" Width="180px" runat="server"></asp:TextBox>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="发票币别">
@@ -107,6 +112,41 @@
             </asp:TemplateField>
         </Columns>
     </asp:GridView>
+    <hr />
+    <asp:GridView ID="GridView2" runat="server" PageSize="20" AutoGenerateColumns="False">
+        <Columns>
+            <asp:TemplateField HeaderText="行号" InsertVisible="False">
+                <ItemTemplate>
+                    <%#Container.DataItemIndex+1%>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="单据编号">
+                <ItemTemplate>
+                    <asp:TextBox ID="txt_bill_no" Style="text-align: center;" onmousedown="PopupIndecWindow();" AutoCompleteType="Disabled" Width="180px" Text='<%#Eval("bill_no") %>' runat="server"></asp:TextBox>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="客户">
+                <ItemTemplate>
+                    <asp:Label ID="lbl_customer" Text='<%#Eval("customer") %>' runat="server"></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="单据金额">
+                <ItemTemplate>
+                    <asp:Label ID="lbl_amount_all" Text=' <%#Eval("amount_all","{0:F}") %>' runat="server"></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="申请人">
+                <ItemTemplate>
+                    <asp:Label ID="lbl_agenter" Text='<%#Eval("agenter") %>' runat="server"></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="申请日期">
+                <ItemTemplate>
+                    <asp:Label ID="lbl_agent_date" Text='<%#Eval("agent_date","{0:yyyy-MM-dd}") %>' runat="server"></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+        </Columns>
+    </asp:GridView>
     <ul class="queryarea">
         <li><span class="title">部门</span>
             <span class="control">
@@ -115,26 +155,29 @@
         </li>
         <li><span class="title">业务员</span>
             <span class="control">
-                <asp:DropDownList ID="DropDownList1" Width="180px" runat="server"></asp:DropDownList>
+                <asp:TextBox ID="txt_emper" Width="180px" runat="server"></asp:TextBox>
             </span>
         </li>
         <li><span class="title">制单人</span>
             <span class="control">
-                <asp:DropDownList ID="DropDownList2" Width="170px" runat="server"></asp:DropDownList>
+                <asp:TextBox ID="txt_preparer" Width="180px" runat="server"></asp:TextBox>
             </span>
         </li>
         <li><span class="title">审核人</span>
             <span class="control">
-                <asp:TextBox ID="TextBox3" Width="180px" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txt_checker" Width="180px" runat="server"></asp:TextBox>
             </span>
         </li>
         <li><span class="title">审核人日期</span>
             <span class="control">
-                <asp:TextBox ID="TextBox4" Width="180px" runat="server"></asp:TextBox>
+                <ExportDrawbackManagement:CalendarBox ID="check_date" runat="server" FormatString="yyyy-MM-dd HH:mm:ss" ResourcePath="../../Calendar"></ExportDrawbackManagement:CalendarBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" SetFocusOnError="true" runat="server" ControlToValidate="check_date" ErrorMessage="审核人日期不能为空"></asp:RequiredFieldValidator>
+
             </span>
         </li>
         <li style="width: 100%; margin-top: 10px; margin-bottom: 10px;">
-            <asp:Button ID="updateUser" runat="server" Text="保   存" Style="margin-left: 40%;" Width="100px" />
+            <asp:Button ID="Button1" Visible="false" runat="server" Text="保   存" Style="margin-left: 40%;" Width="100px" />
+            <asp:Button ID="updateUser" runat="server" Text="保   存" OnClick="updateUser_Click" Style="margin-left: 40%;" Width="100px" />
         </li>
     </ul>
 </asp:Content>

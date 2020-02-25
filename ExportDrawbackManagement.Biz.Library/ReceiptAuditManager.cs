@@ -28,5 +28,22 @@ namespace ExportDrawbackManagement.Biz.Library
                 return ds;
             }
         }
+
+        public DataSet getUnCheckInDecreaseLists(int empid)
+        {
+            Database db = Dao.GetDatabase();
+            DataSet ds;
+            string sql = @"SELECT * FROM ICSale
+                            WHERE FCheckStatus<>2 
+                            --AND FEmpID=@EmpID
+                            ORDER BY FDate DESC";
+            using (DbConnection cn = db.CreateConnection())
+            {
+                DbCommand cmd = db.GetSqlStringCommand(sql);
+                //db.AddInParameter(cmd, "@EmpID", DbType.Int32, empid);
+                ds = db.ExecuteDataSet(cmd);
+                return ds;
+            }
+        }
     }
 }

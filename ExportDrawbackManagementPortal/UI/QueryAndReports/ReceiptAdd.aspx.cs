@@ -16,7 +16,8 @@ public partial class UI_QueryAndReports_ReceiptAdd : System.Web.UI.Page
         {
             ddlReceiptTypeBind();
             ddlCurrencyBind();
-            GridViewEmptyBind();
+            GridView1EmptyBind();
+            GridView2EmptyBind();
 
         }
         else
@@ -26,7 +27,8 @@ public partial class UI_QueryAndReports_ReceiptAdd : System.Web.UI.Page
             Session[user.Name] = null;
             show(ds);
         }
-       
+        check_date.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        txt_preparer.Text = txt_checker.Text = UserInfoAdapter.CurrentUser.Name;
     }
 
     private void ddlReceiptTypeBind()
@@ -55,7 +57,7 @@ public partial class UI_QueryAndReports_ReceiptAdd : System.Web.UI.Page
         this.GridView1.DataBind();
     }
 
-    private void GridViewEmptyBind()
+    private void GridView1EmptyBind()
     {
         DataTable dt = new DataTable();
 
@@ -70,13 +72,33 @@ public partial class UI_QueryAndReports_ReceiptAdd : System.Web.UI.Page
 
         if (dt.Rows.Count == 0)
         {
-            for (int i = 0; i < 19; i++)
+            for (int i = 0; i < 3; i++)
             {
                 dt.Rows.Add(dt.NewRow());
             }
         }
         this.GridView1.DataSource = dt;
         this.GridView1.DataBind();
+    }
+    private void GridView2EmptyBind()
+    {
+        DataTable dt = new DataTable();
+
+        dt.Columns.Add("bill_no");
+        dt.Columns.Add("customer");
+        dt.Columns.Add("amount_all");
+        dt.Columns.Add("agenter");
+        dt.Columns.Add("agent_date");
+       
+        if (dt.Rows.Count == 0)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                dt.Rows.Add(dt.NewRow());
+            }
+        }
+        this.GridView2.DataSource = dt;
+        this.GridView2.DataBind();
     }
 
 
@@ -94,5 +116,9 @@ public partial class UI_QueryAndReports_ReceiptAdd : System.Web.UI.Page
              }
             
          }
+    }
+    protected void updateUser_Click(object sender, EventArgs e)
+    {
+
     }
 }
