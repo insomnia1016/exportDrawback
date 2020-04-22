@@ -173,63 +173,15 @@ public partial class UI_QueryAndReports_ProfitBudgetList : System.Web.UI.Page
         decimal return_rate = 0;
         if (!string.IsNullOrEmpty((row.Cells[18].FindControl("txt_return_rate") as TextBox).Text))
             return_rate = Decimal.Parse((row.Cells[18].FindControl("txt_return_rate") as TextBox).Text);
-        if(volume>0 && capacity>0)
-        calculateProfit(row, exchange_rate, buy_price, sale_price, accessory_price, estimate_freight_charge, tax_rate, sale_rate, buy_rate, currency, volume, capacity, return_rate);
+        if (volume > 0 && capacity > 0)
+        {
+            decimal profit = Common.calculateProfit(exchange_rate, buy_price, sale_price, accessory_price, estimate_freight_charge, tax_rate, sale_rate, buy_rate, currency, volume, capacity, return_rate);
+            Label lb = row.Cells[19].FindControl("lbl_profit") as Label;
+            lb.Text = profit.ToString("f3");
+        }
     }
 
-    private void calculateProfit(GridViewRow row,
-        decimal exchange_rate,
-        decimal buy_price,
-        decimal sale_price,
-        decimal accessory_price,
-        decimal estimate_freight_charge,
-        decimal tax_rate,
-        bool sale_rate,
-        bool buy_rate,
-        string currency,
-        decimal volume,
-        decimal capacity,
-        decimal return_tax = (decimal)0.13)
-    {
-        //计算利润率
-        decimal profit = 0;
-
-        //销售价格是美金
-        if (currency == "USD")
-        {
-            if (buy_rate)//采购价格人民币含税
-            {
-                profit = 1 - (((buy_price + (accessory_price + estimate_freight_charge) / (1 - tax_rate)) * (1 - return_tax / (decimal)1.13) + 2500 / (28 / volume * capacity)) / (sale_price * exchange_rate));
-            }
-            else
-            {
-                profit = 1 - ((((buy_price + accessory_price + estimate_freight_charge) / (1 - tax_rate)) * (1 - return_tax / (decimal)1.13) + 2500 / (28 / volume * capacity)) / (sale_price * exchange_rate));
-            }
-        }
-        else//销售价格是人民币
-        {
-            //销售价格人民币含税
-            if (sale_rate)
-            {
-                //采购价格人民币含税
-                if (buy_rate)
-                {
-                    profit = (sale_price * exchange_rate - buy_price - accessory_price - estimate_freight_charge) / (sale_price * exchange_rate);
-                }
-                else//采购价格人民币不含税
-                {
-                    profit = (sale_price * exchange_rate - buy_price / (1 - tax_rate) - accessory_price - estimate_freight_charge) / (sale_price * exchange_rate);
-                }
-            }
-            else//销售价格人民币不含税
-            {
-                profit = (sale_price * exchange_rate - buy_price - accessory_price - estimate_freight_charge) / (sale_price * exchange_rate);
-            }
-        }
-
-        Label lb = row.Cells[18].FindControl("lbl_profit") as Label;
-        lb.Text = profit.ToString("f3");
-    }
+    
     /// <summary>
     /// 绑定GridView1
     /// </summary>
@@ -360,7 +312,7 @@ public partial class UI_QueryAndReports_ProfitBudgetList : System.Web.UI.Page
         decimal height = 0;
         if (!string.IsNullOrEmpty(((TextBox)row.Cells[13].FindControl("txt_height")).Text.Trim()))
             height = Decimal.Parse(((TextBox)row.Cells[13].FindControl("txt_height")).Text.Trim());
-        decimal volume = length * height * height / 1000000;
+        decimal volume = length * width * height / 1000000;
 
         Label lbl_volume = row.Cells[14].FindControl("lbl_volume") as Label;
         lbl_volume.Text = volume.ToString("f3");
@@ -401,7 +353,9 @@ public partial class UI_QueryAndReports_ProfitBudgetList : System.Web.UI.Page
 
             if (volume > 0 && capacity > 0)
             {
-                calculateProfit(row, exchange_rate, buy_price, sale_price, accessory_price, estimate_freight_charge, tax_rate, sale_rate, buy_rate, currency, volume, capacity, return_rate);
+                decimal profit = Common.calculateProfit(exchange_rate, buy_price, sale_price, accessory_price, estimate_freight_charge, tax_rate, sale_rate, buy_rate, currency, volume, capacity, return_rate);
+                Label lb = row.Cells[19].FindControl("lbl_profit") as Label;
+                lb.Text = profit.ToString("f3");
                 Label2.Text = "";
                 Label2.Visible = false;
             }

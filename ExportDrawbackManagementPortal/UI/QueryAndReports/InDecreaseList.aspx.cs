@@ -17,17 +17,40 @@ public partial class UI_QueryAndReports_InDecreaseList : System.Web.UI.Page
         set { ViewState["selecteditems"] = value; }
     }
     public DataSet ds { get; set; }
+    public int ItemID { get; set; }
+    public int currencyID { get; set; }
     protected void Page_Load(object sender, EventArgs e)
     {
+        string custName = Request.QueryString["custName"].ToString();
+        currencyID = Int32.Parse(Request.QueryString["id"].ToString());
+        if (!string.IsNullOrEmpty(custName))
+        {
+            ItemID = getCusIDByName(custName);
+        }
         if (!IsPostBack)
         {
-            GridViewBind();
+           
+            if (!string.IsNullOrEmpty(custName))
+            {
+                GridViewBind(ItemID, currencyID);
+            }
+            else
+            {
+                Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "close", "<script language='javascript' type='text/javascript'>alert('请先输入客户信息！');window.close();</script>");
+
+            }
         }
     }
-    private void GridViewBind()
+    private int getCusIDByName(string name)
     {
         ReceiptAuditAdapter raa = new ReceiptAuditAdapter();
-        DataSet ds = raa.getUnCheckReceiptLists(1536);
+        int id = raa.getIDByName(name);
+        return id;
+    }
+    private void GridViewBind(int id,int currencyID)
+    {
+        InDecreaseAdapter ida = new InDecreaseAdapter();
+        DataSet ds = ida.getUnCheckInDecreaseLists(id, currencyID);
         GridView1.DataSource = ds;
         GridView1.DataBind();
     }
@@ -57,7 +80,7 @@ public partial class UI_QueryAndReports_InDecreaseList : System.Web.UI.Page
         }
        
         ds.Tables.Add(dt);
-        Session[UserInfoAdapter.CurrentUser.Name] = ds;
+        Session[UserInfoAdapter.CurrentUser.Name+"InDec"] = ds;
         Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "close", "<script language='javascript' type='text/javascript'>window.opener.__doPostBack('ctl00$ContentPlaceHolder1$Button1','');window.close();</script>");
         //Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "close", "<script language='javascript' type='text/javascript'>window.opener.location.reload(true);window.close();</script>");
     }
@@ -67,17 +90,28 @@ public partial class UI_QueryAndReports_InDecreaseList : System.Web.UI.Page
         CommonAdapter ca = new CommonAdapter();
         if (e.Row.RowType == DataControlRowType.DataRow)
         {
+            int check_status = Int32.Parse(e.Row.Cells[6].Text);
+            if (check_status == 0)
+            {
+                e.Row.Cells[6].Text = "未抵扣";
+            }
+            else
+            {
+                e.Row.Cells[6].Text = "已抵扣";
+            }
+            
             
             if (e.Row.RowIndex > -1 && this.SelectedItems != null)
             {
                 CheckBox cbx = (CheckBox)e.Row.FindControl("cbItem");
                 int i = e.Row.RowIndex;
-                string id = string.Format("{0}${1}${2}${3}${4}",
+                string id = string.Format("{0}${1}${2}${3}${4}${5}",
                 this.GridView1.DataKeys[i].Values[0].ToString(),
                 this.GridView1.DataKeys[i].Values[1].ToString(),
                 this.GridView1.DataKeys[i].Values[2].ToString(),
                 this.GridView1.DataKeys[i].Values[3].ToString(),
-                this.GridView1.DataKeys[i].Values[4].ToString()
+                this.GridView1.DataKeys[i].Values[4].ToString(),
+                this.GridView1.DataKeys[i].Values[5].ToString()
                 );
                 if (SelectedItems.Contains(id))
                     cbx.Checked = true;
@@ -89,7 +123,7 @@ public partial class UI_QueryAndReports_InDecreaseList : System.Web.UI.Page
     protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
         GridView1.PageIndex = e.NewPageIndex;
-        GridViewBind();
+        GridViewBind(ItemID, currencyID);
     }
     protected void GridView1_DataBinding(object sender, EventArgs e)
     {
@@ -114,12 +148,13 @@ public partial class UI_QueryAndReports_InDecreaseList : System.Web.UI.Page
         {
             CheckBox cbx = (CheckBox)this.GridView1.Rows[i].FindControl("cbItem");
 
-            string id = string.Format("{0}${1}${2}${3}${4}",
+            string id = string.Format("{0}${1}${2}${3}${4}${5}",
                this.GridView1.DataKeys[i].Values[0].ToString(),
                this.GridView1.DataKeys[i].Values[1].ToString(),
                this.GridView1.DataKeys[i].Values[2].ToString(),
                this.GridView1.DataKeys[i].Values[3].ToString(),
-               this.GridView1.DataKeys[i].Values[4].ToString()
+               this.GridView1.DataKeys[i].Values[4].ToString(),
+               this.GridView1.DataKeys[i].Values[5].ToString()
                );
 
             if (selecteditems.Contains(id) && !cbx.Checked)

@@ -17,12 +17,7 @@ public class EntryAdapter:BaseAdapter<IEntryManager>,IEntryManager
 		//
 	}
 
-	public void addEntryList(T_EntryList entity)
-	{
-		Manager.addEntryList(entity);
-	}
-
-
+	
 	public DataSet getEntryList()
 	{
 		return Manager.getEntryList();

@@ -108,4 +108,18 @@ public partial class UI_QueryAndReports_receipt : System.Web.UI.Page
             Label1.Text = ex.Message;
         }
     }
+    protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+        if (e.Row.RowType == DataControlRowType.DataRow)
+        {
+            string code = e.Row.Cells[1].Text;
+            if (code == "A" || code == "B")
+            {
+                Button btnEdit = e.Row.Cells[0].FindControl("btnEdit") as Button;
+                btnEdit.Enabled = false;
+                Button btnDelete = e.Row.Cells[0].FindControl("benDelete") as Button;
+                btnDelete.Enabled = false;
+            }
+        }
+    }
 }

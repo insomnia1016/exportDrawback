@@ -113,6 +113,7 @@
                                     <cc1:CalendarBox ID="txt_delivery_date" Style="text-align: center;" ResourcePath="../../Calendar" FormatString="yyyy/MM/dd" runat="server"></cc1:CalendarBox>
                                     <asp:HiddenField ID="hdf_g_no" Value ='<%#Eval("g_no") %>' runat="server" />
                                     <asp:HiddenField ID="hdf_entry_id" Value ='<%#Eval("entry_id") %>' runat="server" />
+                                    <asp:HiddenField ID="hnf_sale_bill_no" Value ='<%#Eval("sale_bill_no") %>' runat="server" />
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:BoundField DataField="g_name"  HeaderText="产品名称" />

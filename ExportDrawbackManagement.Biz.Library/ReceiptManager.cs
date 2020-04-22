@@ -2,11 +2,8 @@
 using ExportDrawbackManagement.Biz.Interface;
 using Microsoft.Practices.EnterpriseLibrary.Data;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
-using System.Linq;
-using System.Text;
 
 namespace ExportDrawbackManagement.Biz.Library
 {
@@ -155,5 +152,28 @@ namespace ExportDrawbackManagement.Biz.Library
                 throw new Exception("删除部门方法DeleteReceiptById失败");
             }
         }
+
+        public string  getReceiptNameByType(string code)
+        {
+            Database db = Dao.GetDatabase();
+
+            string sql = @"SELECT name FROM [dbo].[receipt] WHERE code=@code";
+            try
+            {
+                using (DbConnection cn = db.CreateConnection())
+                {
+                    DbCommand cmd = db.GetSqlStringCommand(sql);
+                    db.AddInParameter(cmd, "@code", DbType.String, code);
+                    DataSet ds = db.ExecuteDataSet(cmd);
+                    return ds.Tables[0].Rows[0][0].ToString();
+                }
+            }
+            catch
+            {
+                throw new Exception("根据收款类型代码翻译名称失败");
+            }
+        }
+
+
     }
 }

@@ -85,4 +85,28 @@ public class ProfitBudgetAdapter : BaseAdapter<IProfitBudgetManager>, IProfitBud
 	{
 		return Manager.getProfitBudgetSummaryByID(sale_bill_no);
 	}
+
+
+    public DataSet getProfitBudgetList(T_ProfitBudgetList item)
+    {
+        return Manager.getProfitBudgetList(item);
+    }
+
+
+    public void updateList(List<T_ProfitBudgetList> lists)
+    {
+        Manager.updateList(lists);
+    }
+
+
+    public DataSet getProfitBudgetList(string sale_bill_no)
+    {
+        return Manager.getProfitBudgetList(sale_bill_no);
+    }
+
+
+    public void AddUnAccountingQtyBecauseDelete(List<T_ProfitBudgetList> lists)
+    {
+        Manager.AddUnAccountingQtyBecauseDelete(lists);
+    }
 }

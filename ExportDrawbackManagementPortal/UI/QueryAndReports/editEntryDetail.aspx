@@ -8,28 +8,32 @@
     <ul class="queryarea">
         <li><span class="title">客户</span>
             <span class="control">
-                <asp:TextBox ID="owner_name" Width="180px" runat="server"></asp:TextBox>
+                <asp:TextBox ID="owner_name" Width="180px" runat="server"  Style="text-align: center"></asp:TextBox>
                 
             </span>
         </li>
         <li><span class="title">报关日期</span>
             <span class="control">
-                <ExportDrawbackManagement:CalendarBox ID="d_date" runat="server" FormatString="yyyy-MM-dd HH:mm:ss" ResourcePath="../../Calendar"></ExportDrawbackManagement:CalendarBox>
+                <ExportDrawbackManagement:CalendarBox ID="d_date" Width="180px" runat="server" Style="text-align: center" FormatString="yyyy-MM-dd HH:mm:ss" ResourcePath="../../Calendar"></ExportDrawbackManagement:CalendarBox>
 
             </span>
         </li>
         <li><span class="title">申报单位</span>
             <span class="control">
-                <asp:TextBox ID="agent_name" Width="180px" runat="server"></asp:TextBox>
+                <asp:TextBox ID="agent_name" Width="180px" runat="server" Style="text-align: center"></asp:TextBox>
 
             </span>
         </li>
-        <li><span class="title">报关单号</span>
+        <li style="clear:both;"><span class="title">报关单号</span>
             <span class="control">
-                <asp:TextBox ID="entry_id" Width="180px" ReadOnly="true"  runat="server" ></asp:TextBox>
+                <asp:TextBox ID="entry_id" Width="180px" ReadOnly="true"  runat="server" Style="text-align: center"></asp:TextBox>
             </span>
         </li>
-
+         <li><span class="title">销售发票号</span>
+            <span class="control">
+                <asp:TextBox ID="txt_sale_bill_no" Style="text-align: center" Width="180px" runat="server" onKeyPress="if (event.keyCode<48 || event.keyCode>57) event.returnValue=false"></asp:TextBox>
+            </span>
+        </li>
     </ul>
 
     <h2 style="float: left; text-align: left; width: 100%;">编辑报关单表体数据</h2>
@@ -110,7 +114,7 @@
             <asp:BoundField DataField="entry_id" HeaderText="报关单号" />
             <asp:BoundField DataField="g_no" HeaderText="项号" />
             <asp:BoundField DataField="owner_name" HeaderText="客户" />
-            <asp:BoundField DataField="d_date" HeaderText="申报时间" />
+            <asp:BoundField DataField="d_date"  DataFormatString="{0:d}"  HeaderText="申报时间" />
             <asp:BoundField DataField="agent_name" HeaderText="申报公司" />
             <asp:BoundField DataField="g_name" HeaderText="商品名称" />
             <asp:BoundField DataField="g_qty" DataFormatString="{0:N}" HeaderText="法定数量" />
@@ -121,7 +125,8 @@
             <asp:BoundField DataField="code_ts" HeaderText="商品编码" />
             <asp:BoundField DataField="drawback_rate" DataFormatString="{0:N3}" HeaderText="退税率" />
             <asp:BoundField DataField="operator" HeaderText="操作员" />
-            <asp:BoundField DataField="operate_time" HeaderText="操作时间" />
+            <asp:BoundField DataField="operate_time" DataFormatString="{0:d}"  HeaderText="操作时间" />
+            <asp:BoundField DataField="sale_bill_no"  HeaderText="销售发票号" />
         </Columns>
     </asp:GridView>
 </asp:Content>

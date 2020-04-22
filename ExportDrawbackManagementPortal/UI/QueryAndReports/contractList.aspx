@@ -15,18 +15,22 @@
                 <asp:TextBox ID="txt_entry_id" runat="server"></asp:TextBox>
             </span>
         </li>
+         <li><span class="title">销售发票号</span>
+            <span class="control">
+                <asp:TextBox ID="txt_sale_bill_no" runat="server"></asp:TextBox>
+            </span>
+        </li>
         <li><span class="title">需方公司</span>
             <span class="control">
                 <asp:TextBox ID="txt_xufang" runat="server"></asp:TextBox>
             </span>
         </li>
-        <li><span class="title">需方经办人</span>
+        <li ><span class="title">需方经办人</span>
             <span class="control">
                 <asp:TextBox ID="txt_xufang_jingbanren" runat="server"></asp:TextBox>
             </span>
         </li>
-    </ul>
-    <ul class="queryarea">
+    
         <li><span class="title">供货日期</span>
             <span class="control">
                 <cc1:CalendarBox ID="CalendarBox1" FormatString="yyyy-MM-dd" ResourcePath="../../Calendar" runat="server"></cc1:CalendarBox>

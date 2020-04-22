@@ -28,7 +28,7 @@
         </li>
     </ul>
 
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True"  AllowSorting="True" PageSize="20" AutoGenerateColumns="False" OnPageIndexChanging="GridView1_PageIndexChanging" OnDataBinding="GridView1_DataBinding" OnRowDataBound="GridView1_RowDataBound" DataKeyNames="entry_id,g_no,g_name,g_qty,g_unit" >
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True"  AllowSorting="True" PageSize="20" AutoGenerateColumns="False" OnPageIndexChanging="GridView1_PageIndexChanging" OnDataBinding="GridView1_DataBinding" OnRowDataBound="GridView1_RowDataBound" DataKeyNames="entry_id,g_no,g_name,g_qty,g_unit,sale_bill_no" >
         <Columns>
             <asp:TemplateField HeaderText="操作">
                 <HeaderTemplate>
@@ -42,7 +42,7 @@
             <asp:BoundField DataField="entry_id" HeaderText="报关单号" />
             <asp:BoundField DataField="g_no" HeaderText="项号" />
             <asp:BoundField DataField="owner_name" HeaderText="客户" />
-            <asp:BoundField DataField="d_date" HeaderText="申报时间" />
+            <asp:BoundField DataField="d_date" DataFormatString="{0:d}" HeaderText="申报时间" />
             <asp:BoundField DataField="agent_name" HeaderText="申报公司" />
             <asp:BoundField DataField="g_name" HeaderText="商品名称" />
             <asp:BoundField DataField="g_qty" DataFormatString="{0:N}" HeaderText="法定数量" />
@@ -53,7 +53,8 @@
             <asp:BoundField DataField="code_ts" HeaderText="商品编码" />
             <asp:BoundField DataField="drawback_rate" DataFormatString="{0:N3}" HeaderText="退税率" />
             <asp:BoundField DataField="operator" HeaderText="操作员" />
-            <asp:BoundField DataField="operate_time" HeaderText="操作时间" />
+            <asp:BoundField DataField="operate_time" DataFormatString="{0:d}" HeaderText="操作时间" />
+            <asp:BoundField DataField="sale_bill_no"  HeaderText="销售发票号" />
         </Columns>
     </asp:GridView>
 </asp:Content>

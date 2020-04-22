@@ -68,7 +68,7 @@ public partial class UI_QueryAndReports_addEntryDetail : System.Web.UI.Page
     {
 
 
-        DataTable dt = DefineDataTableSchema("owner_name,d_date,agent_name,entry_id,g_name,code_ts,g_no,g_qty,g_unit,trade_curr,decl_price,decl_total,drawback_rate,id,operator");
+        DataTable dt = DefineDataTableSchema("owner_name,d_date,agent_name,sale_bill_no,entry_id,g_name,code_ts,g_no,g_qty,g_unit,trade_curr,decl_price,decl_total,drawback_rate,id,operator");
         foreach (RepeaterItem item in rptTest.Items)
         {
             DataRow newRow = dt.NewRow();
@@ -84,6 +84,7 @@ public partial class UI_QueryAndReports_addEntryDetail : System.Web.UI.Page
             newRow["d_date"] = d_date.Text.Trim();
             newRow["agent_name"] = agent_name.Text.Trim();
             newRow["entry_id"] = entry_id.Text.Trim();
+            newRow["sale_bill_no"] = txt_sale_bill_no.Text.Trim();
             string g_name = ((TextBox)item.FindControl("txt_g_name")).Text;
             if (string.IsNullOrEmpty(g_name))
             {

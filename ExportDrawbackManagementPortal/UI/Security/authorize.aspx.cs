@@ -136,10 +136,9 @@ public partial class UI_Security_authorize : System.Web.UI.Page
                 newRoles += "," + item.Roles;
             }
         }
-        List<string> dropdpwnlistArray = role.Split(',').ToList();
-        dropdpwnlistArray.Sort();
-        var result = String.Join(",", dropdpwnlistArray.ToArray());
-        if (result == newRoles)
+        var result2 = distinct(newRoles);
+        var result1 = distinct(role);
+        if (result1 == result2)
         {
             return "ALL";
         }
@@ -147,6 +146,14 @@ public partial class UI_Security_authorize : System.Web.UI.Page
         {
             return role;
         }
+    }
+
+    private static string distinct(string role)
+    {
+        List<string> dropdpwnlistArray = role.Split(',').ToList<String>();
+        var query = dropdpwnlistArray.Distinct().OrderBy(c => c).ToList();
+        var result = String.Join(",", query.ToArray());
+        return result;
     }
 
     private string getDisplayNamesByValues(string values)

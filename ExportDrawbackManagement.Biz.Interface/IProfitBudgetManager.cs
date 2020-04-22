@@ -21,5 +21,9 @@ namespace ExportDrawbackManagement.Biz.Interface
        DataSet getProfitBudgetByID(int FInterIID, string sale_bill_no);
        void audit(string sale_bill_no, bool flag);
        DataSet getProfitBudgetSummaryByID(string sale_bill_no);
+       DataSet getProfitBudgetList(T_ProfitBudgetList item);
+       DataSet getProfitBudgetList(string sale_bill_no);
+       void updateList(List<T_ProfitBudgetList> lists);
+       void AddUnAccountingQtyBecauseDelete(List<T_ProfitBudgetList> lists);
     }
 }

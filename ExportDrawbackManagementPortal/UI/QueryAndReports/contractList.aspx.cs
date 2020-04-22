@@ -38,6 +38,10 @@ public partial class UI_QueryAndReports_contractList : System.Web.UI.Page
         {
             head.baoguandanhao = txt_entry_id.Text.Trim();
         }
+        if (!string.IsNullOrEmpty(txt_sale_bill_no.Text.Trim()))
+        {
+            head.xiaoshoufapiaohao = txt_sale_bill_no.Text.Trim();
+        }
         if (!string.IsNullOrEmpty(txt_xufang.Text.Trim()))
         {
             head.Xufang = txt_xufang.Text.Trim();

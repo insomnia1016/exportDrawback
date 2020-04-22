@@ -42,6 +42,10 @@ public partial class UI_QueryAndReports_entryList : System.Web.UI.Page
         {
             item.EntryId = txt_entry_id.Text.Trim();
         }
+        if (!string.IsNullOrEmpty(txt_sale_bill_no.Text.Trim()))
+        {
+            item.SaleBillNo = txt_sale_bill_no.Text.Trim();
+        }
         if (!string.IsNullOrEmpty(txt_g_name.Text.Trim()))
         {
             item.GName = txt_g_name.Text.Trim();

@@ -96,6 +96,7 @@ namespace ExportDrawbackManagement.Biz.Library
             string sql = @"INSERT INTO [dbo].[contract_list]
                            ([contract_id]
                            ,[contract_no]
+                           ,sale_bill_no]
                            ,[entry_id]
                            ,[g_no]
                            ,[g_name]
@@ -106,6 +107,7 @@ namespace ExportDrawbackManagement.Biz.Library
                      VALUES
                            (@contract_id
                            ,@contract_no
+                           ,@sale_bill_no
                            ,@entry_id
                            ,@g_no
                            ,@g_name
@@ -122,6 +124,7 @@ namespace ExportDrawbackManagement.Biz.Library
                         DbCommand cmd = db.GetSqlStringCommand(sql);
                         db.AddInParameter(cmd, "@contract_id", DbType.String, list.ContractId);
                         db.AddInParameter(cmd, "@contract_no", DbType.Decimal, list.ContractNo);
+                        db.AddInParameter(cmd, "@sale_bill_no", DbType.String, list.SaleBillNo);
                         db.AddInParameter(cmd, "@entry_id", DbType.String, list.EntryId);
                         db.AddInParameter(cmd, "@g_no", DbType.Decimal, list.GNo);
                         db.AddInParameter(cmd, "@g_name", DbType.String, list.GName);
@@ -172,6 +175,10 @@ namespace ExportDrawbackManagement.Biz.Library
             {
                 sql += " and entry_id = @entry_id ";
             }
+            if (!string.IsNullOrEmpty(head.xiaoshoufapiaohao))
+            {
+                sql += " and sale_bill_no = @sale_bill_no ";
+            }
             if (!string.IsNullOrEmpty(head.Xufang))
             {
                 sql += " and xufang like @xufang ";
@@ -202,6 +209,10 @@ namespace ExportDrawbackManagement.Biz.Library
                     {
                         db.AddInParameter(cmd, "@entry_id", DbType.String, head.baoguandanhao);
 
+                    }
+                    if (!string.IsNullOrEmpty(head.xiaoshoufapiaohao))
+                    {
+                        db.AddInParameter(cmd, "@sale_bill_no", DbType.String, head.xiaoshoufapiaohao);
                     }
                     if (!string.IsNullOrEmpty(head.Xufang))
                     {

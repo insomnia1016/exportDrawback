@@ -15,7 +15,7 @@
         </li>
         <li><span class="title">报关日期</span>
             <span class="control">
-                <ExportDrawbackManagement:CalendarBox ID="d_date" runat="server" FormatString="yyyy-MM-dd HH:mm:ss" ResourcePath="../../Calendar"></ExportDrawbackManagement:CalendarBox>
+                <ExportDrawbackManagement:CalendarBox ID="d_date" Width="180px" runat="server" FormatString="yyyy-MM-dd HH:mm:ss" ResourcePath="../../Calendar"></ExportDrawbackManagement:CalendarBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator7" SetFocusOnError="true" runat="server" ControlToValidate="d_date" ErrorMessage="报关日期不能为空"></asp:RequiredFieldValidator>
 
             </span>
@@ -27,13 +27,17 @@
 
             </span>
         </li>
-        <li><span class="title">报关单号</span>
+        <li style="clear:both;"><span class="title" >报关单号</span>
             <span class="control">
                 <asp:TextBox ID="entry_id" Width="180px" runat="server" onKeyPress="if (event.keyCode<48 || event.keyCode>57) event.returnValue=false"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" SetFocusOnError="true" runat="server" ControlToValidate="entry_id" ErrorMessage="报关单号不能为空"></asp:RequiredFieldValidator>
             </span>
         </li>
-
+         <li><span class="title">销售发票号</span>
+            <span class="control">
+                <asp:TextBox ID="txt_sale_bill_no" Width="180px" runat="server" onKeyPress="if (event.keyCode<48 || event.keyCode>57) event.returnValue=false"></asp:TextBox>
+            </span>
+        </li>
     </ul>
     
     <h2 style="float:left;text-align:left;width:100%;">录入报关单表体数据</h2>

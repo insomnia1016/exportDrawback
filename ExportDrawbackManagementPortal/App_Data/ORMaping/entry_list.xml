@@ -122,6 +122,26 @@
   </MemberItem>
   <MemberItem>
     <Property>
+      <Name>SaleBillNo</Name>
+      <DisplayName>
+      </DisplayName>
+      <Comment>
+      </Comment>
+    </Property>
+    <Column>
+      <Name>sale_bill_no</Name>
+      <Type>AnsiString</Type>
+      <MaxLength>50</MaxLength>
+      <CanBeNull>True</CanBeNull>
+    </Column>
+    <Transfer>
+      <PropertyToColumn>True</PropertyToColumn>
+      <ColumnToProperty>True</ColumnToProperty>
+      <IsLogModify>True</IsLogModify>
+    </Transfer>
+  </MemberItem>
+  <MemberItem>
+    <Property>
       <Name>GName</Name>
       <DisplayName>
       </DisplayName>

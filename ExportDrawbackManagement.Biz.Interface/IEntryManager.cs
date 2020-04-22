@@ -9,7 +9,7 @@ namespace ExportDrawbackManagement.Biz.Interface
 {
    public interface IEntryManager
     {
-       void addEntryList(T_EntryList entity);
+      
 
        DataSet getEntryList();
 

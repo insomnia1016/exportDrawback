@@ -17,29 +17,80 @@ public partial class UI_QueryAndReports_receiptList : System.Web.UI.Page
         set { ViewState["selecteditems"] = value; }
     }
     public DataSet ds { get; set; }
+    public int ItemID { get; set; }
+    public int ID { get; set; }
+    public string custName { get; set; }
     protected void Page_Load(object sender, EventArgs e)
     {
+        custName = Request.QueryString["custName"].ToString();
+        ID = Int32.Parse(Request.QueryString["id"].ToString());
+        if (!string.IsNullOrEmpty(custName))
+        {
+            ItemID = getCusIDByName(custName);
+        }
         if (!IsPostBack)
         {
-            GridViewBind();
+           
+
+            if (!string.IsNullOrEmpty(custName))
+            {
+
+                GridViewBind(ItemID, custName, ID);
+
+            }
+            else
+            {
+                Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "close", "<script language='javascript' type='text/javascript'>alert('请先输入客户信息！');window.close();</script>");
+
+            }
+
+
         }
     }
-    private void GridViewBind()
+    private int getCusIDByName(string name)
     {
         ReceiptAuditAdapter raa = new ReceiptAuditAdapter();
-        DataSet ds = raa.getUnCheckReceiptLists(1536);
-        GridView1.DataSource = ds;
+        int id = raa.getIDByName(name);
+        return id;
+    }
+    private void GridViewBind(int id, string name, int currencyID)
+    {
+        ReceiptAuditAdapter raa = new ReceiptAuditAdapter();
+        DataSet ds1 = raa.getUnCheckReceiptLists(id, currencyID);
+        DataSet ds2 = raa.getDoneBillNos(name);
+        DataTable dt = sub(ds1, ds2);
+        GridView1.DataSource = dt;
         GridView1.DataBind();
     }
+
+    private DataTable sub(DataSet ds1, DataSet ds2)
+    {
+        var tempExcept = from r in ds1.Tables[0].AsEnumerable()
+                         where
+                         !(from rr in ds2.Tables[0].AsEnumerable() select rr.Field<string>("FBillNo")).Contains(
+                         r.Field<string>("FBillNo"))
+                         select r;
+        if (tempExcept.Count() == 0)
+        {
+            return null;
+        }
+        else
+        {
+            return tempExcept.CopyToDataTable();
+
+        }
+
+    }
+
     protected void btn_import_Click(object sender, EventArgs e)
     {
         //FInterID,FBillNo,FDate,FInvoiceAmountFor,FReceiveAmountFor,FUnReceiveAmountFor,FCurrencyID,FNote
         ds = new DataSet();
         DataTable dt = new DataTable();
-        dt.Columns.Add("FInterID",typeof(Int32));
+        dt.Columns.Add("FInterID", typeof(Int32));
         dt.Columns.Add("FBillNo");
-        dt.Columns.Add("FDate",typeof(DateTime));
-        dt.Columns.Add("FAmountFor",typeof(Decimal));
+        dt.Columns.Add("FDate", typeof(DateTime));
+        dt.Columns.Add("FAmountFor", typeof(Decimal));
         dt.Columns.Add("FReceiveAmountFor", typeof(Decimal));
         dt.Columns.Add("FUnReceiveAmountFor", typeof(Decimal));
         dt.Columns.Add("FCurrencyID", typeof(Int32));
@@ -77,7 +128,7 @@ public partial class UI_QueryAndReports_receiptList : System.Web.UI.Page
         Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "close", "<script language='javascript' type='text/javascript'>window.opener.__doPostBack('ctl00$ContentPlaceHolder1$Button1','');window.close();</script>");
         //Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "close", "<script language='javascript' type='text/javascript'>window.opener.location.reload(true);window.close();</script>");
     }
-    
+
     protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
     {
         CommonAdapter ca = new CommonAdapter();
@@ -111,7 +162,7 @@ public partial class UI_QueryAndReports_receiptList : System.Web.UI.Page
     protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
         GridView1.PageIndex = e.NewPageIndex;
-        GridViewBind();
+        GridViewBind(ItemID, custName, ID);
     }
     protected void GridView1_DataBinding(object sender, EventArgs e)
     {
@@ -157,5 +208,5 @@ public partial class UI_QueryAndReports_receiptList : System.Web.UI.Page
 
 
     }
-    
+
 }

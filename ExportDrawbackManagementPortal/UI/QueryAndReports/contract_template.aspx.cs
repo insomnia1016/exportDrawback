@@ -276,6 +276,8 @@ public partial class UI_QueryAndReports_contract_template : System.Web.UI.Page
             HiddenField hdf1 = GridView1.Rows[i].Cells[0].FindControl("hdf_entry_id") as HiddenField;
             list.EntryId = hdf1.Value;
             HiddenField hdf2 = GridView1.Rows[i].Cells[0].FindControl("hdf_g_no") as HiddenField;
+            HiddenField hdf3 = GridView1.Rows[i].Cells[0].FindControl("hnf_sale_bill_no") as HiddenField;
+            list.SaleBillNo = hdf3.Value.Trim();
             list.GNo = Int32.Parse(hdf2.Value.Trim());
             list.GName = GridView1.Rows[i].Cells[1].Text;
             list.GQty = decimal.Parse(GridView1.Rows[i].Cells[2].Text.Trim());

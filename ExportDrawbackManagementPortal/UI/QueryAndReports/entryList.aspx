@@ -5,41 +5,46 @@
     <ul class="queryarea">
         <li><span class="title">客  户</span>
             <span class="control">
-                <asp:TextBox ID="txt_owner_name" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txt_owner_name" Style="text-align: center" runat="server"></asp:TextBox>
             </span>
         </li>
         <li><span class="title">报关单号</span>
             <span class="control">
-                <asp:TextBox ID="txt_entry_id" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txt_entry_id" Style="text-align: center" runat="server"></asp:TextBox>
+            </span>
+        </li>
+         <li><span class="title">销售发票号</span>
+            <span class="control">
+                <asp:TextBox ID="txt_sale_bill_no" Style="text-align: center" runat="server"></asp:TextBox>
             </span>
         </li>
         <li><span class="title">品  名</span>
             <span class="control">
-                <asp:TextBox ID="txt_g_name" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txt_g_name" Style="text-align: center" runat="server"></asp:TextBox>
             </span>
         </li>
         <li><span class="title">海关编码</span>
             <span class="control">
-                <asp:TextBox ID="txt_code_ts" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txt_code_ts" Style="text-align: center" runat="server"></asp:TextBox>
             </span>
         </li>
         <li><span class="title">申报公司</span>
             <span class="control">
-                <asp:TextBox ID="txt_agent_name" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txt_agent_name" Style="text-align: center" runat="server"></asp:TextBox>
             </span>
         </li>
         <li><span class="title">录入员</span>
             <span class="control">
-                <asp:TextBox ID="txt_operator" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txt_operator" Style="text-align: center" runat="server"></asp:TextBox>
             </span>
         </li>
         <li><span class="title">申报日期</span>
             <span class="control">
-                <cc1:CalendarBox ID="CalendarBox1" FormatString="yyyy-MM-dd" ResourcePath="../../Calendar" runat="server"></cc1:CalendarBox>
+                <cc1:CalendarBox ID="CalendarBox1" Style="text-align: center" FormatString="yyyy-MM-dd" ResourcePath="../../Calendar" runat="server"></cc1:CalendarBox>
             </span>
             至
             <span class="control">
-                <cc1:CalendarBox ID="CalendarBox2"  FormatString="yyyy-MM-dd"  ResourcePath="../../Calendar" runat="server"></cc1:CalendarBox>
+                <cc1:CalendarBox ID="CalendarBox2" Style="text-align: center" FormatString="yyyy-MM-dd"  ResourcePath="../../Calendar" runat="server"></cc1:CalendarBox>
             </span>
         </li>
 
@@ -60,7 +65,7 @@
             <asp:BoundField DataField="entry_id" HeaderText="报关单号" />
             <asp:BoundField DataField="g_no" HeaderText="项号" />
             <asp:BoundField DataField="owner_name" HeaderText="客户" />
-            <asp:BoundField DataField="d_date" HeaderText="申报时间" />
+            <asp:BoundField DataField="d_date" DataFormatString="{0:d}" HeaderText="申报时间" />
             <asp:BoundField DataField="agent_name" HeaderText="申报公司" />
             <asp:BoundField DataField="g_name" HeaderText="商品名称" />
             <asp:BoundField DataField="g_qty" DataFormatString="{0:N}" HeaderText="法定数量" />
@@ -71,7 +76,8 @@
             <asp:BoundField DataField="code_ts" HeaderText="商品编码" />
             <asp:BoundField DataField="drawback_rate" DataFormatString="{0:N3}" HeaderText="退税率" />
             <asp:BoundField DataField="operator" HeaderText="操作员" />
-            <asp:BoundField DataField="operate_time" HeaderText="操作时间" />
+            <asp:BoundField DataField="operate_time" DataFormatString="{0:d}" HeaderText="操作时间" />
+            <asp:BoundField DataField="sale_bill_no"  HeaderText="销售发票号" />
         </Columns>
     </asp:GridView>
 </asp:Content>

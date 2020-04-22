@@ -20,5 +20,12 @@ namespace ExportDrawbackManagement.Biz.Interface
        DataSet getCurrency();
        String getCurrencyByID(int id);
        DataSet getCustomersBySearchKeyName(string name);
+       DataSet getSuppliersBySearchKeyName(string name);
+       DataSet getDepartment();
+       DataSet getEmp();
+       int getIDByName(string name);
+       int getIDByCurrency(string name);
+       string getEmpNameByID(int id);
+       string getDepartmentNameByID(int id);
     }
 }

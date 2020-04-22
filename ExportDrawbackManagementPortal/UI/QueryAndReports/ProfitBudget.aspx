@@ -21,29 +21,40 @@
         <ul class="queryarea">
             <li><span class="title">额外费用</span>
                 <span class="control">
+
                     <asp:TextBox ID="txt_extra_charges" runat="server" onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" Style="text-align: center"></asp:TextBox>
                 </span>
             </li>
+            <li><span class="title">部门</span>
+                <span class="control">
+                    <asp:TextBox id="txt_dept_id" Enabled="false" runat="server" ></asp:TextBox>
+                </span>
+            </li>
+            <li><span class="title">业务员</span>
+                <span class="control">
+                    <asp:TextBox id="txt_emp" Enabled="false" runat="server" ></asp:TextBox>
+                </span>
+            </li>
         </ul>
-        <asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="False" OnRowDataBound="GridView1_RowDataBound" AllowPaging="True" OnPageIndexChanging="GridView1_PageIndexChanging" PageSize="20">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowDataBound="GridView1_RowDataBound" AllowPaging="True" OnPageIndexChanging="GridView1_PageIndexChanging" PageSize="20">
             <Columns>
                 <asp:BoundField DataField="buy_bill_no" HeaderText="采购订单号" />
-                <asp:BoundField DataField="dept_id" HeaderText="部门" />
-                <asp:BoundField DataField="emp_id" HeaderText="业务员" />
+                <asp:BoundField DataField="FName" HeaderText="产品名称" />
+                <asp:BoundField DataField="FNumber" HeaderText="货号" />
                 <asp:BoundField DataField="sale_price" DataFormatString="{0:N2}" HeaderText="销售价" />
-                <asp:BoundField DataField="currency"  HeaderText="币制" />
+                <asp:BoundField DataField="currency" HeaderText="币制" />
                 <asp:TemplateField HeaderText="汇率">
                     <ItemTemplate>
                         <asp:TextBox ID="txt_exchange_rate" Width="50px" Text='<%#Eval("exchange_rate","{0:f2}") %>' AutoPostBack="true" OnTextChanged="txt_Value_TextChanged" onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" Style="text-align: center" runat="server"></asp:TextBox>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:BoundField DataField="sale_rate"  HeaderText="含税" />
+                <asp:BoundField DataField="sale_rate" HeaderText="含税" />
 
-                
+
                 <asp:BoundField DataField="buy_price" DataFormatString="{0:N2}" HeaderText="采购价" />
-                <asp:BoundField DataField="buy_rate"  HeaderText="含税" />
+                <asp:BoundField DataField="buy_rate" HeaderText="含税" />
 
-              
+
                 <asp:BoundField DataField="sale_qty" DataFormatString="{0:N2}" HeaderText="销售数量" />
                 <asp:BoundField DataField="buy_qty" DataFormatString="{0:N2}" HeaderText="采购数量" />
                 <asp:TemplateField HeaderText="配件名称">
@@ -56,8 +67,9 @@
                         <asp:TextBox ID="txt_accessory_price" runat="server" Width="50px" AutoPostBack="true" OnTextChanged="txt_Value_TextChanged" onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" Style="text-align: center"></asp:TextBox>
                     </ItemTemplate>
                 </asp:TemplateField>
-                 <asp:TemplateField HeaderText="箱规(cm)">
-                    <ItemTemplate>长：
+                <asp:TemplateField HeaderText="箱规(cm)">
+                    <ItemTemplate>
+                        长：
                         <asp:TextBox ID="txt_length" runat="server" AutoPostBack="true" Width="30px" OnTextChanged="txt_volume_TextChanged" onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" Style="text-align: center"></asp:TextBox>
                         宽：<asp:TextBox ID="txt_width" runat="server" AutoPostBack="true" Width="30px" OnTextChanged="txt_volume_TextChanged" onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" Style="text-align: center"></asp:TextBox>
                         高：<asp:TextBox ID="txt_height" runat="server" AutoPostBack="true" Width="30px" OnTextChanged="txt_volume_TextChanged" onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" Style="text-align: center"></asp:TextBox>
@@ -65,7 +77,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="体积(m³)">
                     <ItemTemplate>
-                        <asp:Label ID="lbl_volume" runat="server" ></asp:Label>
+                        <asp:Label ID="lbl_volume" runat="server"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="预估运费">
@@ -78,7 +90,7 @@
                         <asp:TextBox ID="txt_capacity" runat="server" Width="30px" AutoPostBack="true" OnTextChanged="txt_Value_TextChanged" onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" Style="text-align: center"></asp:TextBox>
                     </ItemTemplate>
                 </asp:TemplateField>
-                 <asp:TemplateField HeaderText="税点">
+                <asp:TemplateField HeaderText="税点">
                     <ItemTemplate>
                         <asp:TextBox ID="txt_tax_rate" runat="server" Text="0.06" Width="30px" AutoPostBack="true" OnTextChanged="txt_Value_TextChanged" onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" Style="text-align: center"></asp:TextBox>
                     </ItemTemplate>
@@ -94,6 +106,8 @@
                         <asp:HiddenField ID="hdf_finter_id" Value='<%#Eval("FInterID") %>' runat="server" />
                         <asp:HiddenField ID="hdf_sale_fentry_id" Value='<%#Eval("Sale_FEntryID") %>' runat="server" />
                         <asp:HiddenField ID="hdf_buy_fentry_id" Value='<%#Eval("Buy_FEntryID") %>' runat="server" />
+                        <asp:HiddenField ID="hdf_dept_id" Value='<%#Eval("dept_id") %>' runat="server" />
+                        <asp:HiddenField ID="hdf_emp_id" Value='<%#Eval("emp_id") %>' runat="server" />
                         <asp:HiddenField ID="hdf_fitem_id" Value='<%#Eval("FItemID") %>' runat="server" />
                     </ItemTemplate>
                 </asp:TemplateField>

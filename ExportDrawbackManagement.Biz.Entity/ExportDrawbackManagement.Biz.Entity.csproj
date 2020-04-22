@@ -70,22 +70,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoGeneratorCodes\T_Account.cs" />
+    <Compile Include="AutoGeneratorCodes\T_AccountLog.cs" />
+    <Compile Include="AutoGeneratorCodes\T_ActualProfitAccounting.cs" />
+    <Compile Include="AutoGeneratorCodes\T_BillNoDone.cs" />
     <Compile Include="AutoGeneratorCodes\T_ContractHead.cs" />
     <Compile Include="AutoGeneratorCodes\T_ContractList.cs" />
     <Compile Include="AutoGeneratorCodes\T_Department.cs" />
+    <Compile Include="AutoGeneratorCodes\T_DepositHead.cs" />
+    <Compile Include="AutoGeneratorCodes\T_DepositList.cs" />
     <Compile Include="AutoGeneratorCodes\T_EntryList.cs" />
+    <Compile Include="AutoGeneratorCodes\T_IndecreaseHead.cs" />
+    <Compile Include="AutoGeneratorCodes\T_IndecreaseList.cs" />
+    <Compile Include="AutoGeneratorCodes\T_PaymentBillNoDone.cs" />
+    <Compile Include="AutoGeneratorCodes\T_PaymentDepositHead.cs" />
+    <Compile Include="AutoGeneratorCodes\T_PaymentDepositList.cs" />
+    <Compile Include="AutoGeneratorCodes\T_PaymentIndecreaseHead.cs" />
+    <Compile Include="AutoGeneratorCodes\T_PaymentIndecreaseList.cs" />
+    <Compile Include="AutoGeneratorCodes\T_PaymentReceiptHead.cs" />
+    <Compile Include="AutoGeneratorCodes\T_PaymentReceiptList.cs" />
+    <Compile Include="AutoGeneratorCodes\T_PaymentRequest.cs" />
+    <Compile Include="AutoGeneratorCodes\T_PaymentType.cs" />
+    <Compile Include="AutoGeneratorCodes\T_ProfitAccounting.cs" />
+    <Compile Include="AutoGeneratorCodes\T_ProfitAccountingList.cs" />
     <Compile Include="AutoGeneratorCodes\T_ProfitBudget.cs" />
     <Compile Include="AutoGeneratorCodes\T_ProfitBudgetList.cs" />
     <Compile Include="AutoGeneratorCodes\T_Receipt.cs" />
     <Compile Include="AutoGeneratorCodes\T_ReceiptHead.cs" />
     <Compile Include="AutoGeneratorCodes\T_ReceiptList.cs" />
+    <Compile Include="AutoGeneratorCodes\T_SEOrderNODone.cs" />
+    <Compile Include="AutoGeneratorCodes\T_SettlementLog.cs" />
     <Compile Include="AutoGeneratorCodes\T_TaxList.cs" />
     <Compile Include="AutoGeneratorCodes\T_Users.cs" />
     <Compile Include="Funcs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AutoGeneratorCodes\T_Customers.cs" />
     <Compile Include="T_ContractHead.cs" />
+    <Compile Include="T_DepositList.cs" />
     <Compile Include="T_EntryList.cs" />
+    <Compile Include="T_PaymentDepositList.cs" />
+    <Compile Include="T_PaymentReceiptList.cs" />
+    <Compile Include="T_ReceiptList.cs" />
     <Compile Include="T_TaxList.cs" />
     <Compile Include="UserInfo.cs" />
   </ItemGroup>

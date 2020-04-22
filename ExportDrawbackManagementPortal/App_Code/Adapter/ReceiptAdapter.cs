@@ -37,4 +37,10 @@ public class ReceiptAdapter : BaseAdapter<IReceiptManager>, IReceiptManager
 	{
 		Manager.DeleteReceiptById(id);
 	}
+
+
+	public string getReceiptNameByType(string code)
+	{
+		return Manager.getReceiptNameByType(code);
+	}
 }

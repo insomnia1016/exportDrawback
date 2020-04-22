@@ -149,7 +149,20 @@ namespace ExportDrawbackManagement.Biz.Library
 
             }
         }
+        public int getIDByCurrency(string name)
+        {
+            Database db = Dao.GetDatabase("KingDeeConnection");
 
+            string sql = "SELECT FCurrencyID  FROM [dbo].[t_Currency] WHERE FName=@FName";
+            using (DbConnection cn = db.CreateConnection())
+            {
+                DbCommand cmd = db.GetSqlStringCommand(sql);
+                db.AddInParameter(cmd, "@FName", DbType.String, name);
+                DataSet ds = db.ExecuteDataSet(cmd);
+                return Int32.Parse(ds.Tables[0].Rows[0][0].ToString());
+
+            }
+        }
         public DataSet getCustomersBySearchKeyName(string name)
         {
             Database db = Dao.GetDatabase("KingDeeConnection");
@@ -161,6 +174,110 @@ namespace ExportDrawbackManagement.Biz.Library
                 db.AddInParameter(cmd, "@name", DbType.String, "%" + name + "%");
                 ds = db.ExecuteDataSet(cmd);
                 return ds;
+            }
+        }
+        public DataSet getSuppliersBySearchKeyName(string name)
+        {
+            Database db = Dao.GetDatabase("KingDeeConnection");
+            DataSet ds;
+            string sql = "SELECT FNumber,FName FROM T_Supplier WHERE FName LIKE @name";
+            using (DbConnection cn = db.CreateConnection())
+            {
+                DbCommand cmd = db.GetSqlStringCommand(sql);
+                db.AddInParameter(cmd, "@name", DbType.String, "%" + name + "%");
+                ds = db.ExecuteDataSet(cmd);
+                return ds;
+            }
+        }
+        public DataSet getDepartment()
+        {
+            Database db = Dao.GetDatabase("KingDeeConnection");
+            DataSet ds;
+            string sql = "SELECT * FROM T_Department";
+            using (DbConnection cn = db.CreateConnection())
+            {
+                DbCommand cmd = db.GetSqlStringCommand(sql);
+                ds = db.ExecuteDataSet(cmd);
+                return ds;
+            }
+        }
+
+        public DataSet getEmp()
+        {
+            Database db = Dao.GetDatabase("KingDeeConnection");
+            DataSet ds;
+            string sql = "SELECT * FROM T_Emp where FItemID > 0 ";
+            using (DbConnection cn = db.CreateConnection())
+            {
+                DbCommand cmd = db.GetSqlStringCommand(sql);
+                ds = db.ExecuteDataSet(cmd);
+                return ds;
+            }
+        }
+
+        public int getIDByName(string name)
+        {
+            Database db = Dao.GetDatabase("KingDeeConnection");
+            DataSet ds;
+            string sql = "SELECT FItemID FROM T_Emp WHERE FName=@FName";
+            using (DbConnection cn = db.CreateConnection())
+            {
+                DbCommand cmd = db.GetSqlStringCommand(sql);
+                db.AddInParameter(cmd, "@FName", DbType.String,  name );
+
+                ds = db.ExecuteDataSet(cmd);
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    return Int32.Parse(ds.Tables[0].Rows[0][0].ToString());
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+        }
+
+        public string getEmpNameByID(int id)
+        {
+            Database db = Dao.GetDatabase("KingDeeConnection");
+            DataSet ds;
+            string sql = "SELECT FName FROM T_Emp WHERE FItemID=@FItemID";
+            using (DbConnection cn = db.CreateConnection())
+            {
+                DbCommand cmd = db.GetSqlStringCommand(sql);
+                db.AddInParameter(cmd, "@FItemID", DbType.Int32, id);
+
+                ds = db.ExecuteDataSet(cmd);
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    return ds.Tables[0].Rows[0][0].ToString();
+                }
+                else
+                {
+                    return "";
+                }
+            }
+        }
+
+        public string getDepartmentNameByID(int id)
+        {
+            Database db = Dao.GetDatabase("KingDeeConnection");
+            DataSet ds;
+            string sql = "SELECT FName FROM T_Department WHERE FItemID=@FItemID";
+            using (DbConnection cn = db.CreateConnection())
+            {
+                DbCommand cmd = db.GetSqlStringCommand(sql);
+                db.AddInParameter(cmd, "@FItemID", DbType.Int32, id);
+
+                ds = db.ExecuteDataSet(cmd);
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    return ds.Tables[0].Rows[0][0].ToString();
+                }
+                else
+                {
+                    return "";
+                }
             }
         }
     }

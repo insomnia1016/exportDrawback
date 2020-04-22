@@ -23,6 +23,11 @@
                     <asp:TextBox ID="txt_entryId" runat="server"></asp:TextBox>
                 </span>
             </li>
+            <li><span class="title">销售发票号</span>
+                <span class="control">
+                    <asp:TextBox ID="txt_sale_bill_no" runat="server"></asp:TextBox>
+                </span>
+            </li>
             <li>
                 <asp:Button ID="btn_Query" runat="server" Text="查   询" OnClick="btn_Query_Click" Width="100px" />
             </li>
@@ -85,7 +90,7 @@
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:BoundField DataField="agent_name" HeaderText="申报公司" />
-            <asp:BoundField DataField="d_date" DataFormatString="{0:yyyy-MM-dd}" HeaderText="申报日期" />
+            <asp:BoundField DataField="d_date" DataFormatString="{0:d}" HeaderText="申报日期" />
             <asp:BoundField DataField="owner_name" HeaderText="客户" />
             <asp:BoundField DataField="entry_id" HeaderText="报关单号" />
             <asp:BoundField DataField="g_no" HeaderText="项号" />
@@ -93,7 +98,7 @@
             <asp:BoundField DataField="g_qty" DataFormatString="{0:N}" HtmlEncode="false" HeaderText="数量" />
             <asp:BoundField DataField="g_unit" HeaderText="单位" />
             <asp:BoundField DataField="trade_curr" HeaderText="币制" />
-            <asp:BoundField DataField="decl_price" HeaderText="报关单价" />
+            <asp:BoundField DataField="decl_price" DataFormatString="{0:N}"  HeaderText="报关单价" />
             <asp:BoundField DataField="decl_total" HeaderText="报关金额" />
             <asp:BoundField DataField="code_ts" HeaderText="海关编码" />
             <asp:BoundField DataField="drawback_rate" DataFormatString="{0:N3}" HtmlEncode="false" HeaderText="出口退税率" />
@@ -102,9 +107,11 @@
             <asp:BoundField DataField="tax_return_price" DataFormatString="{0:N}" HtmlEncode="false" HeaderText="退税额" />
             <asp:BoundField DataField="tax_return_total" DataFormatString="{0:N}" HtmlEncode="false" HeaderText="退税总金额" />
             <asp:BoundField DataField="state_code" HeaderText="状态" />
-            <asp:BoundField DataField="tax_return_date" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}" HeaderText="退税日期" />
-            <asp:BoundField DataField="tax_retutn_d_date" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}" HeaderText="退税申报日期" />
+            <asp:BoundField DataField="tax_return_date" DataFormatString="{0:d}" HeaderText="退税日期" />
+            <asp:BoundField DataField="tax_retutn_d_date" DataFormatString="{0:d}" HeaderText="退税申报日期" />
             <asp:BoundField DataField="tax_return_no" HeaderText="申报批次号" />
+            <asp:BoundField DataField="sale_bill_no" HeaderText="销售发票号" />
+
         </Columns>
     </asp:GridView>
 </asp:Content>

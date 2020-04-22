@@ -15,8 +15,8 @@ namespace ExportDrawbackManagement.Biz.Library
        public void generateTaxList(decimal bl)
        {
            Database db = Dao.GetDatabase();
-           string sql = @"insert into tax_list (agent_name,d_date,agent_code,owner_name,entry_id,g_no,g_name,g_qty,g_unit,trade_curr,decl_price,decl_total,code_ts,drawback_rate,invoice_price,invoice_total,tax_return_price,tax_return_total,state_code)
-                            select b.agent_name,b.d_date,b.agent_code,b.owner_name,b.entry_id,b.g_no,b.g_name,b.g_qty,b.g_unit,b.trade_curr, b.decl_price,b.decl_total,b.code_ts,b.drawback_rate,
+           string sql = @"insert into tax_list (agent_name,d_date,agent_code,owner_name,sale_bill_no,entry_id,g_no,g_name,g_qty,g_unit,trade_curr,decl_price,decl_total,code_ts,drawback_rate,invoice_price,invoice_total,tax_return_price,tax_return_total,state_code)
+                            select b.agent_name,b.d_date,b.agent_code,b.owner_name,b.sale_bill_no,b.entry_id,b.g_no,b.g_name,b.g_qty,b.g_unit,b.trade_curr, b.decl_price,b.decl_total,b.code_ts,b.drawback_rate,
                             a.invoice_price,a.invoice_total,(a.invoice_price/@bl*b.drawback_rate) as tax_return_price,(a.invoice_total/@bl*b.drawback_rate) as tax_return_total,'N'
                             from [dbo].[contract_list] a
                             inner join [dbo].[entry_list] b
@@ -56,16 +56,31 @@ namespace ExportDrawbackManagement.Biz.Library
            }
        }
 
-       public DataSet getTaxListByEntryId(string id)
+       public DataSet getTaxListByKeys(string entryId,string sale_bill_no)
        {
            Database db = Dao.GetDatabase();
-           string sql = @"SELECT *  FROM [dbo].[tax_list] where entry_id = @entry_id";
+           string sql = @"SELECT *  FROM [dbo].[tax_list] where 1 = 1 ";
+           if (!string.IsNullOrEmpty(entryId))
+           {
+               sql += " and entry_id = @entry_id ";
+           }
+           if (!string.IsNullOrEmpty(sale_bill_no))
+           {
+               sql += " and sale_bill_no = @sale_bill_no ";
+           }
            using (DbConnection cn = db.CreateConnection())
            {
                try
                {
                    DbCommand cmd = db.GetSqlStringCommand(sql);
-                   db.AddInParameter(cmd, "@entry_id", DbType.String, id);
+                   if (!string.IsNullOrEmpty(entryId))
+                   {
+                       db.AddInParameter(cmd, "@entry_id", DbType.String, entryId);
+                   }
+                   if (!string.IsNullOrEmpty(sale_bill_no))
+                   {
+                       db.AddInParameter(cmd, "@sale_bill_no", DbType.String, sale_bill_no);
+                   }
                    return db.ExecuteDataSet(cmd);
                }
                catch
@@ -86,6 +101,10 @@ namespace ExportDrawbackManagement.Biz.Library
            if (!string.IsNullOrEmpty(item.EntryId))
            {
                sql += " and entry_id = @entry_id ";
+           }
+           if (!string.IsNullOrEmpty(item.SaleBillNo))
+           {
+               sql += " and sale_bill_no = @sale_bill_no ";
            }
            if (!string.IsNullOrEmpty(item.GName))
            {
@@ -120,6 +139,11 @@ namespace ExportDrawbackManagement.Biz.Library
                    if (!string.IsNullOrEmpty(item.EntryId))
                    {
                        db.AddInParameter(cmd, "@entry_id", DbType.String, item.EntryId);
+                   }
+                   if (!string.IsNullOrEmpty(item.SaleBillNo))
+                   {
+                       db.AddInParameter(cmd, "@sale_bill_no", DbType.String, item.SaleBillNo);
+
                    }
                    if (!string.IsNullOrEmpty(item.GName))
                    {
@@ -215,6 +239,35 @@ namespace ExportDrawbackManagement.Biz.Library
                catch
                {
                    throw new Exception("更新退税明细表状态位出错");
+               }
+           }
+       }
+
+       public decimal getTaxReturnTotal(string sale_bill_no)
+       {
+           Database db = Dao.GetDatabase();
+           string sql = @"SELECT  SUM(tax_return_total)  FROM [dbo].[tax_list] where sale_bill_no =  @sale_bill_no ";
+           
+           using (DbConnection cn = db.CreateConnection())
+           {
+               try
+               {
+                   DbCommand cmd = db.GetSqlStringCommand(sql);
+                   db.AddInParameter(cmd, "@sale_bill_no", DbType.String, sale_bill_no);
+
+                   DataSet ds = db.ExecuteDataSet(cmd);
+                   if (ds.Tables[0].Rows.Count > 0)
+                   {
+                       return Decimal.Parse(ds.Tables[0].Rows[0][0].ToString());
+                   }
+                   else
+                   {
+                       return 0m;
+                   }
+               }
+               catch
+               {
+                   throw new Exception("根据报关单号获取退税明细表失败");
                }
            }
        }

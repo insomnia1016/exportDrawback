@@ -13,6 +13,7 @@ namespace ExportDrawbackManagement.Biz.Interface
         DataSet getTaxList();
         void UpdateState(T_TaxList item, string[] ids);
         DataSet queryTaxList(T_TaxList item);
-        DataSet getTaxListByEntryId(string id);
+        DataSet getTaxListByKeys(string entryId, string sale_bill_no);
+        decimal getTaxReturnTotal(string sale_bill_no);
     }
 }

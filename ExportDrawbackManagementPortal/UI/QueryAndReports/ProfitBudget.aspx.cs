@@ -32,28 +32,12 @@ public partial class UI_QueryAndReports_ProfitBudget : System.Web.UI.Page
             bool buy_rate = e.Row.Cells[8].Text.Trim() == "1" ? true : false;
             if (buy_rate) e.Row.Cells[8].Text = "是";
             else e.Row.Cells[8].Text = "否";
-
-            //翻译业务部门和业务员
-            ProfitBudgetAdapter pba = new ProfitBudgetAdapter();
-            string dept_id = e.Row.Cells[1].Text.Trim();
-            string emp_id = e.Row.Cells[2].Text.Trim();
-            if (!string.IsNullOrEmpty(dept_id))
+            string buy_bill_no = e.Row.Cells[0].Text.Trim();
+            if (string.IsNullOrEmpty(buy_bill_no) || buy_bill_no == "&nbsp;")
             {
-                string dept_name = pba.getDeptNameById(dept_id);
-                if (!string.IsNullOrEmpty(dept_name))
-                {
-                    e.Row.Cells[1].Text = dept_name;
-                }
-
+                submit.Enabled = false;
             }
-            if (!string.IsNullOrEmpty(emp_id))
-            {
-                string emp_name = pba.getEmpNameById(emp_id);
-                if (!string.IsNullOrEmpty(emp_name))
-                {
-                    e.Row.Cells[2].Text = emp_name;
-                }
-            }
+            
         }
 
     }
@@ -72,12 +56,27 @@ public partial class UI_QueryAndReports_ProfitBudget : System.Web.UI.Page
         Label2.Visible = false;
 
         ProfitBudgetAdapter pba = new ProfitBudgetAdapter();
+        
         T_ProfitBudget item = new T_ProfitBudget();
         sale_bill_no = this.txt_sale_bill_no.Text.Trim();
+
+        //判断是否提交过
+        DataSet ds = pba.getProfitBudgetSummaryByID(sale_bill_no);
+        if (ds.Tables[0].Rows.Count > 0)
+        {
+            Label2.Text = "该销售订单号已经提交过利润预算！";
+            Label2.Visible = true;
+            return;
+        }
+
         item.SaleBillNo = sale_bill_no;
-        DataSet ds = pba.getSEOrderInfo(item);
-        finterid = Int32.Parse(ds.Tables[0].Rows[0][0].ToString());
-        show(ds);
+        ds = pba.getSEOrderInfo(item);
+        if (ds.Tables[0].Rows.Count > 0)
+        {
+            finterid = Int32.Parse(ds.Tables[0].Rows[0][0].ToString());
+            show(ds);
+        }
+       
     }
 
     protected void txt_volume_TextChanged(object sender, EventArgs e)
@@ -93,7 +92,7 @@ public partial class UI_QueryAndReports_ProfitBudget : System.Web.UI.Page
         decimal height = 0;
         if (!string.IsNullOrEmpty(((TextBox)row.Cells[13].FindControl("txt_height")).Text.Trim()))
             height = Decimal.Parse(((TextBox)row.Cells[13].FindControl("txt_height")).Text.Trim());
-        decimal volume = length * height * height / 1000000;
+        decimal volume = length * width * height / 1000000;
 
         Label lbl_volume = row.Cells[14].FindControl("lbl_volume") as Label;
         lbl_volume.Text = volume.ToString("f3");
@@ -132,10 +131,41 @@ public partial class UI_QueryAndReports_ProfitBudget : System.Web.UI.Page
             if (!string.IsNullOrEmpty((row.Cells[18].FindControl("txt_return_rate") as TextBox).Text))
                 return_rate = Decimal.Parse((row.Cells[18].FindControl("txt_return_rate") as TextBox).Text);
 
-            calculateProfit(row, exchange_rate, buy_price, sale_price, accessory_price, estimate_freight_charge, tax_rate, sale_rate, buy_rate, currency, volume, capacity, return_rate);
+            decimal profit = Common.calculateProfit(exchange_rate, buy_price, sale_price, accessory_price, estimate_freight_charge, tax_rate, sale_rate, buy_rate, currency, volume, capacity, return_rate);
+            Label lb = row.Cells[19].FindControl("lbl_profit") as Label;
+            lb.Text = profit.ToString("f3");
 
         }
 
+    }
+
+    private string getDeptName(string dept_id)
+    {
+        string result = dept_id;
+        ProfitBudgetAdapter pba = new ProfitBudgetAdapter();
+        if (!string.IsNullOrEmpty(dept_id))
+        {
+            string dept_name = pba.getDeptNameById(dept_id);
+            if (!string.IsNullOrEmpty(dept_name))
+            {
+                result = dept_name;
+            }
+        }
+        return result;
+    }
+    private string getEmpName(string emp_id)
+    {
+        string result = emp_id;
+        ProfitBudgetAdapter pba = new ProfitBudgetAdapter();
+        if (!string.IsNullOrEmpty(emp_id))
+        {
+            string emp_name = pba.getEmpNameById(emp_id);
+            if (!string.IsNullOrEmpty(emp_name))
+            {
+                result = emp_name;
+            }
+        }
+        return result;
     }
     /// <summary>
     /// 绑定GridView1
@@ -144,12 +174,15 @@ public partial class UI_QueryAndReports_ProfitBudget : System.Web.UI.Page
     {
         if (ds.Tables[0].Rows.Count > 0)
         {
+            txt_dept_id.Text = getDeptName(ds.Tables[0].Rows[0]["dept_id"].ToString());
+            txt_emp.Text = getEmpName(ds.Tables[0].Rows[0]["emp_id"].ToString());
             this.submit.Enabled = true;
         }
         else
         {
             this.submit.Enabled = false;
         }
+
         GridView1.DataSource = ds;
         GridView1.DataBind();
     }
@@ -217,62 +250,15 @@ public partial class UI_QueryAndReports_ProfitBudget : System.Web.UI.Page
         if (!string.IsNullOrEmpty((row.Cells[18].FindControl("txt_return_rate") as TextBox).Text))
             return_rate = Decimal.Parse((row.Cells[18].FindControl("txt_return_rate") as TextBox).Text);
 
-        calculateProfit(row, exchange_rate, buy_price, sale_price, accessory_price, estimate_freight_charge, tax_rate, sale_rate, buy_rate, currency, volume, capacity, return_rate);
-    }
-
-    private void calculateProfit(GridViewRow row,
-        decimal exchange_rate,
-        decimal buy_price,
-        decimal sale_price,
-        decimal accessory_price,
-        decimal estimate_freight_charge,
-        decimal tax_rate,
-        bool sale_rate,
-        bool buy_rate,
-        string currency,
-        decimal volume,
-        decimal capacity,
-        decimal return_tax = (decimal)0.13)
-    {
-        //计算利润率
-        decimal profit = 0;
-
-        //销售价格是美金
-        if (currency == "USD")
-        {
-            if (buy_rate)//采购价格人民币含税
-            {
-                profit = 1 - (((buy_price + (accessory_price + estimate_freight_charge) / (1 - tax_rate)) * (1 - return_tax / (decimal)1.13) + 2500 / (28 / volume * capacity)) / (sale_price * exchange_rate));
-            }
-            else
-            {
-                profit = 1 - ((((buy_price + accessory_price + estimate_freight_charge) / (1 - tax_rate)) * (1 - return_tax / (decimal)1.13) + 2500 / (28 / volume * capacity)) / (sale_price * exchange_rate));
-            }
-        }
-        else//销售价格是人民币
-        {
-            //销售价格人民币含税
-            if (sale_rate)
-            {
-                //采购价格人民币含税
-                if (buy_rate)
-                {
-                    profit = (sale_price * exchange_rate - buy_price - accessory_price - estimate_freight_charge) / (sale_price * exchange_rate);
-                }
-                else//采购价格人民币不含税
-                {
-                    profit = (sale_price * exchange_rate - buy_price / (1 - tax_rate) - accessory_price - estimate_freight_charge) / (sale_price * exchange_rate);
-                }
-            }
-            else//销售价格人民币不含税
-            {
-                profit = (sale_price * exchange_rate - buy_price - accessory_price - estimate_freight_charge) / (sale_price * exchange_rate);
-            }
-        }
-
-        Label lb = row.Cells[18].FindControl("lbl_profit") as Label;
+        decimal profit = Common.calculateProfit(exchange_rate, buy_price, sale_price, 
+            accessory_price, estimate_freight_charge, 
+            tax_rate, sale_rate, buy_rate,
+            currency, volume, capacity, return_rate);
+        Label lb = row.Cells[19].FindControl("lbl_profit") as Label;
         lb.Text = profit.ToString("f3");
     }
+
+
 
     protected void submit_Click(object sender, EventArgs e)
     {
@@ -286,6 +272,7 @@ public partial class UI_QueryAndReports_ProfitBudget : System.Web.UI.Page
         item.FInterID = finterid;
         item.SaleBillNo = sale_bill_no;
         item.AuditState = false;
+        item.CheckStatus = false;
 
         //收集利润预算表体信息
         List<T_ProfitBudgetList> lists = new List<T_ProfitBudgetList>();
@@ -298,8 +285,10 @@ public partial class UI_QueryAndReports_ProfitBudget : System.Web.UI.Page
             list.FItemID = Int32.Parse(((HiddenField)GridView1.Rows[i].Cells[18].FindControl("hdf_fitem_id")).Value);
             list.SaleBillNo = sale_bill_no;
             list.BuyBillNo = GridView1.Rows[i].Cells[0].Text;
-            list.DeptId = Int32.Parse(GridView1.Rows[i].Cells[1].Text);
-            list.EmpId = Int32.Parse(GridView1.Rows[i].Cells[2].Text);
+            list.FName = GridView1.Rows[i].Cells[1].Text;
+            list.FNumber = GridView1.Rows[i].Cells[2].Text;
+            list.DeptId = Int32.Parse(((HiddenField)GridView1.Rows[i].Cells[18].FindControl("hdf_dept_id")).Value);
+            list.EmpId = Int32.Parse(((HiddenField)GridView1.Rows[i].Cells[18].FindControl("hdf_emp_id")).Value);
             list.SalePrice = Decimal.Parse(GridView1.Rows[i].Cells[3].Text);
             list.Currency = GridView1.Rows[i].Cells[4].Text;
             TextBox txt_exchange_rate = (TextBox)GridView1.Rows[i].Cells[5].FindControl("txt_exchange_rate");
@@ -363,6 +352,8 @@ public partial class UI_QueryAndReports_ProfitBudget : System.Web.UI.Page
                 list.ReturnRate = 0;
             else
                 list.ReturnRate = Decimal.Parse(return_rate);
+            list.UnAccountingQty = list.SaleQty;
+            list.CheckStatus = false;
             lists.Add(list);
 
         }

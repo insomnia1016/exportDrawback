@@ -79,12 +79,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAccountLogManager.cs" />
+    <Compile Include="IAccountManager.cs" />
     <Compile Include="ICommonManager.cs" />
     <Compile Include="ICompanyManager.cs" />
     <Compile Include="IContractManager.cs" />
     <Compile Include="IDepartmentManager.cs" />
+    <Compile Include="IDepositManager.cs" />
     <Compile Include="IEntryManager.cs" />
+    <Compile Include="IInDecreaseManager.cs" />
+    <Compile Include="IPaymentDepositManager.cs" />
+    <Compile Include="IPaymentManager.cs" />
+    <Compile Include="IPaymentRequestManager.cs" />
+    <Compile Include="IPaymentTypeManager.cs" />
     <Compile Include="IProfitBudgetManager.cs" />
+    <Compile Include="IProfit\IActualProfitAccountingManager.cs" />
+    <Compile Include="IProfit\IProfitAccountingManager.cs" />
     <Compile Include="IReceiptAuditManager.cs" />
     <Compile Include="IReceiptManager.cs" />
     <Compile Include="ITaxListManager.cs" />
@@ -95,6 +105,7 @@
     <Compile Include="Common\IDictionaryManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Common\TableOption.cs" />
+    <Compile Include="IPaymentInDecreaseManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Readme.txt" />

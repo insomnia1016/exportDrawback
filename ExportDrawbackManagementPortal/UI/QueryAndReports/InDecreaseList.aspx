@@ -19,7 +19,7 @@
               PageSize="20" OnRowDataBound="GridView1_RowDataBound" 
             OnDataBinding="GridView1_DataBinding" 
             OnPageIndexChanging="GridView1_PageIndexChanging" AutoGenerateColumns="False"
-            DataKeyNames="bill_no,customer,amount_all,agenter,agent_date" >
+            DataKeyNames="bill_no,customer,amount_all,agenter,agent_date,check_status" >
             <Columns>
                 <asp:TemplateField HeaderText="操作">
                     <HeaderTemplate>
@@ -34,6 +34,7 @@
                 <asp:BoundField DataField="amount_all" DataFormatString="{0:N2}" HeaderText="单据金额" />
                 <asp:BoundField DataField="agenter"  HeaderText="申请人" />
                 <asp:BoundField DataField="agent_date" DataFormatString="{0:d}" HeaderText="申请日期" />
+                <asp:BoundField DataField="check_status"  HeaderText="状态" />
             </Columns>
         </asp:GridView>
         <li style="width: 100%">

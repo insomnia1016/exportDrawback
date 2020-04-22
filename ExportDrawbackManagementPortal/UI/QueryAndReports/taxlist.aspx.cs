@@ -62,8 +62,10 @@ public partial class UI_QueryAndReports_taxlist : System.Web.UI.Page
 
     private void show()
     {
+        string entryId = txt_entryId.Text.Trim();
+        string sale_bill_no = txt_sale_bill_no.Text.Trim();
         TaxListAdapter tla = new TaxListAdapter();
-        GridView1.DataSource = tla.getTaxList();
+        GridView1.DataSource = tla.getTaxListByKeys(entryId, sale_bill_no);
         GridView1.DataBind();
     }
     
@@ -100,7 +102,7 @@ public partial class UI_QueryAndReports_taxlist : System.Web.UI.Page
         taxlist.StateCode = state;
         switch (state)
         {
-            case "P":
+            case "D":
                 if (string.IsNullOrEmpty(CalendarBox1.Text))
                 {
                     Label1.Text = "退税申报日期不能为空";
@@ -119,8 +121,6 @@ public partial class UI_QueryAndReports_taxlist : System.Web.UI.Page
                 {
                     taxlist.TaxReturnNo = txt_tax_return_no.Text;
                 }
-                break;
-            case "D":
                 if (string.IsNullOrEmpty(CalendarBox2.Text))
                 {
                     Label1.Text = "退税日期不能为空";
@@ -194,16 +194,6 @@ public partial class UI_QueryAndReports_taxlist : System.Web.UI.Page
     }
     protected void btn_Query_Click(object sender, EventArgs e)
     {
-        if (string.IsNullOrEmpty(txt_entryId.Text.Trim()))
-        {
-            show();
-        }
-        else
-        {
-            string entryId = txt_entryId.Text.Trim();
-            TaxListAdapter tla = new TaxListAdapter();
-            GridView1.DataSource = tla.getTaxListByEntryId(entryId);
-            GridView1.DataBind();
-        }
+        show();
     }
 }

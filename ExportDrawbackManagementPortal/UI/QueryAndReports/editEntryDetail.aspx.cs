@@ -41,6 +41,7 @@ public partial class UI_QueryAndReports_editEntryDetail : System.Web.UI.Page
         item.OwnerName = owner_name.Text.Trim();
         item.DDate = DateTime.Parse(d_date.Text.Trim());
         item.AgentName = agent_name.Text.Trim();
+        item.SaleBillNo = txt_sale_bill_no.Text.Trim();
         item.EntryId = entry_id.Text.Trim();
         item.GName = txt_g_name.Text.Trim();
         item.CodeTs = txt_code_ts.Text;
@@ -84,7 +85,7 @@ public partial class UI_QueryAndReports_editEntryDetail : System.Web.UI.Page
         d_date.Text = "";
         agent_name.Text = "";
         entry_id.Text = "";
-
+        txt_sale_bill_no.Text = "";
         txt_g_name.Text = "";
         txt_code_ts.Text = "";
         txt_g_no.Text = "";
@@ -105,7 +106,7 @@ public partial class UI_QueryAndReports_editEntryDetail : System.Web.UI.Page
         d_date.Text = GridView1.SelectedRow.Cells[4].Text;
         agent_name.Text = GridView1.SelectedRow.Cells[5].Text;
         entry_id.Text = GridView1.SelectedRow.Cells[1].Text;
-
+        txt_sale_bill_no.Text = GridView1.SelectedRow.Cells[16].Text;
         txt_g_name.Text = GridView1.SelectedRow.Cells[6].Text;
         txt_code_ts.Text = GridView1.SelectedRow.Cells[12].Text;
         txt_g_no.Text = GridView1.SelectedRow.Cells[2].Text;

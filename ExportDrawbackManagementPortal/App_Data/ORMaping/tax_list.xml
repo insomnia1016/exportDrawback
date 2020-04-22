@@ -102,6 +102,26 @@
   </MemberItem>
   <MemberItem>
     <Property>
+      <Name>SaleBillNo</Name>
+      <DisplayName>
+      </DisplayName>
+      <Comment>
+      </Comment>
+    </Property>
+    <Column>
+      <Name>sale_bill_no</Name>
+      <Type>String</Type>
+      <MaxLength>50</MaxLength>
+      <CanBeNull>True</CanBeNull>
+    </Column>
+    <Transfer>
+      <PropertyToColumn>True</PropertyToColumn>
+      <ColumnToProperty>True</ColumnToProperty>
+      <IsLogModify>True</IsLogModify>
+    </Transfer>
+  </MemberItem>
+  <MemberItem>
+    <Property>
       <Name>EntryId</Name>
       <DisplayName>
       </DisplayName>

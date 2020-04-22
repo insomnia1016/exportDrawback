@@ -8,12 +8,22 @@
                     <asp:TextBox ID="txt_extra_charges" runat="server" onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" Style="text-align: center"></asp:TextBox>
                 </span>
             </li>
+            <li><span class="title">部门</span>
+                <span class="control">
+                    <asp:TextBox id="txt_dept_id" Enabled="false" runat="server" ></asp:TextBox>
+                </span>
+            </li>
+            <li><span class="title">业务员</span>
+                <span class="control">
+                    <asp:TextBox id="txt_emp" Enabled="false" runat="server" ></asp:TextBox>
+                </span>
+            </li>
         </ul>
         <asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="False" OnRowDataBound="GridView1_RowDataBound" AllowPaging="True" OnPageIndexChanging="GridView1_PageIndexChanging" PageSize="20">
             <Columns>
                 <asp:BoundField DataField="buy_bill_no" HeaderText="采购订单号" />
-                <asp:BoundField DataField="dept_id" HeaderText="部门" />
-                <asp:BoundField DataField="emp_id" HeaderText="业务员" />
+                 <asp:BoundField DataField="FName" HeaderText="产品名称" />
+                <asp:BoundField DataField="FNumber" HeaderText="货号" />
                 <asp:BoundField DataField="sale_price" DataFormatString="{0:N2}" HeaderText="销售价" />
                 <asp:BoundField DataField="currency"  HeaderText="币制" />
                 <asp:TemplateField HeaderText="汇率">
@@ -75,6 +85,8 @@
                         <asp:HiddenField ID="hdf_sale_fentry_id" Value='<%#Eval("Sale_FEntryID") %>' runat="server" />
                         <asp:HiddenField ID="hdf_buy_fentry_id" Value='<%#Eval("Buy_FEntryID") %>' runat="server" />
                         <asp:HiddenField ID="hdf_fitem_id" Value='<%#Eval("FItemID") %>' runat="server" />
+                        <asp:HiddenField ID="hdf_emp_id" Value='<%#Eval("emp_id") %>' runat="server" />
+                        <asp:HiddenField ID="HiddenField1" Value='<%#Eval("FItemID") %>' runat="server" />
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
@@ -97,7 +109,13 @@
                 <asp:Button ID="btn_query" runat="server" OnClick="btn_query_Click" Text="查询" />
             </li>
         </ul>
-        <asp:GridView ID="GridView2" runat="server" OnSelectedIndexChanged="GridView2_SelectedIndexChanged" OnRowCommand="GridView2_RowCommand" OnRowDeleting="GridView2_RowDeleting" ShowFooter="true" AutoGenerateColumns="False" OnRowDataBound="GridView2_RowDataBound" AllowPaging="True" OnPageIndexChanging="GridView2_PageIndexChanging" PageSize="20">
+        <asp:GridView ID="GridView2" runat="server" 
+            OnSelectedIndexChanged="GridView2_SelectedIndexChanged"
+             OnRowCommand="GridView2_RowCommand"
+             OnRowDeleting="GridView2_RowDeleting" 
+            ShowFooter="true" AutoGenerateColumns="False"
+             OnRowDataBound="GridView2_RowDataBound" AllowPaging="True"
+             OnPageIndexChanging="GridView2_PageIndexChanging" PageSize="20">
             <Columns>
                 <asp:TemplateField HeaderText="操作">
                     <ItemTemplate>
@@ -106,7 +124,7 @@
                         <asp:HiddenField ID="hdf_finter_id" Value='<%#Eval("FInterID") %>' runat="server" />
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:BoundField DataField="sale_bill_no" HeaderText="销售订单号" />
+                <asp:HyperLinkField DataTextField="sale_bill_no" HeaderText="销售订单号" Target="_blank" DataNavigateUrlFields="sale_bill_no" DataNavigateUrlFormatString="ProfitBudget_detail.aspx?id={0}" />
                 <asp:BoundField DataField="extra_charges" DataFormatString="{0:N2}" HeaderText="额外费用" />
                 <asp:BoundField DataField="update_time" HeaderText="更新时间" />
                 <asp:TemplateField HeaderText="审核操作">

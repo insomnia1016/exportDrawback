@@ -42,9 +42,14 @@ public class TaxListAdapter:BaseAdapter<ITaxListManager>,ITaxListManager
         return Manager.queryTaxList(item);
     }
 
-
-    public DataSet getTaxListByEntryId(string id)
+    public DataSet getTaxListByKeys(string entryId, string sale_bill_no)
     {
-        return Manager.getTaxListByEntryId(id);
+        return Manager.getTaxListByKeys(entryId, sale_bill_no);
+    }
+
+
+    public decimal getTaxReturnTotal(string sale_bill_no)
+    {
+        return Manager.getTaxReturnTotal(sale_bill_no);
     }
 }

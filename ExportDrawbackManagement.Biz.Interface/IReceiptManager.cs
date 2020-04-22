@@ -13,5 +13,6 @@ namespace ExportDrawbackManagement.Biz.Interface
         void addReceipt(T_Receipt item);
         void updateReceipt(T_Receipt item);
         void DeleteReceiptById(int id);
+        string getReceiptNameByType(string code);
     }
 }

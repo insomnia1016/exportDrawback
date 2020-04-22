@@ -51,4 +51,10 @@ public class UsersAdapter : BaseAdapter<IUsersManager>, IUsersManager
 	{
 		Manager.deleteUser(person_id);
 	}
+
+
+    public void add(T_Users entity)
+    {
+        Manager.add(entity);
+    }
 }

@@ -26,6 +26,6 @@ namespace ExportDrawbackManagement.Biz.Interface
 
          void UpdateUserInfo(T_Users user);
          void deleteUser(int person_id);
-
+         void add(T_Users entity);
     }
 }

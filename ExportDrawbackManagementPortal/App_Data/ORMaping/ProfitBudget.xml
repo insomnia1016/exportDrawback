@@ -98,4 +98,24 @@
       <IsLogModify>True</IsLogModify>
     </Transfer>
   </MemberItem>
+  <MemberItem>
+    <Property>
+      <Name>CheckStatus</Name>
+      <DisplayName>
+      </DisplayName>
+      <Comment>
+      </Comment>
+    </Property>
+    <Column>
+      <Name>check_status</Name>
+      <Type>Boolean</Type>
+      <MaxLength>-1</MaxLength>
+      <CanBeNull>True</CanBeNull>
+    </Column>
+    <Transfer>
+      <PropertyToColumn>True</PropertyToColumn>
+      <ColumnToProperty>True</ColumnToProperty>
+      <IsLogModify>True</IsLogModify>
+    </Transfer>
+  </MemberItem>
 </ORMapping>

@@ -54,6 +54,7 @@ public partial class UI_QueryAndReports_contract : System.Web.UI.Page
         dt.Columns.Add("g_name");
         dt.Columns.Add("g_qty");
         dt.Columns.Add("g_unit");
+        dt.Columns.Add("sale_bill_no");
 
         if (!changed)
             GetSelectedItem();
@@ -66,6 +67,7 @@ public partial class UI_QueryAndReports_contract : System.Web.UI.Page
             dr["g_name"] = item[2];
             dr["g_qty"] = item[3];
             dr["g_unit"] = item[4];
+            dr["sale_bill_no"] = item[5];
             dt.Rows.Add(dr);
         }
 
@@ -76,6 +78,7 @@ public partial class UI_QueryAndReports_contract : System.Web.UI.Page
         dr1["g_unit"] = "";
         dr1["entry_id"] = "";
         dr1["g_no"] = "";
+        dr1["sale_bill_no"] = "";
         dt.Rows.Add(dr1);
         ds.Tables.Add(dt);
         Server.Transfer("contract_template.aspx");
@@ -107,12 +110,13 @@ public partial class UI_QueryAndReports_contract : System.Web.UI.Page
         {
             CheckBox cbx = (CheckBox)this.GridView1.Rows[i].FindControl("cbItem");
 
-            string id = string.Format("{0}${1}${2}${3}${4}",
+            string id = string.Format("{0}${1}${2}${3}${4}${5}",
                this.GridView1.DataKeys[i].Values[0].ToString(),
                this.GridView1.DataKeys[i].Values[1].ToString(),
                this.GridView1.DataKeys[i].Values[2].ToString(),
                this.GridView1.DataKeys[i].Values[3].ToString(),
-               this.GridView1.DataKeys[i].Values[4].ToString()
+               this.GridView1.DataKeys[i].Values[4].ToString(),
+               this.GridView1.DataKeys[i].Values[5].ToString()
                );
 
             if (selecteditems.Contains(id) && !cbx.Checked)
@@ -135,12 +139,13 @@ public partial class UI_QueryAndReports_contract : System.Web.UI.Page
         {
             CheckBox cbx = (CheckBox)e.Row.FindControl("cbItem");
             int i = e.Row.RowIndex;
-            string id = string.Format("{0}${1}${2}${3}${4}",
+            string id = string.Format("{0}${1}${2}${3}${4}${5}",
             this.GridView1.DataKeys[i].Values[0].ToString(),
             this.GridView1.DataKeys[i].Values[1].ToString(),
             this.GridView1.DataKeys[i].Values[2].ToString(),
             this.GridView1.DataKeys[i].Values[3].ToString(),
-            this.GridView1.DataKeys[i].Values[4].ToString()
+            this.GridView1.DataKeys[i].Values[4].ToString(),
+            this.GridView1.DataKeys[i].Values[5].ToString()
             );
             if (SelectedItems.Contains(id))
                 cbx.Checked = true;

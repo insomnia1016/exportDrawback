@@ -13,5 +13,6 @@ namespace ExportDrawbackManagement.Biz.Interface
        void addDepartment(T_Department item);
        void updateDepartment(T_Department item);
        void DeleteDepartmentById(int id);
+       
     }
 }

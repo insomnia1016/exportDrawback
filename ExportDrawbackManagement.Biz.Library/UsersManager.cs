@@ -101,7 +101,46 @@ namespace ExportDrawbackManagement.Biz.Library
             }
 
         }
+        public void add(T_Users entity)
+        {
+            if (this.checkUsername(entity.Username))
+            {
+                throw new Exception("已存在该用户名");
+            }
 
+            Database db = Dao.GetDatabase();
+            string sql = @"INSERT INTO [dbo].[users]
+                               ([name]
+                               ,[username]
+                               ,[password]
+                               ,[roles]
+                               ,[derpartment])
+                         VALUES
+                               (@NAME
+                               ,@username
+                               ,@PASSWORD
+                               ,@roles
+                               ,@derpartment)";
+            using (DbConnection cn = db.CreateConnection())
+            {
+                try
+                {
+                    DbCommand cmd = db.GetSqlStringCommand(sql);
+                    db.AddInParameter(cmd, "@NAME", DbType.String, entity.Name);
+                    db.AddInParameter(cmd, "@username", DbType.String, entity.Username);
+                    db.AddInParameter(cmd, "@PASSWORD", DbType.String, entity.Password);
+                    db.AddInParameter(cmd, "@roles", DbType.String, entity.Roles);
+                    db.AddInParameter(cmd, "@derpartment", DbType.String, entity.Derpartment);
+                    db.ExecuteNonQuery(cmd);
+
+                }
+                catch
+                {
+                    throw new Exception("用户新增失败");
+                }
+            }
+
+        }
         private bool checkPassword(int person_id, string password)
         {
             Database db = Dao.GetDatabase();

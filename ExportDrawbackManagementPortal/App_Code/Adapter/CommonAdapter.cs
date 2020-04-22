@@ -85,4 +85,44 @@ public class CommonAdapter : BaseAdapter<ICommonManager>, ICommonManager
     {
         return Manager.getCurrencyByID(id);
     }
+
+
+    public DataSet getDepartment()
+    {
+        return Manager.getDepartment();
+    }
+
+    public DataSet getEmp()
+    {
+        return Manager.getEmp();
+    }
+
+
+    public int getIDByName(string name)
+    {
+        return Manager.getIDByName(name);
+    }
+
+
+    public int getIDByCurrency(string name)
+    {
+        return Manager.getIDByCurrency(name);
+    }
+
+
+    public string getEmpNameByID(int id)
+    {
+        return Manager.getEmpNameByID(id);
+    }
+
+    public string getDepartmentNameByID(int id)
+    {
+        return Manager.getDepartmentNameByID(id);
+    }
+
+
+    public DataSet getSuppliersBySearchKeyName(string name)
+    {
+        return Manager.getSuppliersBySearchKeyName(name);
+    }
 }
